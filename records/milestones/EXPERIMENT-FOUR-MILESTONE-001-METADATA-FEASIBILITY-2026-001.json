@@ -94,13 +94,19 @@
   "exit_conditions": [
     {
       "id": "EXIT-M1-PRIOR-EXCLUSIONS",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "records/metadata/EXPERIMENT-FOUR-PRIOR-EVENT-EXCLUSION-MANIFEST-2026-001.json",
+        "records/evidence/E4-EV-0005-PRIOR-EVENT-EXCLUSIONS-2026-001.json"
+      ]
     },
     {
       "id": "EXIT-M1-FROZEN-METADATA-SCHEMA",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "records/metadata/EXPERIMENT-FOUR-METADATA-SCHEMA-FREEZE-2026-001.json",
+        "records/evidence/E4-EV-0006-METADATA-SCHEMA-FREEZE-2026-001.json"
+      ]
     },
     {
       "id": "EXIT-M1-SOURCES-GATED",
@@ -169,27 +175,29 @@
       ],
       "action_class": "read_only_inspection",
       "human_gate": false,
-      "status": "in_progress",
+      "status": "complete",
       "inputs": [
         "Read-only canonical repositories and public release records for Experiments One through Three"
       ],
       "outputs": [
-        "Versioned prior-event exclusion manifest",
-        "Source-path and revision provenance",
-        "Ambiguity and missing-identity ledger"
+        "records/metadata/EXPERIMENT-FOUR-PRIOR-EVENT-EXCLUSION-MANIFEST-2026-001.json",
+        "records/evidence/E4-EV-0005-PRIOR-EVENT-EXCLUSIONS-2026-001.json",
+        "Bounded identity gaps and conservative matching policy in the manifest"
       ],
       "gates": {
-        "repository_identity": "pending",
-        "read_only_boundary": "pending",
-        "event_identity_completeness": "pending"
+        "repository_identity": "pass",
+        "read_only_boundary": "pass",
+        "event_identity_completeness": "pass"
       },
-      "disposition": null,
+      "disposition": "pass",
       "retained_failures": [],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M1-PRIOR-EXCLUSIONS"
         ],
-        "observed": [],
+        "observed": [
+          "EXIT-M1-PRIOR-EXCLUSIONS"
+        ],
         "decision_value": "advances_exit",
         "rationale": "Fresh-event eligibility cannot be evaluated until all prior experiment identities are excluded."
       },
@@ -203,28 +211,34 @@
       ],
       "action_class": "project_control",
       "human_gate": false,
-      "status": "planned",
+      "status": "complete",
       "inputs": [
         "Execution goal",
         "Prior-event exclusion manifest"
       ],
       "outputs": [
-        "Metadata schema",
-        "Eligibility and exclusion specification",
-        "Deterministic replay tests"
+        "schemas/candidate-event.schema.json",
+        "schemas/metadata-eligibility-profile.schema.json",
+        "records/metadata/EXPERIMENT-FOUR-METADATA-SCHEMA-FREEZE-2026-001.json",
+        "src/burnlens_e4/metadata_eligibility.py",
+        "Synthetic replay and fail-closed tests"
       ],
       "gates": {
-        "no_model_output_fields": "pending",
-        "whole_event_identity": "pending",
-        "unknown_semantics": "pending"
+        "no_model_output_fields": "pass",
+        "whole_event_identity": "pass",
+        "unknown_semantics": "pass"
       },
-      "disposition": null,
-      "retained_failures": [],
+      "disposition": "pass",
+      "retained_failures": [
+        "Attempt 1: Milestone 0 top-level allowlist omitted Milestone 1 schemas and src paths; narrow repair passed"
+      ],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M1-FROZEN-METADATA-SCHEMA"
         ],
-        "observed": [],
+        "observed": [
+          "EXIT-M1-FROZEN-METADATA-SCHEMA"
+        ],
         "decision_value": "advances_exit",
         "rationale": "The universe must be defined before source rows are observed."
       },
@@ -238,24 +252,28 @@
       ],
       "action_class": "external_source_dependency_runtime_or_service_adoption",
       "human_gate": true,
-      "status": "planned",
+      "status": "in_progress",
       "inputs": [
         "Frozen metadata schema",
         "Official publisher documentation and metadata-only probes"
       ],
       "outputs": [
-        "Hash-bound source review bundle",
+        "records/reviews/E4-M1-SOURCE-ADOPTION-BUNDLE-2026-001.json",
+        "records/reviews/E4-M1-SOURCE-ADOPTION-CONTRACT-2026-001.json",
+        "docs/reviews/e4-m1-source-adoption-review.html",
         "Exact owner decision",
         "Admitted-source registry or terminal stop"
       ],
       "gates": {
-        "provenance": "pending",
-        "rights_terms": "pending",
-        "identity_revision": "pending",
+        "provenance": "pass",
+        "rights_terms": "pass",
+        "identity_revision": "pass",
         "owner_decision": "pending"
       },
       "disposition": null,
-      "retained_failures": [],
+      "retained_failures": [
+        "Attempt 1: source-review validation used literal wording and any checked token instead of testing accepted semantic boundary phrases and the actual radio checked attribute; the validator was narrowly repaired and passed"
+      ],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M1-SOURCES-GATED"
@@ -403,12 +421,15 @@
       "complete diff and live publication verification"
     ],
     "completed_checks": [
-      "canonical repository and revision identity"
+      "canonical repository and revision identity",
+      "complete prior-event exclusion inventory",
+      "schema and reason-code validation",
+      "no model-output selection fields"
     ]
   },
   "handoff": {
-    "current_checkpoint": "Milestone 0 accepted; Milestone 1 metadata-only controls active under issue #2.",
-    "next_action": "Inventory prior-experiment event identities from read-only public project records.",
+    "current_checkpoint": "Milestone 0 accepted; Milestone 1 source review bundle 7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7 is prepared with zero source adoptions and zero candidate rows.",
+    "next_action": "Present the exact M1-U004 bundle and wait for the owner decision; lock and reconcile only an exact returned response.",
     "do_not_carry_forward": [
       "Any assumption that a prior event name is a complete event identity",
       "Any source authority inferred from anonymous discovery",

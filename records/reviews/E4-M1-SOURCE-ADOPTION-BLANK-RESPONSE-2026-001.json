@@ -1,0 +1,18 @@
+{
+  "response_schema_version": "e4-human-source-adoption-response-v1",
+  "review_id": "E4-M1-SOURCE-ADOPTION-2026-001",
+  "completed": false,
+  "review_started_at_utc": null,
+  "review_completed_at_utc": null,
+  "reviewer": {
+    "attestation": false
+  },
+  "responses": [
+    {
+      "item_id": "E4-M1-SOURCE-ADOPTION-BUNDLE",
+      "evidence_sha256": "7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7",
+      "decision": null,
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "evidence_id": "E4-EV-0006",
+  "observed_at_utc": "2026-08-25T22:01:17Z",
+  "scope": "M1-U003 candidate schema, eligibility-profile schema, deterministic evaluator, reason codes, and replay controls",
+  "disposition": "pass",
+  "scientific_evidence": false,
+  "artifacts": [
+    {
+      "path": "schemas/candidate-event.schema.json",
+      "sha256": "1163ead60565e003248ed69cebf4169602ad5a8ea07b7f692cc21fd07c6def86"
+    },
+    {
+      "path": "schemas/metadata-eligibility-profile.schema.json",
+      "sha256": "84f121064864e83ad1a39c9cfe9eeb9cd2ed1c46934e706096db9f53974dc7b8"
+    },
+    {
+      "path": "records/metadata/EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-PROPOSAL-2026-001.json",
+      "sha256": "af6661fe6080e762b50bc27b1f0260d4e0227639a2607055ec9ecd5a1d220302"
+    },
+    {
+      "path": "records/metadata/EXPERIMENT-FOUR-METADATA-SCHEMA-FREEZE-2026-001.json",
+      "sha256": "1acc11bbca3674df51a09b41741b4429820a960840fd4a25a0b3a5733823d1fa"
+    },
+    {
+      "path": "src/burnlens_e4/metadata_eligibility.py",
+      "sha256": "2c3a75352e3d9b26e0bc71433d2ede7f156f64328a3f965718b7f67c5a6fe860"
+    },
+    {
+      "path": "docs/protocols/CANDIDATE-UNIVERSE-METADATA-PROTOCOL.md",
+      "sha256": "6721abe3a165e4a9b40d539802ba31e316a8bd7352ebed7d846e76f2a4e753e5"
+    }
+  ],
+  "retained_failed_attempts": [
+    {
+      "attempt": 1,
+      "finding": "The Milestone 0 repository validator did not yet allow the schemas and src top-level paths authorized by Milestone 1.",
+      "repair": "Add only schemas and src to the public top-level allowlist.",
+      "post_repair_result": "pass"
+    }
+  ],
+  "validation": [
+    {
+      "command": "python scripts/validate_metadata_protocol.py",
+      "result": "PASS; schema, semantics, reason ordering, and evaluator aligned; eligibility profile remains proposed; zero candidate rows"
+    },
+    {
+      "command": "python scripts/validate_prior_event_exclusions.py",
+      "result": "PASS; 68 identities permanently excluded"
+    },
+    {
+      "command": "python scripts/validate_repository.py",
+      "result": "PASS; 44 public-safe files checked at validation time"
+    },
+    {
+      "command": "python -m unittest discover -s tests -v",
+      "result": "PASS; 14 tests including eight synthetic eligibility behaviors"
+    }
+  ],
+  "boundary": {
+    "candidate_rows_observed": 0,
+    "external_sources_adopted": 0,
+    "scientific_source_bodies_opened": 0,
+    "profile_status": "proposed",
+    "owner_gate_required": true
+  },
+  "limitations": [
+    "Exact incident-year, area, maturity, ecology, source, and duplicate-resolution values are not supplied by the approved charter and remain pending an exact owner decision.",
+    "The standard-library validator checks the repository's frozen structural invariants and synthetic evaluator behavior; it does not claim full third-party JSON Schema conformance testing.",
+    "No candidate eligibility, source fitness, dataset readiness, or scientific result is established."
+  ]
+}

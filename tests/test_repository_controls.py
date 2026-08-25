@@ -17,6 +17,14 @@ assert SPEC is not None and SPEC.loader is not None
 VALIDATOR = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(VALIDATOR)
 
+EXCLUSION_VALIDATOR_PATH = ROOT / "scripts" / "validate_prior_event_exclusions.py"
+EXCLUSION_SPEC = importlib.util.spec_from_file_location(
+    "validate_prior_event_exclusions", EXCLUSION_VALIDATOR_PATH
+)
+assert EXCLUSION_SPEC is not None and EXCLUSION_SPEC.loader is not None
+EXCLUSION_VALIDATOR = importlib.util.module_from_spec(EXCLUSION_SPEC)
+EXCLUSION_SPEC.loader.exec_module(EXCLUSION_VALIDATOR)
+
 
 class RepositoryControlTests(unittest.TestCase):
     def test_repository_validator_passes(self) -> None:
@@ -52,6 +60,9 @@ class RepositoryControlTests(unittest.TestCase):
             if path.suffix.lower() in VALIDATOR.PROHIBITED_SUFFIXES
         ]
         self.assertEqual([], violations)
+
+    def test_prior_event_exclusions_are_complete(self) -> None:
+        self.assertEqual([], EXCLUSION_VALIDATOR.validate())
 
     def test_cli_reports_non_scientific_scope(self) -> None:
         result = subprocess.run(

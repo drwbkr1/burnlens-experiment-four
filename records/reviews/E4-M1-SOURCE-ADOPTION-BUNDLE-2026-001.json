@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "bundle_id": "E4-M1-SOURCE-ADOPTION-BUNDLE-2026-001",
+  "review_id": "E4-M1-SOURCE-ADOPTION-2026-001",
+  "authority_ref": "records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md; active goal BurnLens Experiment Four - Prospective Fresh-Event Benchmark",
+  "candidate_identity": "E4-M1-SOURCE-PACKAGE-2026-001",
+  "artifacts": [
+    {
+      "artifact_id": "review-surface",
+      "path": "docs/reviews/e4-m1-source-adoption-review.html",
+      "sha256": "7c3e775bf88605a3a577fae0781e6c26d29785781a6dd7db1b932f0af8a38983",
+      "role": "review_surface",
+      "render_required": true,
+      "render_receipts": [
+        {
+          "path": "records/reviews/E4-M1-SOURCE-ADOPTION-RENDER-RECEIPT-2026-001.json",
+          "sha256": "ebdc5e8b8bcd06fcdf5c523f0a600ced6bc56f01112a33de6e177cdc64966c2b"
+        }
+      ]
+    },
+    {
+      "artifact_id": "plain-language-review",
+      "path": "docs/reviews/2026-08-25-m1-source-adoption-owner-review.md",
+      "sha256": "9e30fdebcc1abf384060e0b0d8386003c8b75820f90e6d91effb3c70c3599c48",
+      "role": "review_narrative",
+      "render_required": false,
+      "render_receipts": []
+    },
+    {
+      "artifact_id": "render-receipt",
+      "path": "records/reviews/E4-M1-SOURCE-ADOPTION-RENDER-RECEIPT-2026-001.json",
+      "sha256": "ebdc5e8b8bcd06fcdf5c523f0a600ced6bc56f01112a33de6e177cdc64966c2b",
+      "role": "render_receipt",
+      "render_required": false,
+      "render_receipts": []
+    },
+    {
+      "artifact_id": "source-gate-assessment",
+      "path": "records/sources/EXPERIMENT-FOUR-SOURCE-GATE-ASSESSMENT-2026-001.json",
+      "sha256": "08dbe07f04963c25d6f35a19b201e1c3e4ae5dd3c59a9de9aaf181c76a90df93",
+      "role": "source_gate_evidence",
+      "render_required": false,
+      "render_receipts": []
+    },
+    {
+      "artifact_id": "source-use-proposal",
+      "path": "records/sources/EXPERIMENT-FOUR-SOURCE-USE-PROPOSAL-2026-001.json",
+      "sha256": "3fcf8f5fbd9d7263a7dba2e56d71cdb4546cfc83e481ac4b37208d1bf65f70c2",
+      "role": "source_and_eligibility_proposal",
+      "render_required": false,
+      "render_receipts": []
+    },
+    {
+      "artifact_id": "eligibility-profile-proposal",
+      "path": "records/metadata/EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-PROPOSAL-2026-002.json",
+      "sha256": "bb69f42b9d1f14903a922fd4320c469198329c3104250ba9853405d053a463a4",
+      "role": "machine_readable_eligibility_values",
+      "render_required": false,
+      "render_receipts": []
+    },
+    {
+      "artifact_id": "prior-event-exclusions",
+      "path": "records/metadata/EXPERIMENT-FOUR-PRIOR-EVENT-EXCLUSION-MANIFEST-2026-001.json",
+      "sha256": "c819624011f5353bb085ba4b5a8db38cf0a0ca1c55e9a7741e7af59c0f7d164d",
+      "role": "prospective_exclusion_boundary",
+      "render_required": false,
+      "render_receipts": []
+    },
+    {
+      "artifact_id": "metadata-schema-freeze",
+      "path": "records/metadata/EXPERIMENT-FOUR-METADATA-SCHEMA-FREEZE-2026-001.json",
+      "sha256": "1acc11bbca3674df51a09b41741b4429820a960840fd4a25a0b3a5733823d1fa",
+      "role": "machine_readable_metadata_boundary",
+      "render_required": false,
+      "render_receipts": []
+    },
+    {
+      "artifact_id": "metadata-protocol",
+      "path": "docs/protocols/CANDIDATE-UNIVERSE-METADATA-PROTOCOL.md",
+      "sha256": "6721abe3a165e4a9b40d539802ba31e316a8bd7352ebed7d846e76f2a4e753e5",
+      "role": "metadata_protocol",
+      "render_required": false,
+      "render_receipts": []
+    }
+  ],
+  "review_surface": {
+    "artifact_id": "review-surface",
+    "blank_state_verified": true,
+    "completion_controls_verified": true,
+    "export_verified": true
+  },
+  "limitations": [
+    "The package contains source metadata and policy evidence only; zero candidate rows and zero scientific source bodies were opened.",
+    "MTBS is remote-sensing-derived reference evidence and is not independent ground truth.",
+    "EPA Level III ecoregions support broad stratification and are not fine-scale ecological truth.",
+    "Approval does not authorize HLS imagery, credentials, event selection, AOIs, role assignment, training, evaluation, test opening, claims, or release."
+  ]
+}
