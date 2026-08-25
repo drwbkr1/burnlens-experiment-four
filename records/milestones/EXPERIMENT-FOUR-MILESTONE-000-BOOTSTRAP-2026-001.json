@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "milestone_id": "EXPERIMENT-FOUR-MILESTONE-000-BOOTSTRAP-2026-001",
   "project_profile_ref": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-001.json",
-  "status": "active",
+  "status": "complete",
   "authority": {
     "mode": "inherited",
     "authority_ref": "goal-service:01a0320c-ae81-7550-ade2-c6c22d4abf93/records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
@@ -112,23 +112,34 @@
     },
     {
       "id": "EXIT-M0-LIVE-MAIN",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "main 9e244ac3a8c84ec70651aa2a3114da2be25d489d",
+        "records/evidence/E4-EV-0004-M0-LIVE-CHECKPOINT-2026-001.json"
+      ]
     },
     {
       "id": "EXIT-M0-CI",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "GitHub Actions run 32901591615 concluded success"
+      ]
     },
     {
       "id": "EXIT-M0-RECONCILED",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-002.json"
+      ]
     },
     {
       "id": "EXIT-M0-NEXT-MILESTONE",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "Issue #2",
+        "records/milestones/EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001.json",
+        "codex/metadata-feasibility-001"
+      ]
     }
   ],
   "units": [
@@ -247,30 +258,33 @@
       ],
       "action_class": "public_repository_publication",
       "human_gate": false,
-      "status": "in_progress",
+      "status": "complete",
       "inputs": [
         "Validated bootstrap candidate",
         "Issue #1"
       ],
       "outputs": [
-        "Live main commit",
-        "Passing CI",
-        "Public readback evidence"
+        "Live main 9e244ac3a8c84ec70651aa2a3114da2be25d489d",
+        "Passing GitHub Actions run 32901591615",
+        "records/evidence/E4-EV-0004-M0-LIVE-CHECKPOINT-2026-001.json"
       ],
       "gates": {
-        "initial_commit": "pending",
-        "push": "pending",
-        "ci": "pending",
-        "live_readback": "pending"
+        "initial_commit": "pass",
+        "push": "pass",
+        "ci": "pass",
+        "live_readback": "pass"
       },
-      "disposition": null,
+      "disposition": "pass",
       "retained_failures": [],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M0-LIVE-MAIN",
           "EXIT-M0-CI"
         ],
-        "observed": [],
+        "observed": [
+          "EXIT-M0-LIVE-MAIN",
+          "EXIT-M0-CI"
+        ],
         "decision_value": "advances_exit",
         "rationale": "The first accepted checkpoint must exist and verify on the real public surface."
       },
@@ -284,28 +298,31 @@
       ],
       "action_class": "project_control",
       "human_gate": false,
-      "status": "planned",
+      "status": "complete",
       "inputs": [
         "Verified live main and CI"
       ],
       "outputs": [
-        "Accepted current records",
+        "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-002.json",
         "Closed issue #1",
-        "Issue-backed Milestone 1 contract and branch"
+        "Issue #2, active Milestone 1 contract, and codex/metadata-feasibility-001"
       ],
       "gates": {
-        "reconciliation": "pending",
-        "issue_close": "pending",
-        "next_contract": "pending"
+        "reconciliation": "pass",
+        "issue_close": "pass",
+        "next_contract": "pass"
       },
-      "disposition": null,
+      "disposition": "pass",
       "retained_failures": [],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M0-RECONCILED",
           "EXIT-M0-NEXT-MILESTONE"
         ],
-        "observed": [],
+        "observed": [
+          "EXIT-M0-RECONCILED",
+          "EXIT-M0-NEXT-MILESTONE"
+        ],
         "decision_value": "advances_exit",
         "rationale": "Milestone 0 closes only with a clean, exact resume point."
       },
@@ -344,12 +361,16 @@
       "JSON and Markdown structure",
       "prohibited scientific-byte and secret scan",
       "focused tests",
-      "complete candidate review"
+      "complete candidate review",
+      "live main identity",
+      "CI",
+      "public readback",
+      "state reconciliation"
     ]
   },
   "handoff": {
-    "current_checkpoint": "Locally validated public-safe bootstrap candidate on unborn main; live checkpoint pending.",
-    "next_action": "Review the staged candidate, create the one authorized initial commit, push main, and verify CI and public readback.",
+    "current_checkpoint": "Milestone 0 accepted at main 9e244ac3a8c84ec70651aa2a3114da2be25d489d with passing CI and public readback.",
+    "next_action": "Resume from the active Milestone 1 contract and inventory prior-experiment event identities.",
     "do_not_carry_forward": [
       "Any assumption that bootstrap controls are scientific evidence",
       "Any prior experiment authority or dirty worktree state",

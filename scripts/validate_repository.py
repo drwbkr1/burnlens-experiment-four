@@ -8,6 +8,7 @@ work is admitted; it does not treat structure as scientific evidence.
 from __future__ import annotations
 
 import json
+import os
 import re
 import subprocess
 import sys
@@ -37,10 +38,13 @@ REQUIRED_PATHS = (
     "pyproject.toml",
     "records/decisions/DECISION-REGISTER.md",
     "records/evidence/EVIDENCE-LEDGER.md",
+    "records/evidence/E4-EV-0004-M0-LIVE-CHECKPOINT-2026-001.json",
+    "records/governance/ACTIVE-PROJECT-CONTROL-PROFILE",
     "records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
-    "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-001.json",
-    "records/milestones/EXPERIMENT-FOUR-MILESTONE-000-BOOTSTRAP-2026-001.json",
+    "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+    "records/milestones/EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001.json",
     "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-001.json",
+    "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-002.json",
     "scripts/validate_repository.py",
     "tests/test_repository_controls.py",
 )
@@ -194,11 +198,30 @@ def check_secret_indicators(files: list[Path], errors: list[str]) -> None:
 
 
 def check_control_alignment(errors: list[str]) -> None:
-    profile_path = ROOT / "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-001.json"
-    contract_path = ROOT / "records/milestones/EXPERIMENT-FOUR-MILESTONE-000-BOOTSTRAP-2026-001.json"
+    pointer_path = ROOT / "records/governance/ACTIVE-PROJECT-CONTROL-PROFILE"
+    try:
+        pointer = pointer_path.read_text(encoding="utf-8").strip()
+        profile_path = (ROOT / pointer).resolve()
+        profile_path.relative_to(ROOT)
+    except (OSError, UnicodeError, ValueError) as exc:
+        errors.append(f"invalid active-profile pointer: {exc}")
+        return
     profile = load_json(profile_path, errors)
+    if not isinstance(profile, dict):
+        return
+
+    active_contract = profile.get("control_surfaces", {}).get("active_contract")
+    if not isinstance(active_contract, str) or not active_contract:
+        errors.append("active project profile has no active_contract")
+        return
+    contract_path = (ROOT / active_contract).resolve()
+    try:
+        contract_path.relative_to(ROOT)
+    except ValueError:
+        errors.append("active contract path leaves repository")
+        return
     contract = load_json(contract_path, errors)
-    if not isinstance(profile, dict) or not isinstance(contract, dict):
+    if not isinstance(contract, dict):
         return
 
     expected_remote = "https://github.com/drwbkr1/burnlens-experiment-four.git"
@@ -206,11 +229,11 @@ def check_control_alignment(errors: list[str]) -> None:
         errors.append("project profile expected_remote does not match canonical repository")
     contract_ref = relative(contract_path)
     if profile.get("control_surfaces", {}).get("active_contract") != contract_ref:
-        errors.append("project profile active_contract does not reference Milestone 0")
+        errors.append("project profile active_contract does not match the resolved contract")
     if contract.get("project_profile_ref") != relative(profile_path):
-        errors.append("Milestone 0 does not reference the active project profile")
+        errors.append("active milestone does not reference the active project profile")
     if contract.get("status") != "active":
-        errors.append("Milestone 0 must remain active until live reconciliation")
+        errors.append("the pointer-selected milestone contract must be active")
 
     profile_actions = set(profile.get("authority", {}).get("authorized_action_classes", []))
     contract_actions = set(contract.get("authority", {}).get("authorized_action_classes", []))
@@ -225,7 +248,7 @@ def check_claim_boundaries(errors: list[str]) -> None:
     normalized_readme = " ".join(readme.lower().split())
     normalized_goal = " ".join(goal.lower().split())
     required_readme = (
-        "there is no admitted dataset",
+        "there is no admitted external source, scientific dataset",
         "not official fire information",
         "dataset_readiness",
         "comparative_status",
@@ -277,8 +300,12 @@ def check_git_identity(errors: list[str]) -> None:
     }
     if remote not in accepted_remotes:
         errors.append(f"unexpected origin remote: {remote}")
-    if branch != "main":
-        errors.append(f"bootstrap validation requires main, found: {branch or '<detached>'}")
+    effective_branch = branch or os.environ.get("GITHUB_HEAD_REF", "")
+    if effective_branch != "main" and not effective_branch.startswith("codex/"):
+        errors.append(
+            "validation requires main or a codex/ review branch, found: "
+            f"{effective_branch or '<detached>'}"
+        )
 
 
 def validate() -> list[str]:

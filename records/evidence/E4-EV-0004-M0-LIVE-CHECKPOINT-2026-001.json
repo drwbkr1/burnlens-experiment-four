@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "evidence_id": "E4-EV-0004",
+  "observed_at_utc": "2026-08-25T21:35:10Z",
+  "scope": "Milestone 0 live public repository checkpoint",
+  "disposition": "pass",
+  "scientific_evidence": false,
+  "repository": {
+    "url": "https://github.com/drwbkr1/burnlens-experiment-four",
+    "visibility": "public",
+    "default_branch": "main",
+    "description": "Prospective fresh-event burn-change benchmark with whole-event held-out evaluation and evidence-bound controls"
+  },
+  "checkpoint": {
+    "commit": "9e244ac3a8c84ec70651aa2a3114da2be25d489d",
+    "tree": "b17b028b36245b15b2f50c7a4a56c64e49ae8fe9",
+    "remote_ref_match": true,
+    "github_signature_verified": false,
+    "signature_note": "The commit is unsigned; signature verification was not a Milestone 0 requirement."
+  },
+  "ci": {
+    "workflow": "repository-controls",
+    "run_id": 32901591615,
+    "url": "https://github.com/drwbkr1/burnlens-experiment-four/actions/runs/32901591615",
+    "head_sha": "9e244ac3a8c84ec70651aa2a3114da2be25d489d",
+    "status": "completed",
+    "conclusion": "success",
+    "job": "validate"
+  },
+  "public_readback": [
+    {
+      "path": "README.md",
+      "local_git_blob": "7bbcc7aa3d7c07e9c0796b124c7f7ba3fadaac31",
+      "github_git_blob": "7bbcc7aa3d7c07e9c0796b124c7f7ba3fadaac31",
+      "match": true
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "local_git_blob": "60976ad3d68eccbc372b674c99dda1831d5b8841",
+      "github_git_blob": "60976ad3d68eccbc372b674c99dda1831d5b8841",
+      "match": true
+    }
+  ],
+  "main_protection": {
+    "strict_required_status": "validate",
+    "pull_request_required": true,
+    "required_approving_review_count": 0,
+    "admin_enforcement": true,
+    "linear_history": true,
+    "conversation_resolution": true,
+    "force_pushes": false,
+    "deletion": false
+  },
+  "limitations": [
+    "This proves public repository publication and controls, not scientific validity.",
+    "No external scientific source, source body, event, label, model, metric, tag, or release was admitted."
+  ]
+}

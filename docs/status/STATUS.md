@@ -5,19 +5,22 @@
 | Status date | 2026-08-25 |
 | Canonical remote | `https://github.com/drwbkr1/burnlens-experiment-four` |
 | Canonical checkout | `C:\Projects\Active\burnlens-experiment-four` |
-| Working version | `0.0.0-m0-bootstrap` |
-| Accepted checkpoint | None; repository `main` is unborn |
-| Active work | Milestone 0 under issue #1 |
-| Overall state | Locally validated bootstrap candidate; public checkpoint pending |
+| Working version | `0.1.0-m1-metadata-feasibility` |
+| Accepted checkpoint | `9e244ac3a8c84ec70651aa2a3114da2be25d489d` on live `main` |
+| Active work | Milestone 1 under issue #2 on `codex/metadata-feasibility-001` |
+| Overall state | Milestone 0 accepted; metadata-only feasibility active |
 
 ## Current truth
 
 - The owner created the public repository on 2026-08-25.
-- Direct remote inspection found no refs, commits, branches, tags, releases,
-  rulesets, workflows, deployments, license, or project files.
-- The canonical local clone exists and has unborn `main`.
+- The repository entered as verified empty and now has one accepted bootstrap
+  checkpoint on `main`.
 - Secret scanning and push protection are enabled.
-- Issue #1 records the truthful bootstrap boundary.
+- GitHub Actions run `32901591615` passed against the exact accepted commit.
+- Live README and workflow Git blobs matched local object identities.
+- `main` requires strict `validate` status, pull requests, linear history, and
+  conversation resolution; force pushes and deletion are denied.
+- Issue #1 records the accepted bootstrap; issue #2 controls Milestone 1.
 - The complete local bootstrap candidate passed repository validation, five
   focused unit tests, the project-control validator, and the milestone
   validator after two retained repair cycles.
@@ -25,8 +28,8 @@
   dependency runtime, training run, inference, evaluation, metric, tag,
   release, or deployment.
 
-Missing is not passed. The files in the current worktree are an unaccepted
-Milestone 0 candidate until commit, push, live readback, and CI pass.
+Missing is not passed. The accepted checkpoint proves repository controls only;
+it is not scientific evidence or source approval.
 
 ## Scientific state
 
@@ -43,6 +46,6 @@ Milestone 0 candidate until commit, push, live readback, and CI pass.
 
 ## Immediate next action
 
-Inspect the complete staged candidate for scientific bytes and unsupported
-claims, then create and push the one authorized initial commit on unborn
-`main` and verify the live repository and CI.
+Build the complete exclusion inventory for all events used by Experiments One
+through Three from read-only public project records. Do not access proposed
+external source bodies or adopt a new source.

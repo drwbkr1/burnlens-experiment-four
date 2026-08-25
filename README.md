@@ -7,11 +7,12 @@ Pacific Northwest cohort before model evaluation.
 
 ## Current status
 
-Milestone 0 is active from a verified empty public repository under
-[issue #1](https://github.com/drwbkr1/burnlens-experiment-four/issues/1).
-This repository currently contains control-plane and project-bootstrap
-material only. There is no admitted dataset, model, training run, evaluation,
-metric, tag, release, deployment, or operational product.
+Milestone 0 established and live-verified the repository control plane.
+Milestone 1 is active under
+[issue #2](https://github.com/drwbkr1/burnlens-experiment-four/issues/2) for
+metadata-only candidate-universe feasibility. There is no admitted external
+source, scientific dataset, model, training run, evaluation, metric, tag,
+release, deployment, or operational product.
 
 ## Research question
 

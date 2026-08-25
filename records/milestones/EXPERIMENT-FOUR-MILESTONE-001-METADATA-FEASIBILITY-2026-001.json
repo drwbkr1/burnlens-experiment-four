@@ -1,0 +1,419 @@
+{
+  "schema_version": "1.0",
+  "milestone_id": "EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001",
+  "project_profile_ref": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+  "status": "active",
+  "authority": {
+    "mode": "inherited",
+    "authority_ref": "goal-service:01a0320c-ae81-7550-ade2-c6c22d4abf93/records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
+    "authorized_action_classes": [
+      "read_only_inspection",
+      "external_state_verification",
+      "deterministic_validation",
+      "routine_qa",
+      "metadata_capture",
+      "evidence_recording",
+      "project_control",
+      "update_project_records",
+      "reversible_remediation",
+      "version_control_write",
+      "github_issue_management",
+      "github_pull_request_management",
+      "public_repository_publication",
+      "software_implementation"
+    ],
+    "user_instruction": "Execute the approved BurnLens Experiment Four long-running goal in https://github.com/drwbkr1/burnlens-experiment-four.",
+    "repository_controls": [
+      "AGENTS.md",
+      "docs/governance/EXPERIMENT-FOUR-EXECUTION-GOAL.md",
+      "docs/governance/CHECKPOINT-POLICY.md",
+      "records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
+      "https://github.com/drwbkr1/burnlens-experiment-four/issues/2"
+    ],
+    "active_contract": "records/milestones/EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001.json",
+    "verified_at_utc": "2026-08-25T21:35:10Z",
+    "expires_at_utc": null
+  },
+  "scope": {
+    "objective": "Determine whether the frozen six-pilot plus 30-final-event design is feasible from a complete, replayable metadata-defined universe before opening scientific source bodies.",
+    "allowed_paths": [
+      ".github/**",
+      "AGENTS.md",
+      "CHANGELOG.md",
+      "README.md",
+      "VERSION",
+      "docs/**",
+      "pyproject.toml",
+      "records/**",
+      "scripts/**",
+      "src/**",
+      "tests/**"
+    ],
+    "forbidden_work": [
+      "Open, download, copy, or inspect scientific source bodies, imagery pixels, reference rasters, labels, or model artifacts before an exact source gate",
+      "Adopt an external source, dependency, runtime, service, credential, account, terms change, or paid resource without the declared gate",
+      "Select final events or pilot events, draw AOIs, construct labels, train, infer, evaluate, or render scientific outputs",
+      "Use any model output, burn index, prediction, metric, error surface, or scene-body observation to determine eligibility or exclusion",
+      "Relax the six-pilot plus 30-final-event requirement, substitute prior-experiment events, or conceal missing and conflicting identities",
+      "Create a scientific tag, release, deployment, model claim, dataset claim, or operational wildfire claim",
+      "Modify another BurnLens repository"
+    ],
+    "reversible_actions": [
+      "Read public project records and Git history without modifying prior repositories",
+      "Create public-safe metadata schemas, source proposals, inventories, manifests, scripts, tests, and aggregate receipts",
+      "Perform anonymous metadata discovery without accessing scientific source bodies",
+      "Measure storage, compute, and review capacity using estimates and synthetic fixtures",
+      "Repair agent-owned structural defects and manage the issue-backed milestone branch and pull request"
+    ],
+    "stop_conditions": [
+      "A source, dependency, runtime, service, credential, rights, terms, spending, or account decision is required",
+      "A prior-event identity is ambiguous or cannot be reconciled without scientific source-body access",
+      "A candidate-universe rule would use model output or require a frozen-design change",
+      "Fewer than six pilot plus 30 final slots can qualify without relaxing requirements",
+      "An action falls outside the authorized action classes"
+    ]
+  },
+  "entry_conditions": [
+    {
+      "id": "ENTRY-M1-M0-ACCEPTED",
+      "status": "pass",
+      "evidence": [
+        "records/evidence/E4-EV-0004-M0-LIVE-CHECKPOINT-2026-001.json",
+        "GitHub Actions run 32901591615",
+        "Accepted main 9e244ac3a8c84ec70651aa2a3114da2be25d489d"
+      ]
+    },
+    {
+      "id": "ENTRY-M1-ISSUE",
+      "status": "pass",
+      "evidence": [
+        "https://github.com/drwbkr1/burnlens-experiment-four/issues/2"
+      ]
+    }
+  ],
+  "exit_conditions": [
+    {
+      "id": "EXIT-M1-PRIOR-EXCLUSIONS",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "EXIT-M1-FROZEN-METADATA-SCHEMA",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "EXIT-M1-SOURCES-GATED",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "EXIT-M1-COMPLETE-UNIVERSE",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "EXIT-M1-CAPACITY",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "EXIT-M1-INDEPENDENT-VALIDATION",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "EXIT-M1-DISPOSITION",
+      "status": "pending",
+      "evidence": []
+    }
+  ],
+  "units": [
+    {
+      "id": "M1-U001-ACTIVATE-CONTROLS",
+      "purpose": "Activate exact metadata-only authority, profile, issue, branch, and contract from the accepted Milestone 0 checkpoint.",
+      "depends_on": [],
+      "action_class": "project_control",
+      "human_gate": false,
+      "status": "complete",
+      "inputs": [
+        "Accepted Milestone 0 checkpoint",
+        "Issue #2",
+        "Standing goal authority"
+      ],
+      "outputs": [
+        "Active profile 2026-002",
+        "Milestone 1 contract",
+        "Issue-backed codex/metadata-feasibility-001 branch"
+      ],
+      "gates": {
+        "m0_acceptance": "pass",
+        "scope": "pass",
+        "branch_protection": "pass"
+      },
+      "disposition": "pass",
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [],
+        "observed": [],
+        "decision_value": "enables_dependency",
+        "rationale": "The bounded metadata-only contract enables the first evidence unit without admitting a source."
+      },
+      "next_dependency": "M1-U002-PRIOR-EVENT-EXCLUSIONS"
+    },
+    {
+      "id": "M1-U002-PRIOR-EVENT-EXCLUSIONS",
+      "purpose": "Build a complete identity-bound exclusion inventory for every event used by Experiments One through Three from read-only public project records.",
+      "depends_on": [
+        "M1-U001-ACTIVATE-CONTROLS"
+      ],
+      "action_class": "read_only_inspection",
+      "human_gate": false,
+      "status": "in_progress",
+      "inputs": [
+        "Read-only canonical repositories and public release records for Experiments One through Three"
+      ],
+      "outputs": [
+        "Versioned prior-event exclusion manifest",
+        "Source-path and revision provenance",
+        "Ambiguity and missing-identity ledger"
+      ],
+      "gates": {
+        "repository_identity": "pending",
+        "read_only_boundary": "pending",
+        "event_identity_completeness": "pending"
+      },
+      "disposition": null,
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M1-PRIOR-EXCLUSIONS"
+        ],
+        "observed": [],
+        "decision_value": "advances_exit",
+        "rationale": "Fresh-event eligibility cannot be evaluated until all prior experiment identities are excluded."
+      },
+      "next_dependency": "M1-U003-METADATA-SCHEMA"
+    },
+    {
+      "id": "M1-U003-METADATA-SCHEMA",
+      "purpose": "Freeze the candidate-universe metadata schema, deterministic eligibility fields, reason codes, identity rules, and replay contract without enumerating candidates.",
+      "depends_on": [
+        "M1-U002-PRIOR-EVENT-EXCLUSIONS"
+      ],
+      "action_class": "project_control",
+      "human_gate": false,
+      "status": "planned",
+      "inputs": [
+        "Execution goal",
+        "Prior-event exclusion manifest"
+      ],
+      "outputs": [
+        "Metadata schema",
+        "Eligibility and exclusion specification",
+        "Deterministic replay tests"
+      ],
+      "gates": {
+        "no_model_output_fields": "pending",
+        "whole_event_identity": "pending",
+        "unknown_semantics": "pending"
+      },
+      "disposition": null,
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M1-FROZEN-METADATA-SCHEMA"
+        ],
+        "observed": [],
+        "decision_value": "advances_exit",
+        "rationale": "The universe must be defined before source rows are observed."
+      },
+      "next_dependency": "M1-U004-SOURCE-GATE"
+    },
+    {
+      "id": "M1-U004-SOURCE-GATE",
+      "purpose": "Prepare and obtain an exact owner decision on official metadata sources, revisions, terms, rights, access, attribution, and downstream use before adoption.",
+      "depends_on": [
+        "M1-U003-METADATA-SCHEMA"
+      ],
+      "action_class": "external_source_dependency_runtime_or_service_adoption",
+      "human_gate": true,
+      "status": "planned",
+      "inputs": [
+        "Frozen metadata schema",
+        "Official publisher documentation and metadata-only probes"
+      ],
+      "outputs": [
+        "Hash-bound source review bundle",
+        "Exact owner decision",
+        "Admitted-source registry or terminal stop"
+      ],
+      "gates": {
+        "provenance": "pending",
+        "rights_terms": "pending",
+        "identity_revision": "pending",
+        "owner_decision": "pending"
+      },
+      "disposition": null,
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M1-SOURCES-GATED"
+        ],
+        "observed": [],
+        "decision_value": "advances_exit",
+        "rationale": "No external metadata source becomes authoritative through inspection alone."
+      },
+      "next_dependency": "M1-U005-ENUMERATE-UNIVERSE"
+    },
+    {
+      "id": "M1-U005-ENUMERATE-UNIVERSE",
+      "purpose": "Enumerate and account for the complete metadata-defined candidate universe under the frozen schema and admitted exact sources.",
+      "depends_on": [
+        "M1-U004-SOURCE-GATE"
+      ],
+      "action_class": "metadata_capture",
+      "human_gate": false,
+      "status": "planned",
+      "inputs": [
+        "Admitted exact metadata sources",
+        "Frozen schema",
+        "Prior-event exclusions"
+      ],
+      "outputs": [
+        "Complete candidate manifest",
+        "Exclusion and unknown accounting",
+        "Replay receipt"
+      ],
+      "gates": {
+        "completeness": "pending",
+        "identity": "pending",
+        "replay": "pending",
+        "model_independence": "pending"
+      },
+      "disposition": null,
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M1-COMPLETE-UNIVERSE"
+        ],
+        "observed": [],
+        "decision_value": "advances_exit",
+        "rationale": "Feasibility must use the complete predeclared universe rather than convenient examples."
+      },
+      "next_dependency": "M1-U006-CAPACITY-FEASIBILITY"
+    },
+    {
+      "id": "M1-U006-CAPACITY-FEASIBILITY",
+      "purpose": "Verify metadata-level imagery/reference availability and bounded storage, compute, and independent-review capacity for six pilots plus 30 final events.",
+      "depends_on": [
+        "M1-U005-ENUMERATE-UNIVERSE"
+      ],
+      "action_class": "deterministic_validation",
+      "human_gate": false,
+      "status": "planned",
+      "inputs": [
+        "Complete candidate manifest",
+        "Source metadata",
+        "Synthetic or analytical capacity model"
+      ],
+      "outputs": [
+        "Availability matrix",
+        "Capacity receipt",
+        "Shortfall accounting"
+      ],
+      "gates": {
+        "six_pilots": "pending",
+        "thirty_final": "pending",
+        "state_balance": "pending",
+        "capacity": "pending"
+      },
+      "disposition": null,
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M1-CAPACITY"
+        ],
+        "observed": [],
+        "decision_value": "advances_exit",
+        "rationale": "A metadata-rich universe is insufficient if the frozen study cannot be acquired and reviewed."
+      },
+      "next_dependency": "M1-U007-INDEPENDENT-VALIDATION"
+    },
+    {
+      "id": "M1-U007-INDEPENDENT-VALIDATION",
+      "purpose": "Independently validate identities, completeness, exclusion logic, replay, leakage controls, and capacity before assigning the terminal Milestone 1 disposition.",
+      "depends_on": [
+        "M1-U006-CAPACITY-FEASIBILITY"
+      ],
+      "action_class": "deterministic_validation",
+      "human_gate": false,
+      "status": "planned",
+      "inputs": [
+        "Complete Milestone 1 evidence bundle"
+      ],
+      "outputs": [
+        "Independent validation receipt",
+        "PASS, FAIL, INCONCLUSIVE, or INVALID disposition",
+        "Reconciled next dependency"
+      ],
+      "gates": {
+        "identity": "pending",
+        "completeness": "pending",
+        "leakage": "pending",
+        "replay": "pending",
+        "capacity": "pending"
+      },
+      "disposition": null,
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M1-INDEPENDENT-VALIDATION",
+          "EXIT-M1-DISPOSITION"
+        ],
+        "observed": [],
+        "decision_value": "advances_exit",
+        "rationale": "Milestone 2 is allowed only if the frozen design is genuinely feasible."
+      },
+      "next_dependency": null
+    }
+  ],
+  "path_efficiency": {
+    "max_consecutive_no_progress_units": 2,
+    "review_action_class": "project_control",
+    "review_human_gate": false
+  },
+  "verification": {
+    "changed_risks": [
+      "prior-event identity completeness",
+      "candidate-universe definition",
+      "external metadata provenance and rights",
+      "metadata leakage",
+      "study capacity"
+    ],
+    "required_checks": [
+      "canonical repository and revision identity",
+      "complete prior-event exclusion inventory",
+      "schema and reason-code validation",
+      "exact source gate and owner decision",
+      "candidate-universe completeness and replay",
+      "no model-output selection fields",
+      "storage, compute, and review capacity",
+      "independent bundle validation",
+      "complete diff and live publication verification"
+    ],
+    "completed_checks": [
+      "canonical repository and revision identity"
+    ]
+  },
+  "handoff": {
+    "current_checkpoint": "Milestone 0 accepted; Milestone 1 metadata-only controls active under issue #2.",
+    "next_action": "Inventory prior-experiment event identities from read-only public project records.",
+    "do_not_carry_forward": [
+      "Any assumption that a prior event name is a complete event identity",
+      "Any source authority inferred from anonymous discovery",
+      "Any prior dataset, label, model output, threshold, metric, or scientific disposition",
+      "Any authority to open source bodies, adopt a source, select events, train, evaluate, or release"
+    ]
+  }
+}
