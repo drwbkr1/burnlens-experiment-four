@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "snapshot_id": "EXPERIMENT-FOUR-STATE-2026-001",
+  "observed_at_utc": "2026-08-25T21:23:20Z",
+  "checkpoint_status": "candidate",
+  "canonical_root": "C:\\Projects\\Active\\burnlens-experiment-four",
+  "remote": "https://github.com/drwbkr1/burnlens-experiment-four.git",
+  "branch": "main",
+  "head": null,
+  "remote_refs": 0,
+  "active_issue": "https://github.com/drwbkr1/burnlens-experiment-four/issues/1",
+  "active_profile": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-001.json",
+  "active_contract": "records/milestones/EXPERIMENT-FOUR-MILESTONE-000-BOOTSTRAP-2026-001.json",
+  "scientific_outputs": {
+    "admitted_sources": 0,
+    "pilot_events": 0,
+    "final_events": 0,
+    "training_runs": 0,
+    "test_openings": 0,
+    "evaluations": 0,
+    "releases": 0
+  },
+  "claims": [
+    {
+      "id": "STATE-EMPTY-ENTRY",
+      "value": "verified-empty-public-repository",
+      "evidence": "Direct Git and GitHub API inspection"
+    },
+    {
+      "id": "STATE-M0",
+      "value": "bootstrap-candidate-in-progress",
+      "evidence": "Issue #1 and active Milestone 0 contract"
+    }
+  ],
+  "unknowns": [],
+  "next_action": "Validate the complete bootstrap candidate before creating the initial commit."
+}

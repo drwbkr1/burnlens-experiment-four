@@ -1,0 +1,359 @@
+{
+  "schema_version": "1.0",
+  "milestone_id": "EXPERIMENT-FOUR-MILESTONE-000-BOOTSTRAP-2026-001",
+  "project_profile_ref": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-001.json",
+  "status": "active",
+  "authority": {
+    "mode": "inherited",
+    "authority_ref": "goal-service:01a0320c-ae81-7550-ade2-c6c22d4abf93/records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
+    "authorized_action_classes": [
+      "read_only_inspection",
+      "external_state_verification",
+      "deterministic_validation",
+      "routine_qa",
+      "metadata_capture",
+      "evidence_recording",
+      "project_control",
+      "update_project_records",
+      "reversible_remediation",
+      "version_control_write",
+      "github_issue_management",
+      "github_pull_request_management",
+      "public_repository_publication",
+      "software_implementation"
+    ],
+    "user_instruction": "Create the approved long-running goal and use https://github.com/drwbkr1/burnlens-experiment-four.",
+    "repository_controls": [
+      "AGENTS.md",
+      "docs/governance/EXPERIMENT-FOUR-EXECUTION-GOAL.md",
+      "docs/governance/CHECKPOINT-POLICY.md",
+      "records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
+      "https://github.com/drwbkr1/burnlens-experiment-four/issues/1"
+    ],
+    "active_contract": "records/milestones/EXPERIMENT-FOUR-MILESTONE-000-BOOTSTRAP-2026-001.json",
+    "verified_at_utc": "2026-08-25T21:23:20Z",
+    "expires_at_utc": null
+  },
+  "scope": {
+    "objective": "Create and live-verify the complete public-safe project control plane from the verified empty repository without admitting or implying scientific evidence.",
+    "allowed_paths": [
+      ".gitattributes",
+      ".github/**",
+      ".gitignore",
+      "AGENTS.md",
+      "CHANGELOG.md",
+      "CONTRIBUTING.md",
+      "LICENSE",
+      "README.md",
+      "SECURITY.md",
+      "VERSION",
+      "docs/**",
+      "pyproject.toml",
+      "records/**",
+      "scripts/**",
+      "tests/**"
+    ],
+    "forbidden_work": [
+      "Acquire or inspect scientific source bodies",
+      "Adopt a source, dependency, runtime, model artifact, credential, account, terms change, or paid service",
+      "Select events, construct labels, implement models, train, infer, evaluate, or render scientific results",
+      "Create a tag, release, deployment, dataset claim, model claim, or operational wildfire claim",
+      "Modify another BurnLens repository",
+      "Commit data, imagery, labels, arrays, model artifacts, secrets, private review material, or generated scientific outputs"
+    ],
+    "reversible_actions": [
+      "Create public-safe project files in the empty checkout",
+      "Run local validation and tests",
+      "Repair agent-owned structural defects",
+      "Create the one initial unborn-main commit and push it",
+      "Update truthful repository metadata and issue state after validation"
+    ],
+    "stop_conditions": [
+      "The remote or local repository is not the verified empty state",
+      "A proposed file contains scientific bytes, secrets, private material, unsupported claims, or ambiguous third-party rights",
+      "A required repository or live-state fact cannot be verified",
+      "Any action requires an authority class outside this contract"
+    ]
+  },
+  "entry_conditions": [
+    {
+      "id": "ENTRY-M0-EMPTY-REMOTE",
+      "status": "pass",
+      "evidence": [
+        "2026-08-25 git ls-remote returned no refs",
+        "GitHub repository API reported size 0 and empty default branch",
+        "local canonical checkout is unborn main"
+      ]
+    },
+    {
+      "id": "ENTRY-M0-OWNER-GOAL",
+      "status": "pass",
+      "evidence": [
+        "Active goal service thread 01a0320c-ae81-7550-ade2-c6c22d4abf93",
+        "Owner supplied and authorized use of the public repository"
+      ]
+    }
+  ],
+  "exit_conditions": [
+    {
+      "id": "EXIT-M0-CONTROL-PLANE",
+      "status": "pass",
+      "evidence": [
+        "Complete public-safe control surfaces in the local candidate",
+        "records/evidence/E4-EV-0003-M0-LOCAL-VALIDATION-2026-001.json"
+      ]
+    },
+    {
+      "id": "EXIT-M0-LOCAL-VALIDATION",
+      "status": "pass",
+      "evidence": [
+        "records/evidence/E4-EV-0003-M0-LOCAL-VALIDATION-2026-001.json"
+      ]
+    },
+    {
+      "id": "EXIT-M0-LIVE-MAIN",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "EXIT-M0-CI",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "EXIT-M0-RECONCILED",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "EXIT-M0-NEXT-MILESTONE",
+      "status": "pending",
+      "evidence": []
+    }
+  ],
+  "units": [
+    {
+      "id": "M0-U001-VERIFY-EMPTY-STATE",
+      "purpose": "Verify the exact remote, local, GitHub, security, and issue entry state.",
+      "depends_on": [],
+      "action_class": "read_only_inspection",
+      "human_gate": false,
+      "status": "complete",
+      "inputs": [
+        "Owner-supplied GitHub URL",
+        "Canonical local path"
+      ],
+      "outputs": [
+        "Verified empty public remote",
+        "Unborn local main",
+        "GitHub issue #1"
+      ],
+      "gates": {
+        "identity": "pass",
+        "empty_state": "pass",
+        "secrets_in_repository": "zero_pass"
+      },
+      "disposition": "pass",
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M0-CONTROL-PLANE"
+        ],
+        "observed": [],
+        "decision_value": "enables_dependency",
+        "rationale": "The exact empty state permits a truthful bootstrap candidate."
+      },
+      "next_dependency": "M0-U002-CONTROL-PLANE"
+    },
+    {
+      "id": "M0-U002-CONTROL-PLANE",
+      "purpose": "Create the complete public-safe repository control plane and unabridged charter.",
+      "depends_on": [
+        "M0-U001-VERIFY-EMPTY-STATE"
+      ],
+      "action_class": "project_control",
+      "human_gate": false,
+      "status": "complete",
+      "inputs": [
+        "Approved Experiment Four proposal",
+        "Verified empty state",
+        "Standing authority"
+      ],
+      "outputs": [
+        "Repository controls, goal, profile, contract, roadmap, status, ledgers, validation, CI, and public boundaries"
+      ],
+      "gates": {
+        "scope": "pass",
+        "public_claim_boundary": "pass"
+      },
+      "disposition": "pass",
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M0-CONTROL-PLANE"
+        ],
+        "observed": [
+          "EXIT-M0-CONTROL-PLANE"
+        ],
+        "decision_value": "advances_exit",
+        "rationale": "The complete candidate must exist before deterministic validation."
+      },
+      "next_dependency": "M0-U003-VALIDATE-CANDIDATE"
+    },
+    {
+      "id": "M0-U003-VALIDATE-CANDIDATE",
+      "purpose": "Validate structure, authority, links, paths, JSON, tests, diff, prohibited bytes, and claim boundaries.",
+      "depends_on": [
+        "M0-U002-CONTROL-PLANE"
+      ],
+      "action_class": "deterministic_validation",
+      "human_gate": false,
+      "status": "complete",
+      "inputs": [
+        "Complete bootstrap candidate"
+      ],
+      "outputs": [
+        "records/evidence/E4-EV-0003-M0-LOCAL-VALIDATION-2026-001.json"
+      ],
+      "gates": {
+        "repository": "pass",
+        "profile": "pass",
+        "milestone": "pass",
+        "tests": "pass",
+        "diff": "pass"
+      },
+      "disposition": "pass",
+      "retained_failures": [
+        "Attempt 1: brittle exact-string checks and invalid profile risk class",
+        "Attempt 2: one remaining equivalent-wording mismatch"
+      ],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M0-LOCAL-VALIDATION"
+        ],
+        "observed": [
+          "EXIT-M0-LOCAL-VALIDATION"
+        ],
+        "decision_value": "enables_dependency",
+        "rationale": "No public commit may precede complete local validation."
+      },
+      "next_dependency": "M0-U004-INITIAL-PUBLIC-CHECKPOINT"
+    },
+    {
+      "id": "M0-U004-INITIAL-PUBLIC-CHECKPOINT",
+      "purpose": "Create and push the one initial unborn-main commit and verify live identity and CI.",
+      "depends_on": [
+        "M0-U003-VALIDATE-CANDIDATE"
+      ],
+      "action_class": "public_repository_publication",
+      "human_gate": false,
+      "status": "in_progress",
+      "inputs": [
+        "Validated bootstrap candidate",
+        "Issue #1"
+      ],
+      "outputs": [
+        "Live main commit",
+        "Passing CI",
+        "Public readback evidence"
+      ],
+      "gates": {
+        "initial_commit": "pending",
+        "push": "pending",
+        "ci": "pending",
+        "live_readback": "pending"
+      },
+      "disposition": null,
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M0-LIVE-MAIN",
+          "EXIT-M0-CI"
+        ],
+        "observed": [],
+        "decision_value": "advances_exit",
+        "rationale": "The first accepted checkpoint must exist and verify on the real public surface."
+      },
+      "next_dependency": "M0-U005-RECONCILE-AND-ACTIVATE-M1"
+    },
+    {
+      "id": "M0-U005-RECONCILE-AND-ACTIVATE-M1",
+      "purpose": "Reconcile the accepted bootstrap, close issue #1, and activate metadata-only Milestone 1 from the exact checkpoint.",
+      "depends_on": [
+        "M0-U004-INITIAL-PUBLIC-CHECKPOINT"
+      ],
+      "action_class": "project_control",
+      "human_gate": false,
+      "status": "planned",
+      "inputs": [
+        "Verified live main and CI"
+      ],
+      "outputs": [
+        "Accepted current records",
+        "Closed issue #1",
+        "Issue-backed Milestone 1 contract and branch"
+      ],
+      "gates": {
+        "reconciliation": "pending",
+        "issue_close": "pending",
+        "next_contract": "pending"
+      },
+      "disposition": null,
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M0-RECONCILED",
+          "EXIT-M0-NEXT-MILESTONE"
+        ],
+        "observed": [],
+        "decision_value": "advances_exit",
+        "rationale": "Milestone 0 closes only with a clean, exact resume point."
+      },
+      "next_dependency": null
+    }
+  ],
+  "path_efficiency": {
+    "max_consecutive_no_progress_units": 2,
+    "review_action_class": "project_control",
+    "review_human_gate": false
+  },
+  "verification": {
+    "changed_risks": [
+      "public repository content",
+      "standing scientific authority",
+      "future custody boundaries",
+      "public claim envelope"
+    ],
+    "required_checks": [
+      "repository identity and empty-state entry",
+      "required control surfaces and internal references",
+      "project-control profile and milestone validation",
+      "JSON and Markdown structure",
+      "prohibited scientific-byte and secret scan",
+      "focused tests",
+      "complete diff review",
+      "live main identity",
+      "CI",
+      "public readback",
+      "state reconciliation"
+    ],
+    "completed_checks": [
+      "repository identity and empty-state entry",
+      "required control surfaces and internal references",
+      "project-control profile and milestone validation",
+      "JSON and Markdown structure",
+      "prohibited scientific-byte and secret scan",
+      "focused tests",
+      "complete candidate review"
+    ]
+  },
+  "handoff": {
+    "current_checkpoint": "Locally validated public-safe bootstrap candidate on unborn main; live checkpoint pending.",
+    "next_action": "Review the staged candidate, create the one authorized initial commit, push main, and verify CI and public readback.",
+    "do_not_carry_forward": [
+      "Any assumption that bootstrap controls are scientific evidence",
+      "Any prior experiment authority or dirty worktree state",
+      "Any dataset, source-body, model, training, evaluation, release, or operational claim"
+    ]
+  }
+}

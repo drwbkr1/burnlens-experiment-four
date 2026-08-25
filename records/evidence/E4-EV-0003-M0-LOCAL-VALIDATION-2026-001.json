@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "evidence_id": "E4-EV-0003",
+  "observed_at_utc": "2026-08-25T21:30:52Z",
+  "scope": "Milestone 0 public-safe bootstrap structure only",
+  "disposition": "pass",
+  "scientific_evidence": false,
+  "failed_attempts": [
+    {
+      "attempt": 1,
+      "disposition": "fail",
+      "findings": [
+        "The repository claim checker required exact wording not used by equivalent control text.",
+        "The project-control profile used unsupported risk class policy."
+      ],
+      "repair": "Normalize whitespace and case for semantic control phrases; remove the unsupported risk class."
+    },
+    {
+      "attempt": 2,
+      "disposition": "fail",
+      "findings": [
+        "One pilot-exclusion phrase still required wording narrower than the execution goal."
+      ],
+      "repair": "Check the separately explicit development-only pilot and permanent-exclusion controls."
+    }
+  ],
+  "passing_checks": [
+    {
+      "command": "python scripts/validate_repository.py",
+      "result": "PASS; 25 public-safe files checked before this receipt was added; scientific evidence NOT STARTED"
+    },
+    {
+      "command": "python -m unittest discover -s tests -v",
+      "result": "PASS; 5 tests"
+    },
+    {
+      "command": "python C:/Users/drewb/.codex/skills/standardize-project-control-plane/scripts/validate_project_control.py records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-001.json --project-root . --verify-paths --milestone-contract records/milestones/EXPERIMENT-FOUR-MILESTONE-000-BOOTSTRAP-2026-001.json",
+      "result": "PASS; profile valid; no warnings"
+    },
+    {
+      "command": "python C:/Users/drewb/.codex/skills/run-controlled-milestone/scripts/validate_milestone.py records/milestones/EXPERIMENT-FOUR-MILESTONE-000-BOOTSTRAP-2026-001.json --project-profile records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-001.json",
+      "result": "PASS; milestone valid; expected pre-reconciliation progress warnings retained"
+    }
+  ],
+  "limitations": [
+    "No external source, scientific data, reference label, model, runtime, training, inference, evaluation, metric, or release was inspected or validated.",
+    "Live GitHub main, CI, and public readback remain pending."
+  ]
+}

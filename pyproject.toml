@@ -1,0 +1,8 @@
+[project]
+name = "burnlens-experiment-four"
+version = "0.0.0"
+description = "Prospective fresh-event benchmark control plane"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
