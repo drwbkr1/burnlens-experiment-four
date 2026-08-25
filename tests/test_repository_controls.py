@@ -31,9 +31,10 @@ class RepositoryControlTests(unittest.TestCase):
                 self.assertIsInstance(parsed, dict)
 
     def test_profile_and_contract_are_bidirectionally_bound(self) -> None:
-        profile_path = ROOT / "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-001.json"
-        contract_path = ROOT / "records/milestones/EXPERIMENT-FOUR-MILESTONE-000-BOOTSTRAP-2026-001.json"
+        pointer_path = ROOT / "records/governance/ACTIVE-PROJECT-CONTROL-PROFILE"
+        profile_path = ROOT / pointer_path.read_text(encoding="utf-8").strip()
         profile = json.loads(profile_path.read_text(encoding="utf-8"))
+        contract_path = ROOT / profile["control_surfaces"]["active_contract"]
         contract = json.loads(contract_path.read_text(encoding="utf-8"))
         self.assertEqual(
             contract["project_profile_ref"],

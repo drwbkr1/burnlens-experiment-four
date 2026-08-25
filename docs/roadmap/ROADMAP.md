@@ -9,7 +9,7 @@ frozen route cannot support its question.
 
 ## Milestone 0 — Truthful bootstrap
 
-**Status:** Active.
+**Status:** Accepted 2026-08-25.
 
 Establish the public-safe repository control plane from the verified empty
 state. No data, model, runtime, training, evaluation, tag, or release belongs
@@ -18,7 +18,7 @@ passing CI, state reconciliation, and activation of Milestone 1.
 
 ## Milestone 1 — Candidate-universe feasibility
 
-**Status:** Planned; blocked on accepted Milestone 0.
+**Status:** Active under issue #2; metadata only.
 
 Enumerate the complete metadata-defined candidate universe, exclude prior-
 experiment events, test source identity and availability without opening

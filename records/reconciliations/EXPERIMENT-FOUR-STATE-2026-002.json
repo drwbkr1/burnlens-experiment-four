@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "snapshot_id": "EXPERIMENT-FOUR-STATE-2026-002",
+  "observed_at_utc": "2026-08-25T21:35:10Z",
+  "checkpoint_status": "accepted",
+  "canonical_root": "C:\\Projects\\Active\\burnlens-experiment-four",
+  "remote": "https://github.com/drwbkr1/burnlens-experiment-four.git",
+  "accepted_branch": "main",
+  "accepted_head": "9e244ac3a8c84ec70651aa2a3114da2be25d489d",
+  "accepted_tree": "b17b028b36245b15b2f50c7a4a56c64e49ae8fe9",
+  "accepted_ci_run": 32901591615,
+  "active_branch": "codex/metadata-feasibility-001",
+  "completed_issue": "https://github.com/drwbkr1/burnlens-experiment-four/issues/1",
+  "active_issue": "https://github.com/drwbkr1/burnlens-experiment-four/issues/2",
+  "active_profile": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+  "active_contract": "records/milestones/EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001.json",
+  "scientific_outputs": {
+    "admitted_sources": 0,
+    "pilot_events": 0,
+    "final_events": 0,
+    "training_runs": 0,
+    "test_openings": 0,
+    "evaluations": 0,
+    "releases": 0
+  },
+  "claims": [
+    {
+      "id": "STATE-M0",
+      "value": "accepted-control-checkpoint",
+      "evidence": "records/evidence/E4-EV-0004-M0-LIVE-CHECKPOINT-2026-001.json"
+    },
+    {
+      "id": "STATE-M1",
+      "value": "active-metadata-only-feasibility",
+      "evidence": "Issue #2 and active Milestone 1 contract"
+    }
+  ],
+  "unknowns": [
+    "External metadata source admission",
+    "Complete prior-event identity inventory",
+    "Candidate-universe feasibility",
+    "Storage, compute, and human-review capacity"
+  ],
+  "next_action": "Inventory all prior-experiment event identities from read-only public project records."
+}
