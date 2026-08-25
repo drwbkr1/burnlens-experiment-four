@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0",
+  "reconciliation_id": "EXPERIMENT-FOUR-STATE-2026-003",
+  "project_profile_ref": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+  "authority": {
+    "mode": "inherited",
+    "authority_ref": "goal-service:01a0320c-ae81-7550-ade2-c6c22d4abf93/records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
+    "authorized_action_classes": [
+      "read_only_inspection",
+      "external_state_verification",
+      "deterministic_validation",
+      "routine_qa",
+      "metadata_capture",
+      "evidence_recording",
+      "project_control",
+      "update_project_records",
+      "reversible_remediation",
+      "version_control_write",
+      "github_issue_management",
+      "github_pull_request_management",
+      "public_repository_publication",
+      "software_implementation"
+    ],
+    "verified_at_utc": "2026-08-25T23:24:46Z",
+    "expires_at_utc": null
+  },
+  "observed_at_utc": "2026-08-25T23:24:46Z",
+  "live_facts": [
+    {
+      "id": "project.root",
+      "status": "observed",
+      "value": "C:\\Projects\\Active\\burnlens-experiment-four",
+      "source_ref": "canonical checkout and project profile",
+      "observed_at_utc": "2026-08-25T23:24:46Z"
+    },
+    {
+      "id": "git.branch",
+      "status": "observed",
+      "value": "codex/metadata-feasibility-001",
+      "source_ref": "git branch --show-current",
+      "observed_at_utc": "2026-08-25T23:24:46Z"
+    },
+    {
+      "id": "git.main_head",
+      "status": "observed",
+      "value": "3ee76b430521ec8e09788c4c0e775ea7b3da60dc",
+      "source_ref": "git rev-parse refs/heads/main and git ls-remote origin refs/heads/main",
+      "observed_at_utc": "2026-08-25T23:24:46Z"
+    },
+    {
+      "id": "contract.active_id",
+      "status": "observed",
+      "value": "records/milestones/EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001.json",
+      "source_ref": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+      "observed_at_utc": "2026-08-25T23:24:46Z"
+    },
+    {
+      "id": "source_review.bundle_sha256",
+      "status": "observed",
+      "value": "7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7",
+      "source_ref": "Get-FileHash and prepare_review_bundle.py",
+      "observed_at_utc": "2026-08-25T23:24:46Z"
+    },
+    {
+      "id": "source_review.owner_decision",
+      "status": "observed",
+      "value": "pending",
+      "source_ref": "records/reviews/E4-M1-SOURCE-ADOPTION-BLANK-RESPONSE-2026-001.json and review contract",
+      "observed_at_utc": "2026-08-25T23:24:46Z"
+    },
+    {
+      "id": "next_action",
+      "status": "observed",
+      "value": "Present bundle 7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7 for the exact M1-U004 owner decision without adopting a source or enumerating candidates",
+      "source_ref": "active M1-U004 contract and prepared review bundle",
+      "observed_at_utc": "2026-08-25T23:24:46Z"
+    }
+  ],
+  "recorded_claims": [
+    {
+      "id": "status.project-root",
+      "fact_id": "project.root",
+      "surface_ref": "docs/status/STATUS.md",
+      "scope": "current",
+      "claimed_value": "C:\\Projects\\Active\\burnlens-experiment-four",
+      "evidence_ref": "status table Canonical checkout"
+    },
+    {
+      "id": "status.active-branch",
+      "fact_id": "git.branch",
+      "surface_ref": "docs/status/STATUS.md",
+      "scope": "current",
+      "claimed_value": "codex/metadata-feasibility-001",
+      "evidence_ref": "status table Active work"
+    },
+    {
+      "id": "status.live-main",
+      "fact_id": "git.main_head",
+      "surface_ref": "docs/status/STATUS.md",
+      "scope": "current",
+      "claimed_value": "3ee76b430521ec8e09788c4c0e775ea7b3da60dc",
+      "evidence_ref": "status table Live accepted main"
+    },
+    {
+      "id": "profile.active-contract",
+      "fact_id": "contract.active_id",
+      "surface_ref": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+      "scope": "current",
+      "claimed_value": "records/milestones/EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001.json",
+      "evidence_ref": "control_surfaces.active_contract"
+    },
+    {
+      "id": "status.bundle",
+      "fact_id": "source_review.bundle_sha256",
+      "surface_ref": "docs/status/STATUS.md",
+      "scope": "current",
+      "claimed_value": "7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7",
+      "evidence_ref": "Current truth source review bundle"
+    },
+    {
+      "id": "evidence.owner-decision",
+      "fact_id": "source_review.owner_decision",
+      "surface_ref": "records/evidence/E4-EV-0007-SOURCE-REVIEW-CHECKPOINT-2026-001.json",
+      "scope": "current",
+      "claimed_value": "pending",
+      "evidence_ref": "owner_decision"
+    },
+    {
+      "id": "profile.next-action",
+      "fact_id": "next_action",
+      "surface_ref": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+      "scope": "current",
+      "claimed_value": "Present bundle 7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7 for the exact M1-U004 owner decision without adopting a source or enumerating candidates",
+      "evidence_ref": "current_checkpoint.next_action"
+    }
+  ],
+  "required_fact_ids": [
+    "project.root",
+    "git.branch",
+    "git.main_head",
+    "contract.active_id",
+    "source_review.bundle_sha256",
+    "source_review.owner_decision",
+    "next_action"
+  ],
+  "reconciliation": {
+    "requested_action_class": "update_project_records",
+    "intended_surfaces": [
+      "docs/status/STATUS.md",
+      "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+      "records/milestones/EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001.json",
+      "records/evidence/E4-EV-0007-SOURCE-REVIEW-CHECKPOINT-2026-001.json"
+    ],
+    "limitations": [
+      "The earlier 9e244ac3a8c84ec70651aa2a3114da2be25d489d bootstrap evidence remains historical and was not rewritten.",
+      "The source review branch was not yet published at this observation time.",
+      "No owner decision, source adoption, candidate enumeration, or scientific result was created by reconciliation."
+    ]
+  }
+}

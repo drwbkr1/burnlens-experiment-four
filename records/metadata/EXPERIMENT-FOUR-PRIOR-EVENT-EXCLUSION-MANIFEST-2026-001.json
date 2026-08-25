@@ -1,0 +1,1501 @@
+{
+  "schema_version": "1.0",
+  "manifest_id": "EXPERIMENT-FOUR-PRIOR-EVENT-EXCLUSION-MANIFEST-2026-001",
+  "created_at_utc": "2026-08-25T21:50:46Z",
+  "status": "complete-for-inspected-prior-project-records",
+  "authority_ref": "records/milestones/EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001.json#M1-U002-PRIOR-EVENT-EXCLUSIONS",
+  "purpose": "Permanently exclude every event used, admitted, or model-blind-selected as a candidate by BurnLens Experiments One through Three before Experiment Four candidate enumeration.",
+  "policy": {
+    "exclusion_is_conservative": true,
+    "exact_identifiers_take_precedence": [
+      "unique_fire_identifier",
+      "source_global_id",
+      "source_event_id",
+      "project_event_id"
+    ],
+    "experiment_one_fallback": "Until an official incident identifier is separately admitted, an exact normalized name-year match or later-proven geometry overlap with an Experiment One event is excluded; ambiguity remains unknown and excluded.",
+    "no_selection_claim": "This manifest excludes prior events only. It does not admit a source, define the new candidate universe, select an Experiment Four event, or authorize source-body access.",
+    "immutability": "Entries are never removed. A correction creates a successor record and retains the prior entry."
+  },
+  "source_revisions": [
+    {
+      "prior_experiment": "Experiment One",
+      "repository": "https://github.com/drwbkr1/burnlens-deschutes.git",
+      "branch": "main",
+      "commit": "a741111d82e69689022d2058118ed8f4b9bf3546",
+      "worktree_clean": true,
+      "records": [
+        {
+          "path": "records/phase-two/readiness/DATASET-CANDIDATE-2026-002.json",
+          "git_blob": "f1c4e4b73cefc2cf5c4cf193746488574e26be52"
+        },
+        {
+          "path": "records/phase-two/manifests/WHOLE-EVENT-SPLIT-2026-001.json",
+          "git_blob": "1ca789712c063b7a2ce5dc9a0e411d3fba966272"
+        },
+        {
+          "path": "samples/datasets/burnlens-dataset-v0.1.0/DATASET-MANIFEST.json",
+          "git_blob": "9e5da617067a332e90220eb13c46c44c93130794"
+        }
+      ],
+      "finding": "Six whole events entered the accepted final dataset."
+    },
+    {
+      "prior_experiment": "Experiment Two and Two-B public repository",
+      "repository": "https://github.com/drwbkr1/burnlens-experiment-two.git",
+      "branch": "codex/stage-one-planning-bootstrap",
+      "commit": "4f35a5563211c95c360344ced50cb29de03accb9",
+      "worktree_clean": false,
+      "records": [
+        {
+          "path": "records/stage-one/CANDIDATE-EVENT-INVENTORY-2026-001.json",
+          "git_blob": "d78c4d1a3cb5294a003c47295215e3ebaf490a9a"
+        }
+      ],
+      "finding": "The accepted public branch contains a blocked empty event inventory and no admitted event."
+    },
+    {
+      "prior_experiment": "Experiment Two-B unpublished local continuation",
+      "repository": "C:\\Projects\\Active\\burnlens-experiment-two",
+      "base_commit": "4f35a5563211c95c360344ced50cb29de03accb9",
+      "acceptance_status": "uncommitted-and-unpublished",
+      "use_limit": "Conservative exclusion only; these records are not accepted prior-project truth.",
+      "records": [
+        {
+          "path": "records/stage-one/EXPERIMENT-TWO-B-WFIGS-MODEL-BLIND-CANDIDATE-ROSTER-2026-001.json",
+          "sha256": "b1547a04e6306cc5482990734dd4777dde9e75f6406a93af9d42f16be49ad9d7",
+          "selected_rows": 24
+        },
+        {
+          "path": "records/stage-one/EXPERIMENT-TWO-B-BAER-BACKED-MODEL-BLIND-CANDIDATE-ROSTER-2026-001.json",
+          "sha256": "df45d8be05f1a3162d20effd5a0eb6b9972fe5667e29d0b88aad116fc2dea0cc",
+          "selected_rows": 24
+        },
+        {
+          "path": "records/stage-one/EXPERIMENT-TWO-B-HLS-V20-FRESH-UNTOUCHED-EVENT-ROSTER-2026-001.json",
+          "sha256": "13e0d4be21f40e8e3905aeeafd313094cc1a3d11b91b5d9c4d8a9cbdef445f16",
+          "selected_rows": 18
+        }
+      ],
+      "finding": "The union contains 62 publisher-identity-bound candidates. All are excluded because prior selection exposure defeats Experiment Four freshness even though the rosters were never accepted or published."
+    },
+    {
+      "prior_experiment": "Experiment Three",
+      "repository": "https://github.com/drwbkr1/burnlens-experiment-three.git",
+      "release_tag": "v1.0.0",
+      "tag_commit": "275eb15ef2839b3d746af0c1c77890552c8ed4b9",
+      "record": {
+        "path": "records/provenance/EXPERIMENT-ONE-BENCHMARK-IDENTITY-INVENTORY-2026-001.json",
+        "git_blob": "54df1a516ab22304cac604ef76df68ec19f0ba96"
+      },
+      "finding": "Experiment Three used exactly the same six Experiment One event groups and no additional events."
+    }
+  ],
+  "summary": {
+    "experiment_one_accepted_events": 6,
+    "experiment_three_additional_events": 0,
+    "experiment_two_public_accepted_events": 0,
+    "experiment_two_b_local_candidate_rows": 66,
+    "experiment_two_b_local_unique_events": 62,
+    "total_unique_permanent_exclusions": 68,
+    "unresolved_duplicate_identities": 0,
+    "external_source_adoptions": 0,
+    "scientific_source_bodies_opened": 0
+  },
+  "events": [
+    {
+      "exclusion_id": "E4-EXCL-0001",
+      "project_event_id": "event-mckay-1035-ne-2017",
+      "canonical_name": "McKay 1035 NE",
+      "state": null,
+      "year": 2017,
+      "scene_group_id": "scene-add80d3d408bf64d",
+      "geography_group_id": "geography-880312ff6cabc533",
+      "time_group_id": "time-bf60ed592330ab14",
+      "source_product_native_ids": [
+        "S2A_MSIL2A_20170729T184921_N0500_R113_T10TFP_20230917T022841.SAFE",
+        "S2A_MSIL2A_20170927T185131_N0500_R113_T10TFP_20230824T183525.SAFE"
+      ],
+      "unique_fire_identifier": null,
+      "source_event_id": null,
+      "source_global_id": null,
+      "prior_uses": [
+        "experiment-one-final-dataset",
+        "experiment-three-retrospective-benchmark"
+      ],
+      "provenance_tier": "accepted-public",
+      "identity_status": "bound-to-prior-project-event-geography-time-and-source-scenes; official incident identifier not present in inspected accepted records",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0002",
+      "project_event_id": "event-tepee-1144-ne-2018",
+      "canonical_name": "Tepee 1144 NE",
+      "state": null,
+      "year": 2018,
+      "scene_group_id": "scene-1711b54a308f6f1d",
+      "geography_group_id": "geography-5fba95338d0a6611",
+      "time_group_id": "time-4d9211150514853b",
+      "source_product_native_ids": [
+        "S2B_MSIL2A_20180811T185909_N0500_R013_T10TFP_20230815T160827.SAFE",
+        "S2B_MSIL2A_20180920T190049_N0500_R013_T10TFP_20230803T120358.SAFE"
+      ],
+      "unique_fire_identifier": null,
+      "source_event_id": null,
+      "source_global_id": null,
+      "prior_uses": [
+        "experiment-one-final-dataset",
+        "experiment-three-retrospective-benchmark"
+      ],
+      "provenance_tier": "accepted-public",
+      "identity_status": "bound-to-prior-project-event-geography-time-and-source-scenes; official incident identifier not present in inspected accepted records",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0003",
+      "project_event_id": "event-ward-creek-2019",
+      "canonical_name": "Ward Creek",
+      "state": null,
+      "year": 2019,
+      "scene_group_id": "scene-a021c106412e6728",
+      "geography_group_id": "geography-c8095d60443fe241",
+      "time_group_id": "time-0ae3f1f16b5d75fc",
+      "source_product_native_ids": [
+        "S2A_MSIL2A_20190801T185921_N0500_R013_T10TFQ_20230707T221135.SAFE",
+        "S2A_MSIL2A_20190831T185921_N0500_R013_T10TFQ_20230528T200015.SAFE"
+      ],
+      "unique_fire_identifier": null,
+      "source_event_id": null,
+      "source_global_id": null,
+      "prior_uses": [
+        "experiment-one-final-dataset",
+        "experiment-three-retrospective-benchmark"
+      ],
+      "provenance_tier": "accepted-public",
+      "identity_status": "bound-to-prior-project-event-geography-time-and-source-scenes; official incident identifier not present in inspected accepted records",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0004",
+      "project_event_id": "event-green-ridge-0684-cs-2020",
+      "canonical_name": "Green Ridge 0684 CS",
+      "state": null,
+      "year": 2020,
+      "scene_group_id": "scene-e0c1b2d5410e4216",
+      "geography_group_id": "geography-48c2a06c36cae4a6",
+      "time_group_id": "time-c8dca0b161d6b730",
+      "source_product_native_ids": [
+        "S2B_MSIL2A_20200810T185919_N0500_R013_T10TFQ_20230509T050550.SAFE",
+        "S2B_MSIL2A_20200929T190109_N0500_R013_T10TFQ_20230427T010543.SAFE"
+      ],
+      "unique_fire_identifier": null,
+      "source_event_id": null,
+      "source_global_id": null,
+      "prior_uses": [
+        "experiment-one-final-dataset",
+        "experiment-three-retrospective-benchmark"
+      ],
+      "provenance_tier": "accepted-public",
+      "identity_status": "bound-to-prior-project-event-geography-time-and-source-scenes; official incident identifier not present in inspected accepted records",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0005",
+      "project_event_id": "event-grandview-0558-od-2021",
+      "canonical_name": "Grandview 0558 OD",
+      "state": null,
+      "year": 2021,
+      "scene_group_id": "scene-52480bb8110475c9",
+      "geography_group_id": "geography-6d8988c636f1219c",
+      "time_group_id": "time-010c76aca52d4e22",
+      "source_product_native_ids": [
+        "S2B_MSIL2A_20210603T184919_N0500_R113_T10TFQ_20230130T001253.SAFE",
+        "S2B_MSIL2A_20210723T184919_N0500_R113_T10TFQ_20230131T130926.SAFE"
+      ],
+      "unique_fire_identifier": null,
+      "source_event_id": null,
+      "source_global_id": null,
+      "prior_uses": [
+        "experiment-one-final-dataset",
+        "experiment-three-retrospective-benchmark"
+      ],
+      "provenance_tier": "accepted-public",
+      "identity_status": "bound-to-prior-project-event-geography-time-and-source-scenes; official incident identifier not present in inspected accepted records",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0006",
+      "project_event_id": "event-windigo-2022",
+      "canonical_name": "Windigo",
+      "state": null,
+      "year": 2022,
+      "scene_group_id": "scene-e78909721773383a",
+      "geography_group_id": "geography-46d365f9de5e3c69",
+      "time_group_id": "time-4fbc084020362b45",
+      "source_product_native_ids": [
+        "S2A_MSIL2A_20220726T185931_N0510_R013_T10TEP_20240712T042551.SAFE",
+        "S2A_MSIL2A_20220815T185931_N0510_R013_T10TEP_20240703T124031.SAFE"
+      ],
+      "unique_fire_identifier": null,
+      "source_event_id": null,
+      "source_global_id": null,
+      "prior_uses": [
+        "experiment-one-final-dataset",
+        "experiment-three-retrospective-benchmark"
+      ],
+      "provenance_tier": "accepted-public",
+      "identity_status": "bound-to-prior-project-event-geography-time-and-source-scenes; official incident identifier not present in inspected accepted records",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0007",
+      "project_event_id": "BLX2B-EVENT-CE00493B220DE206",
+      "canonical_name": "Indian Ridge",
+      "state": "ID",
+      "year": 2022,
+      "unique_fire_identifier": "2022-MTBRF-022131",
+      "source_event_id": "{C3D82B66-AF22-4D41-AD5B-662E7EDDF7BF}",
+      "source_global_id": "73466f84-ca01-4c7f-8bab-f3c32e0d8ef6",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0008",
+      "project_event_id": "BLX2B-EVENT-FB483288A2A84E72",
+      "canonical_name": "Patrol Point",
+      "state": "ID",
+      "year": 2022,
+      "unique_fire_identifier": "2022-IDPAF-005433",
+      "source_event_id": "{E6CA5168-C80A-465C-894D-B7AC558E6023}",
+      "source_global_id": "5ae48797-2ef7-496c-b7cf-c5d53fefe0aa",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster",
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0009",
+      "project_event_id": "BLX2B-EVENT-0304345560548304",
+      "canonical_name": "Porphyry",
+      "state": "ID",
+      "year": 2022,
+      "unique_fire_identifier": "2022-IDPAF-005393",
+      "source_event_id": "{C8A7982C-E2F2-4DB4-9D8E-802E639070D7}",
+      "source_global_id": "688968eb-c83e-4b9c-81b9-86d3d0b27bd1",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0010",
+      "project_event_id": "BLX2B-EVENT-CA40F34E75F6F5F3",
+      "canonical_name": "Tenmile",
+      "state": "ID",
+      "year": 2022,
+      "unique_fire_identifier": "2022-IDPAF-005567",
+      "source_event_id": "{8B0592D6-18F3-4B88-932D-7ED07FEE8771}",
+      "source_global_id": "37b7b01b-e277-4f06-bf0b-6b43fe38c9ce",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster",
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0011",
+      "project_event_id": "BLX2B-EVENT-6FA7E49CC608E16F",
+      "canonical_name": "Twist Creek",
+      "state": "ID",
+      "year": 2022,
+      "unique_fire_identifier": "2022-MTBRF-022237",
+      "source_event_id": "{9EBA8624-A199-4E22-A7B9-B5694DBD6423}",
+      "source_global_id": "5368f587-ef92-4588-8425-8198317a3775",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0012",
+      "project_event_id": "BLX2B-EVENT-B5296B88A530E48C",
+      "canonical_name": "Van Camp",
+      "state": "ID",
+      "year": 2022,
+      "unique_fire_identifier": "2022-IDNCF-000493",
+      "source_event_id": "{AA1BA5D6-2283-40CF-A92D-740EC4328657}",
+      "source_global_id": "9c3c7e75-27ca-48f0-ae5d-37fe7cc2fb3f",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0013",
+      "project_event_id": "BLX2B-EVENT-4B48C58DC3E0F6A8",
+      "canonical_name": "ANT",
+      "state": "ID",
+      "year": 2023,
+      "unique_fire_identifier": "2023-IDBOD-000755",
+      "source_event_id": "{47C7D170-2C7F-4244-B1F8-EECD3B314304}",
+      "source_global_id": "da60184c-5ce2-453d-85db-23fd674f378a",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0014",
+      "project_event_id": "BLX2B-EVENT-88156219C2A34CE3",
+      "canonical_name": "EAST",
+      "state": "ID",
+      "year": 2023,
+      "unique_fire_identifier": "2023-IDBOF-000740",
+      "source_event_id": "{5E353D58-CE5D-470D-B8F2-08A32181FF69}",
+      "source_global_id": "cfafefa3-1413-4b92-ad8a-5d0430703e5a",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0015",
+      "project_event_id": "BLX2B-EVENT-F205CACED2A21CD6",
+      "canonical_name": "Hayden",
+      "state": "ID",
+      "year": 2023,
+      "unique_fire_identifier": "2023-IDSCF-023084",
+      "source_event_id": "{3B96070F-23BB-4B83-A2CB-5FA4C2E741E2}",
+      "source_global_id": "a6d4574c-2ae5-4574-8204-1484df0c8d4c",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0016",
+      "project_event_id": "BLX2B-EVENT-2FAEA6992A171EFC",
+      "canonical_name": "Little Bear",
+      "state": "ID",
+      "year": 2023,
+      "unique_fire_identifier": "2023-IDNCF-000321",
+      "source_event_id": "{EEAB7C5D-1D00-4810-8573-7550BB415410}",
+      "source_global_id": "768ebdc7-ff48-4ad4-87a6-f898ecebd49e",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0017",
+      "project_event_id": "BLX2B-EVENT-8B7F43DE69A1223B",
+      "canonical_name": "Ridge Creek",
+      "state": "ID",
+      "year": 2023,
+      "unique_fire_identifier": "2023-IDIPF-000447",
+      "source_event_id": "{8EB69C6E-FC5F-4E8B-A322-2174A53A9CF9}",
+      "source_global_id": "56d6bad2-0492-4b9c-a41e-7a945382586f",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster",
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0018",
+      "project_event_id": "BLX2B-EVENT-A8B16241738F2706",
+      "canonical_name": "RILEY",
+      "state": "ID",
+      "year": 2023,
+      "unique_fire_identifier": "2023-IDBOD-000759",
+      "source_event_id": "{A2792819-BC22-433E-8239-B8C89F22D0ED}",
+      "source_global_id": "6e821f54-26c2-4090-b341-55fe2164b549",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0019",
+      "project_event_id": "BLX2B-EVENT-3F8BBBF493E94C8E",
+      "canonical_name": "NELLIE",
+      "state": "ID",
+      "year": 2024,
+      "unique_fire_identifier": "2024-IDBOF-000923",
+      "source_event_id": "{A49C6416-8B28-4CD1-9267-1398F333FB80}",
+      "source_global_id": "35b89be7-e55e-42b3-9fa5-bcf91d7ae1b7",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0020",
+      "project_event_id": "BLX2B-EVENT-61D58852AA6AA72C",
+      "canonical_name": "OTR 136",
+      "state": "ID",
+      "year": 2024,
+      "unique_fire_identifier": "2024-IDIDNG-001000",
+      "source_event_id": "{3BFD49C7-4490-4161-BA11-EE47147230D9}",
+      "source_global_id": "ef36860d-fa1c-4fdb-9d2e-52cc4c4e1aae",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0021",
+      "project_event_id": "BLX2B-EVENT-9241BC72151D2BB7",
+      "canonical_name": "Prospect",
+      "state": "ID",
+      "year": 2024,
+      "unique_fire_identifier": "2024-MTBRF-024348",
+      "source_event_id": "{5A6C01C8-519F-40F9-B45E-AE598B8BFDD2}",
+      "source_global_id": "66d9407c-f56a-468b-92eb-0ac62b62c58a",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0022",
+      "project_event_id": "BLX2B-EVENT-68E0F998BB2B04D6",
+      "canonical_name": "TABLE",
+      "state": "ID",
+      "year": 2024,
+      "unique_fire_identifier": "2024-IDSWS-001111",
+      "source_event_id": "{CA285652-E54F-4C5A-8C8D-56227DC879B2}",
+      "source_global_id": "03415036-97dd-43af-8fc5-97c08e429b4c",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0023",
+      "project_event_id": "BLX2B-EVENT-A862CCB627DDA380",
+      "canonical_name": "Wolf Creek",
+      "state": "ID",
+      "year": 2024,
+      "unique_fire_identifier": "2024-IDPAF-005467",
+      "source_event_id": "{DC48BD1E-2134-43BB-916C-DED5DD45D150}",
+      "source_global_id": "5bbf06f0-4e03-4331-801b-16c4e922e078",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0024",
+      "project_event_id": "BLX2B-EVENT-6709466190E64500",
+      "canonical_name": "East",
+      "state": "ID",
+      "year": 2025,
+      "unique_fire_identifier": "2025-IDNCF-000699",
+      "source_event_id": "{D2A66B91-21EA-4C6E-9B99-052A8C7F8FBA}",
+      "source_global_id": "dce328d3-713c-471e-8e6f-fe4d3bd5b1b4",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0025",
+      "project_event_id": "BLX2B-EVENT-653CF86B0CB56845",
+      "canonical_name": "Mire",
+      "state": "ID",
+      "year": 2025,
+      "unique_fire_identifier": "2025-IDNCF-000647",
+      "source_event_id": "{369DB452-22A8-45A4-8590-FA698A2EAF12}",
+      "source_global_id": "5ab619df-ce23-4bc7-9954-4bea2c9b171b",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0026",
+      "project_event_id": "BLX2B-EVENT-91BEDE9F71A329A1",
+      "canonical_name": "Cedar Creek",
+      "state": "OR",
+      "year": 2022,
+      "unique_fire_identifier": "2022-ORWIF-220180",
+      "source_event_id": "{21BB61C1-C479-4721-8295-9120974092D2}",
+      "source_global_id": "f00c42c6-8f11-4fee-9d50-f293d9f51ea0",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0027",
+      "project_event_id": "BLX2B-EVENT-704B09931104D0B2",
+      "canonical_name": "Crockets Knob",
+      "state": "OR",
+      "year": 2022,
+      "unique_fire_identifier": "2022-ORMAF-022199",
+      "source_event_id": "{40139450-A4E7-453F-9478-DDA7B402C8A2}",
+      "source_global_id": "f64555c8-b67b-49c5-9f38-db38b8bee5e1",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0028",
+      "project_event_id": "BLX2B-EVENT-BB33D9B966E1C34D",
+      "canonical_name": "Double Creek",
+      "state": "OR",
+      "year": 2022,
+      "unique_fire_identifier": "2022-ORWWF-000400",
+      "source_event_id": "{92B22838-C96C-4B21-B1E8-F09E8EE65C8F}",
+      "source_global_id": "f7f8a082-83d0-4eee-9c97-5de02545e9f8",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0029",
+      "project_event_id": "BLX2B-EVENT-5399A0937EA369BB",
+      "canonical_name": "Griffin",
+      "state": "OR",
+      "year": 2022,
+      "unique_fire_identifier": "2022-ORBUD-002313",
+      "source_event_id": "{D6DC0265-BDD0-4F05-A002-F6F041B354ED}",
+      "source_global_id": "cb89426e-4e5a-41bd-93c6-35994347c281",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0030",
+      "project_event_id": "BLX2B-EVENT-BD286B31DB2BBC1B",
+      "canonical_name": "Rum Creek",
+      "state": "OR",
+      "year": 2022,
+      "unique_fire_identifier": "2022-ORMED-000243",
+      "source_event_id": "{E0C771C8-8138-440D-A5BC-BE5013BFAFD6}",
+      "source_global_id": "0acb131e-e17a-4ad8-86b9-6c901774095b",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0031",
+      "project_event_id": "BLX2B-EVENT-A9DBC2EE512D28E7",
+      "canonical_name": "Anvil",
+      "state": "OR",
+      "year": 2023,
+      "unique_fire_identifier": "2023-ORRSF-000413",
+      "source_event_id": "{BF2E0890-DA87-47BC-9A30-0062DB83B3FE}",
+      "source_global_id": "42ecf18a-64f0-4ef9-8c1a-ac55fb8b465b",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0032",
+      "project_event_id": "BLX2B-EVENT-EF89980164B1E550",
+      "canonical_name": "CAMP CREEK",
+      "state": "OR",
+      "year": 2023,
+      "unique_fire_identifier": "2023-ORMHF-001199",
+      "source_event_id": "{8A6D09B9-4A0B-4215-9AAC-1CC17EEC19EB}",
+      "source_global_id": "d7b81993-b4b5-4b86-be56-c49b9753cc30",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0033",
+      "project_event_id": "BLX2B-EVENT-0984999E06F1BD64",
+      "canonical_name": "Chilcoot",
+      "state": "OR",
+      "year": 2023,
+      "unique_fire_identifier": "2023-ORUPF-230345",
+      "source_event_id": "{C3508196-B91F-43B1-A6BC-5EB39266B901}",
+      "source_global_id": "5d20dbd0-b71e-4bca-97ef-7ec6fd421ea7",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0034",
+      "project_event_id": "BLX2B-EVENT-D5331750F743DB75",
+      "canonical_name": "Dillon Creek",
+      "state": "OR",
+      "year": 2023,
+      "unique_fire_identifier": "2023-ORFWF-230118",
+      "source_event_id": "{D9FE92FB-103C-447A-83C0-E4D36E8BFB5F}",
+      "source_global_id": "dca53049-42f1-4a50-b175-4988c494f381",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0035",
+      "project_event_id": "BLX2B-EVENT-E13AC123101BEBA2",
+      "canonical_name": "Flat",
+      "state": "OR",
+      "year": 2023,
+      "unique_fire_identifier": "2023-ORRSF-000209",
+      "source_event_id": "{76502E27-4AE0-4100-A9AD-F1850B16333D}",
+      "source_global_id": "007b983f-5f75-469a-9cd8-9837cd078be6",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0036",
+      "project_event_id": "BLX2B-EVENT-D7FF57C0F9C1CEAF",
+      "canonical_name": "Morgan",
+      "state": "OR",
+      "year": 2023,
+      "unique_fire_identifier": "2023-ORFWF-230307",
+      "source_event_id": "{C88F4251-829A-4D08-89B5-59FA39C4FB15}",
+      "source_global_id": "7cd6c5fd-043d-4991-8adf-fc9dd38158bd",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0037",
+      "project_event_id": "BLX2B-EVENT-708F152ECF2FD810",
+      "canonical_name": "SIMNASHO",
+      "state": "OR",
+      "year": 2023,
+      "unique_fire_identifier": "2023-ORWSA-000063",
+      "source_event_id": "{EE1765C0-6CE0-45F8-9210-FF7E34AA97B7}",
+      "source_global_id": "287d0363-cb28-4353-b24b-bbf0aad3d1f3",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0038",
+      "project_event_id": "BLX2B-EVENT-B089F4828B0822EC",
+      "canonical_name": "TOWER ROAD",
+      "state": "OR",
+      "year": 2023,
+      "unique_fire_identifier": "2023-WAMCR-000129",
+      "source_event_id": "{9F1747B8-5213-4835-86C6-E4FE784016D2}",
+      "source_global_id": "a66c0db4-5fd8-41f6-b6f9-ac6e5fbf4c59",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0039",
+      "project_event_id": "BLX2B-EVENT-E2D03F7DE160F119",
+      "canonical_name": "Dixon",
+      "state": "OR",
+      "year": 2024,
+      "unique_fire_identifier": "2024-ORUPF-000361",
+      "source_event_id": "{3F496BBE-5704-44EE-AF9E-B4B6111581C3}",
+      "source_global_id": "62f57eea-4437-4bcc-a1f0-d2950500d9c3",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0040",
+      "project_event_id": "BLX2B-EVENT-D7F1F9BC0096C1A8",
+      "canonical_name": "FIRESTONE",
+      "state": "OR",
+      "year": 2024,
+      "unique_fire_identifier": "2024-ORDEF-000851",
+      "source_event_id": "{12887D99-59D3-436D-8026-0DD179D695A1}",
+      "source_global_id": "5f47b15d-0b9c-47e4-82e5-b11b7d3d9dc0",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0041",
+      "project_event_id": "BLX2B-EVENT-8CFF6AD5B1102E72",
+      "canonical_name": "Jack Saddle",
+      "state": "OR",
+      "year": 2024,
+      "unique_fire_identifier": "2024-ORUPF-240235",
+      "source_event_id": "{F8A6220C-C636-4CA3-9E1C-3CE082A118F0}",
+      "source_global_id": "2626adf5-88ab-48e2-9a34-e43db5d3d4f6",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0042",
+      "project_event_id": "BLX2B-EVENT-56EFA89DCFCC1999",
+      "canonical_name": "Ore",
+      "state": "OR",
+      "year": 2024,
+      "unique_fire_identifier": "2024-ORWIF-240195",
+      "source_event_id": "{5E1B47FD-FD48-4DDF-AE01-0F7B2D726F4B}",
+      "source_global_id": "78f820b1-2b19-42e5-a2bc-c9e87d542b71",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0043",
+      "project_event_id": "BLX2B-EVENT-8D9FCF0B08B96471",
+      "canonical_name": "PINE",
+      "state": "OR",
+      "year": 2024,
+      "unique_fire_identifier": "2024-ORPRD-001002",
+      "source_event_id": "{A53B0901-2EEF-4E65-AECD-41392DAE94E5}",
+      "source_global_id": "fe02c3fe-81dd-4605-8625-a4fdbb3662f7",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0044",
+      "project_event_id": "BLX2B-EVENT-64949CB2124BD994",
+      "canonical_name": "Upper Pine",
+      "state": "OR",
+      "year": 2024,
+      "unique_fire_identifier": "2024-ORMAF-002497",
+      "source_event_id": "{D66BEA2C-1A9E-4102-BD3E-E8BB075E5117}",
+      "source_global_id": "6a8b1030-af92-46a3-84c4-41458b4c84e2",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0045",
+      "project_event_id": "BLX2B-EVENT-C28D953CB18FD200",
+      "canonical_name": "Whiskey Mountain",
+      "state": "OR",
+      "year": 2024,
+      "unique_fire_identifier": "2024-ORMAF-002533",
+      "source_event_id": "{6353FA55-D487-4A86-9842-D2306690836E}",
+      "source_global_id": "169a0b6c-ac69-4225-b02e-2a0febeaa11a",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0046",
+      "project_event_id": "BLX2B-EVENT-8FCA33BAD458841B",
+      "canonical_name": "MARKS CREEK",
+      "state": "OR",
+      "year": 2025,
+      "unique_fire_identifier": "2025-OROCF-000944",
+      "source_event_id": "{2F4A0528-068A-4B14-A6A7-96A011F11B81}",
+      "source_global_id": "191678d2-f81c-4c40-a392-dd392dd55820",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0047",
+      "project_event_id": "BLX2B-EVENT-4575443CEC1A1407",
+      "canonical_name": "ROWENA",
+      "state": "OR",
+      "year": 2025,
+      "unique_fire_identifier": "2025-OR954S-000327",
+      "source_event_id": "{E7E0C6A8-1E10-469F-8800-7FC679FA3EE3}",
+      "source_global_id": "adc38682-380e-4280-9d03-fba6e60160fc",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0048",
+      "project_event_id": "BLX2B-EVENT-2166F3FD52493A49",
+      "canonical_name": "Brush Creek 2",
+      "state": "WA",
+      "year": 2022,
+      "unique_fire_identifier": "2022-WANCP-000303",
+      "source_event_id": "{94308D80-029A-4A04-804A-9E58C962F0C4}",
+      "source_global_id": "388df29f-8961-46fa-8336-7b891f315a58",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0049",
+      "project_event_id": "BLX2B-EVENT-0EE47790EAB9998F",
+      "canonical_name": "IRVING PEAK",
+      "state": "WA",
+      "year": 2022,
+      "unique_fire_identifier": "2022-WAOWF-000315",
+      "source_event_id": "{87C83DD3-F066-491D-8A1F-D0EEFF7E896D}",
+      "source_global_id": "adac79d3-08c5-45fd-b91f-1edde6f4174b",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0050",
+      "project_event_id": "BLX2B-EVENT-63A11CD99DEBFE20",
+      "canonical_name": "MINNOW RIDGE",
+      "state": "WA",
+      "year": 2022,
+      "unique_fire_identifier": "2022-WAOWF-000479",
+      "source_event_id": "{A7AE3D8B-A9F6-4DAB-A1C9-7062264B9241}",
+      "source_global_id": "e26fc320-ac92-4187-8def-b95bd225d799",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0051",
+      "project_event_id": "BLX2B-EVENT-0B03DA08AFC05B59",
+      "canonical_name": "SIOUXON",
+      "state": "WA",
+      "year": 2022,
+      "unique_fire_identifier": "2022-WAGPF-001208",
+      "source_event_id": "{AC23598C-654F-4702-8AFF-B730C0963BEE}",
+      "source_global_id": "89e2a82e-63c1-4906-bb8d-71889c14704c",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0052",
+      "project_event_id": "BLX2B-EVENT-1FC4C69103285CB1",
+      "canonical_name": "VANTAGE HIGHWAY",
+      "state": "WA",
+      "year": 2022,
+      "unique_fire_identifier": "2022-WASES-000263",
+      "source_event_id": "{4FBD9A73-23DF-4ACF-A36F-58A47C8437B3}",
+      "source_global_id": "fc123810-c465-46f6-9270-1fb7bbc14fc1",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0053",
+      "project_event_id": "BLX2B-EVENT-D90388BDFCD78CB7",
+      "canonical_name": "AIRPLANE LAKE",
+      "state": "WA",
+      "year": 2023,
+      "unique_fire_identifier": "2023-WAOWF-000374",
+      "source_event_id": "{CD4C02C9-5AEA-4DD6-8B2D-E1698C67B738}",
+      "source_global_id": "43711d2d-c356-4a42-86c8-170758c30e01",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0054",
+      "project_event_id": "BLX2B-EVENT-86A5D16365DAF3EA",
+      "canonical_name": "BLUE LAKE",
+      "state": "WA",
+      "year": 2023,
+      "unique_fire_identifier": "2023-WAOWF-000563",
+      "source_event_id": "{8AEADE11-732B-4F58-96A5-D78EDA1701C5}",
+      "source_global_id": "1f2eb35b-0214-4574-9d49-4042f4d0cbce",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0055",
+      "project_event_id": "BLX2B-EVENT-193EE92462DAA12D",
+      "canonical_name": "CRATER CREEK",
+      "state": "WA",
+      "year": 2023,
+      "unique_fire_identifier": "2023-WANES-001972",
+      "source_event_id": "{89D8AC68-D8F3-41AF-9D30-0982C7DBA62B}",
+      "source_global_id": "5fbd1495-5bd7-4d8f-9a71-8943f5ca4c1b",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0056",
+      "project_event_id": "BLX2B-EVENT-8E56AF8427199920",
+      "canonical_name": "Dome Peak",
+      "state": "WA",
+      "year": 2023,
+      "unique_fire_identifier": "2023-WAMSF-000265",
+      "source_event_id": "{64520746-7F0C-4FE9-AFDC-7AB8D46FC9F0}",
+      "source_global_id": "a7dd0509-af69-4079-8511-26f4277a5de2",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0057",
+      "project_event_id": "BLX2B-EVENT-B67D311930D9DE19",
+      "canonical_name": "EAGLE BLUFF",
+      "state": "WA",
+      "year": 2023,
+      "unique_fire_identifier": "2023-WANES-001759",
+      "source_event_id": "{12E0D4D9-C1A3-4EDB-98DC-D8CC9C6CDA4A}",
+      "source_global_id": "b6beac4f-1a0c-41aa-962d-45759f967880",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0058",
+      "project_event_id": "BLX2B-EVENT-3F41FF5508B0EA4B",
+      "canonical_name": "BLACK CANYON",
+      "state": "WA",
+      "year": 2024,
+      "unique_fire_identifier": "2024-WASES-000475",
+      "source_event_id": "{563AC10C-62BE-48CD-A722-AF157206A498}",
+      "source_global_id": "8a6c71b2-5f1d-46d4-b12d-84f62be86f05",
+      "prior_uses": [
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0059",
+      "project_event_id": "BLX2B-EVENT-1ED54051FD0E5319",
+      "canonical_name": "Cougar Creek",
+      "state": "WA",
+      "year": 2024,
+      "unique_fire_identifier": "2024-WASES-020209",
+      "source_event_id": "{4B6B9927-4575-4A7E-990C-893527A2D3CD}",
+      "source_global_id": "c8d85c91-fb51-4dae-8653-7e7b0f314db1",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0060",
+      "project_event_id": "BLX2B-EVENT-27AAE6DEE42578B1",
+      "canonical_name": "EASY",
+      "state": "WA",
+      "year": 2024,
+      "unique_fire_identifier": "2024-WAOWF-000435",
+      "source_event_id": "{FD556A20-0FCF-44B0-8B91-B98C164F9249}",
+      "source_global_id": "523c9e85-4d65-4d39-b04f-0850b42f9929",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster",
+        "experiment-two-b-wfigs-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0061",
+      "project_event_id": "BLX2B-EVENT-8F83AB1CB8B230DE",
+      "canonical_name": "PIONEER",
+      "state": "WA",
+      "year": 2024,
+      "unique_fire_identifier": "2024-WASES-000173",
+      "source_event_id": "{03FE65C0-435C-4116-A78E-AFEFE1ADC9A7}",
+      "source_global_id": "caf9387f-4206-4e28-bf1e-37ee6ba02cad",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0062",
+      "project_event_id": "BLX2B-EVENT-1F73D6ABD9B4EBD9",
+      "canonical_name": "RETREAT",
+      "state": "WA",
+      "year": 2024,
+      "unique_fire_identifier": "2024-WASES-000477",
+      "source_event_id": "{AEC7C251-B36B-44D1-B407-FFFCD62788ED}",
+      "source_global_id": "19c41ea3-be63-4834-a93b-0d375139b39a",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0063",
+      "project_event_id": "BLX2B-EVENT-8636407B4803425D",
+      "canonical_name": "WILLIAMS MINE",
+      "state": "WA",
+      "year": 2024,
+      "unique_fire_identifier": "2024-WAGPF-000813",
+      "source_event_id": "{74CCAF8D-B50F-45F0-B068-F04C794E73A6}",
+      "source_global_id": "4aa1c570-ddc4-4550-a195-3053be2640e1",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0064",
+      "project_event_id": "BLX2B-EVENT-FF3F343323446A2B",
+      "canonical_name": "Bear Gulch",
+      "state": "WA",
+      "year": 2025,
+      "unique_fire_identifier": "2025-WAOLF-000178",
+      "source_event_id": "{0EC37DB6-8E0E-4844-A310-F737E7456029}",
+      "source_global_id": "4d28054d-2073-4797-906e-c400f44d7931",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0065",
+      "project_event_id": "BLX2B-EVENT-55CE3D88236F878F",
+      "canonical_name": "BURDOIN",
+      "state": "WA",
+      "year": 2025,
+      "unique_fire_identifier": "2025-WASES-000447",
+      "source_event_id": "{FC4C74C4-D490-45E6-AAEA-4C3EDBD55218}",
+      "source_global_id": "0883f11a-9483-428b-aa59-f9ad5b1fad10",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0066",
+      "project_event_id": "BLX2B-EVENT-FE7FCF60CE98F4EE",
+      "canonical_name": "KATY CREEK",
+      "state": "WA",
+      "year": 2025,
+      "unique_fire_identifier": "2025-WACOF-002257",
+      "source_event_id": "{9091D65A-706B-4C0A-87DE-2CD9E1AB64E1}",
+      "source_global_id": "d4f6d50b-cbe5-4921-bc08-6ec03205a995",
+      "prior_uses": [
+        "experiment-two-b-hls-fresh-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0067",
+      "project_event_id": "BLX2B-EVENT-433DA9CF77E63D77",
+      "canonical_name": "LOWER SUGARLOAF",
+      "state": "WA",
+      "year": 2025,
+      "unique_fire_identifier": "2025-WAOWF-000797",
+      "source_event_id": "{569FB7BD-BA9B-4706-9D42-F05C7C6AC148}",
+      "source_global_id": "1493dff1-e668-441f-9ff8-f0b4a10c60fc",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    },
+    {
+      "exclusion_id": "E4-EXCL-0068",
+      "project_event_id": "BLX2B-EVENT-ABCE37AE1DA9B701",
+      "canonical_name": "POMAS",
+      "state": "WA",
+      "year": 2025,
+      "unique_fire_identifier": "2025-WAOWF-000242",
+      "source_event_id": "{41E770F6-74CA-4F78-85A9-91DFAA1FF446}",
+      "source_global_id": "7e8a3c1a-8c19-4028-be84-665ae38859b6",
+      "prior_uses": [
+        "experiment-two-b-baer-candidate-roster"
+      ],
+      "scene_group_id": null,
+      "geography_group_id": null,
+      "time_group_id": null,
+      "source_product_native_ids": [],
+      "provenance_tier": "unaccepted-local-conservative-exclusion",
+      "identity_status": "bound-to-publisher-metadata-identifiers-in-hash-bound-local-record",
+      "disposition": "permanently-excluded"
+    }
+  ],
+  "limitations": [
+    "Experiment One accepted records do not expose a single official incident identifier for each event; their exclusions are bound to project event, geography, time, and exact source-scene identities.",
+    "Experiment Two-B continuation records are dirty-worktree evidence and may be stale or superseded. Their only use here is conservative exclusion, never proof of an accepted cohort or result.",
+    "Names alone never establish a fresh-event match. Ambiguous name-year or spatial relationships remain unknown and excluded until exact admitted metadata resolves them."
+  ],
+  "disposition": "PASS-prior-event-exclusion-inventory-complete-for-inspected-records"
+}

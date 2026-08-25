@@ -1,0 +1,41 @@
+{
+  "schema_version": "render-receipt-v1",
+  "receipt_id": "E4-M1-SOURCE-ADOPTION-RENDER-2026-001",
+  "review_id": "E4-M1-SOURCE-ADOPTION-2026-001",
+  "observed_at_utc": "2026-08-25T22:26:19.3014249Z",
+  "surface": {
+    "path": "docs/reviews/e4-m1-source-adoption-review.html",
+    "sha256": "7c3e775bf88605a3a577fae0781e6c26d29785781a6dd7db1b932f0af8a38983",
+    "served_from": "http://127.0.0.1:8765/",
+    "browser": "Codex In-app Browser"
+  },
+  "fixture": {
+    "evidence_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "software_generated": true,
+    "human_decision": false,
+    "export_filename": "E4-M1-SOURCE-ADOPTION-2026-001-response-429f032622d6c673.json",
+    "export_sha256": "429f032622d6c673a2e9d0436d272a0b288da09936ed746b6bb3732563f53c3e"
+  },
+  "checks": {
+    "desktop_render_verified": true,
+    "narrow_render_verified": true,
+    "narrow_viewport_css_pixels": {
+      "width": 390,
+      "height": 844
+    },
+    "narrow_horizontal_overflow": false,
+    "blank_decision_verified": true,
+    "blank_attestation_verified": true,
+    "incomplete_export_blocked": true,
+    "incomplete_export_message": "Select one decision.",
+    "attestation_required": true,
+    "hash_binding_verified": true,
+    "hash_named_export_verified": true,
+    "closed_decision_domain_verified": true,
+    "human_decisions_created": 0
+  },
+  "limitations": [
+    "The export used a conspicuous all-a software fixture hash and is not an owner response.",
+    "The browser backend full-page screenshot stitch repeated regions, so the receipt relies on live DOM inspection and separate top, middle, and decision-control viewport renders instead of that stitched image."
+  ]
+}

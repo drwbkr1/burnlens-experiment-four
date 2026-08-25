@@ -1,0 +1,43 @@
+{
+  "contract_version": "human-review-contract-v1",
+  "template": false,
+  "review_id": "E4-M1-SOURCE-ADOPTION-2026-001",
+  "response_schema_version": "e4-human-source-adoption-response-v1",
+  "workflow_authority": {
+    "mode": "inherited",
+    "authority_ref": "records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md; active goal BurnLens Experiment Four - Prospective Fresh-Event Benchmark",
+    "authorized_action_classes": [
+      "lock exact owner response without overwrite",
+      "reconcile exact locked owner response",
+      "continue exact owner-approved Milestone 1 metadata actions if and only if the reconciled decision is approve"
+    ],
+    "verified_at_utc": "2026-08-25T22:30:54Z",
+    "expires_at_utc": null,
+    "review_required": true,
+    "lock_authorized": true,
+    "reconcile_authorized": true,
+    "post_review_actions": [
+      "continue exact owner-approved Milestone 1 metadata actions if and only if the reconciled decision is approve"
+    ]
+  },
+  "review_bundle": {
+    "bundle_id": "E4-M1-SOURCE-ADOPTION-BUNDLE-2026-001",
+    "manifest_sha256": "7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7",
+    "candidate_identity": "E4-M1-SOURCE-PACKAGE-2026-001",
+    "rendered_surface_verified": true
+  },
+  "allowed_decisions": [
+    "approve",
+    "reject",
+    "uncertain"
+  ],
+  "required_attestation": true,
+  "max_notes_length": 2000,
+  "hash_prefix_length": 16,
+  "items": [
+    {
+      "item_id": "E4-M1-SOURCE-ADOPTION-BUNDLE",
+      "evidence_sha256": "7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7"
+    }
+  ]
+}

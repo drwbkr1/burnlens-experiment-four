@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0",
+  "proposal_id": "E4-SOURCE-USE-PROPOSAL-2026-001",
+  "candidate_identity": "E4-M1-SOURCE-PACKAGE-2026-001",
+  "status": "proposed_owner_gate",
+  "source_gate_ref": "records/sources/EXPERIMENT-FOUR-SOURCE-GATE-ASSESSMENT-2026-001.json",
+  "eligibility_profile_ref": "records/metadata/EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-PROPOSAL-2026-002.json",
+  "prior_exclusion_manifest_sha256": "c819624011f5353bb085ba4b5a8db38cf0a0ca1c55e9a7741e7af59c0f7d164d",
+  "observed_candidate_rows": 0,
+  "scientific_source_bodies_opened": 0,
+  "sources": {
+    "candidate_universe": {
+      "source_id": "USGS-MTBS-PERIMETERS-V12",
+      "sciencebase_item_id": "5e7229b8e4b01d509268afba",
+      "version": "12.0",
+      "edition": "April 2025",
+      "file_name": "mtbs_perims_DD.zip",
+      "file_size_bytes": 374092911,
+      "publisher_md5": "65278fcb893f94cd0eaf66d966ee7125",
+      "role": "Versioned census of completed MTBS mappings and reference-product availability; not independent ground truth."
+    },
+    "incident_identity_and_maturity": {
+      "source_id": "NIFC-WFIGS-PERIMETERS-5E72B169",
+      "arcgis_item_id": "5e72b1699bf74eefb3f3aff6f4ba5511",
+      "layer_id": 0,
+      "revision_policy": "Dynamic service; freeze exact schema, query, UTC retrieval time, dataLastEditDate, page bytes, and aggregate SHA-256 at intake.",
+      "role": "Exact incident identifiers, wildfire type, state, final-report maturity, complex membership, and approved public incident perimeter."
+    },
+    "imagery_metadata": [
+      {
+        "source_id": "NASA-HLSL30-2.0-C2021957657",
+        "concept_id": "C2021957657-LPCLOUD",
+        "cmr_revision_observed": 93,
+        "doi": "https://doi.org/10.5067/HLS/HLSL30.002"
+      },
+      {
+        "source_id": "NASA-HLSS30-2.0-C2021957295",
+        "concept_id": "C2021957295-LPCLOUD",
+        "cmr_revision_observed": 95,
+        "doi": "https://doi.org/10.5067/HLS/HLSS30.002"
+      }
+    ],
+    "ecology": {
+      "source_id": "EPA-ECOREGIONS-LEVEL-III-US",
+      "file_name": "us_eco_l3.zip",
+      "file_size_bytes_observed": 28424315,
+      "last_modified_observed": "2024-11-14T17:09:20Z",
+      "role": "Event-level ecological stratification only; not local ecological truth or a pixel label."
+    }
+  },
+  "eligibility_semantics": {
+    "universe_definition": "Every MTBS version 12.0 row with Map_Prog exactly MTBS, ignition in 2021 or 2022, and a mapped centroid in ID, OR, or WA enters evaluation before any eligibility exclusion is applied.",
+    "jurisdiction": "WFIGS attr_POOState must exactly equal ID, OR, or WA and agree with the MTBS centroid state assignment. Conflict or missing evidence is unknown.",
+    "incident_type": "MTBS Incid_Type must equal WF and the exact WFIGS match attr_IncidentTypeCategory must equal WF.",
+    "maturity": "The exact WFIGS match must be public, approved, visible, not deleted, valid, not quarantined, and have non-null final-fire-report approval and fire-out timestamps. Candidate perimeter_status is final only when all conditions pass.",
+    "area": "Both MTBS BurnBndAc and WFIGS attr_FinalAcres must be at least 1,000 acres. There is no maximum-area exclusion. Missing or conflicting values are unknown.",
+    "reference_availability": "The retained row itself proves only that an MTBS mapping exists in version 12.0. It does not establish independent corroboration or ground truth.",
+    "ecology": "Intersect the MTBS boundary with EPA Level III polygons. At least 95 percent of boundary area must receive a valid Level III code. Dominant code is the largest intersection share, with lexicographic code only as an exact-area tie break.",
+    "imagery_metadata": "For both HLSL30 and HLSS30, anonymous CMR granule metadata must return at least one spatially intersecting record in each of two broad feasibility intervals: ignition minus 365 days through one second before ignition, and ignition through 730 days after ignition. No cloud, QA, scene-body, index, label, model, or metric filter is permitted in Milestone 1.",
+    "prior_experiment_exclusion": "Apply the exact 68-identity exclusion manifest first. Exact official-ID matches are excluded. A normalized name-year or geometry relationship that cannot be resolved exactly is unknown and therefore not eligible.",
+    "unknown_policy": "Any missing, contradictory, ambiguous, stale, structurally invalid, or unadmitted required value yields unknown or invalid, never eligible."
+  },
+  "field_policy": {
+    "mtbs_allowlist": [
+      "Shape",
+      "Event_ID",
+      "irwinID",
+      "Incid_Name",
+      "Incid_Type",
+      "Map_ID",
+      "Map_Prog",
+      "Asmnt_Type",
+      "BurnBndAc",
+      "BurnBndLat",
+      "BurnBndLon",
+      "Ig_Date"
+    ],
+    "mtbs_explicit_denylist": [
+      "Pre_ID",
+      "Post_ID",
+      "Perim_ID",
+      "dNBR_offst",
+      "dNBR_stdDv",
+      "NoData_T",
+      "IncGreen_T",
+      "Low_T",
+      "Mod_T",
+      "High_T",
+      "Comment"
+    ],
+    "wfigs_allowlist": [
+      "GlobalID",
+      "poly_IRWINID",
+      "poly_FORID",
+      "poly_SourceGlobalID",
+      "poly_Source",
+      "poly_FeatureAccess",
+      "poly_FeatureStatus",
+      "poly_IsVisible",
+      "poly_DeleteThis",
+      "poly_DateCurrent",
+      "poly_PolygonDateTime",
+      "poly_Acres_AutoCalc",
+      "attr_IrwinID",
+      "attr_FORID",
+      "attr_SourceGlobalID",
+      "attr_Source",
+      "attr_UniqueFireIdentifier",
+      "attr_IncidentName",
+      "attr_IncidentTypeCategory",
+      "attr_FireDiscoveryDateTime",
+      "attr_ContainmentDateTime",
+      "attr_FireOutDateTime",
+      "attr_FFReportApprovedDate",
+      "attr_FinalAcres",
+      "attr_POOState",
+      "attr_IsValid",
+      "attr_IsQuarantined",
+      "attr_IsCpxChild",
+      "attr_CpxID",
+      "attr_CpxName",
+      "geometry"
+    ],
+    "wfigs_denied_categories": [
+      "usernames and creator or modifier fields",
+      "personnel and cost fields",
+      "cause and free-text operational descriptions",
+      "current suppression and behavior fields not required by eligibility"
+    ]
+  },
+  "identity_and_duplicate_policy": {
+    "match_order": [
+      "Exact non-null MTBS irwinID to WFIGS attr_IrwinID or poly_IRWINID",
+      "Exact non-null MTBS Event_ID to WFIGS attr_UniqueFireIdentifier"
+    ],
+    "name_only_match_permitted": false,
+    "one_to_one_required": true,
+    "multiple_exact_wfigs_matches": "unknown_not_eligible",
+    "duplicate_mtbs_event_id": "all_rows_unknown_not_eligible",
+    "duplicate_non_null_irwin_id": "all_rows_unknown_not_eligible",
+    "date_agreement": "MTBS and WFIGS ignition dates must differ by no more than one calendar day; otherwise unknown.",
+    "probable_geometry_duplicate": "Distinct candidates with intersection-over-union at least 0.50 and ignition dates within 30 days are marked probable_duplicate and are not eligible until an exact owner-approved resolution exists.",
+    "complex_policy": "Candidates sharing a non-null WFIGS complex ID remain separate eligible events but count as one selectable capacity slot, and at most one may enter the six-pilot plus 30-final cohort."
+  },
+  "capacity_and_terminal_rules": {
+    "pilot_slots_per_state": 2,
+    "final_slots_per_state": 10,
+    "required_selectable_slots_per_state": 12,
+    "required_total_slots": 36,
+    "minimum_distinct_dominant_level_iii_codes_per_state": 2,
+    "minimum_distinct_dominant_level_iii_codes_total": 6,
+    "shortfall_disposition": "INCONCLUSIVE",
+    "shortfall_rule": "If any state has fewer than 12 selectable slots, the total has fewer than 36, or the fixed ecology minima fail, stop Milestone 1 INCONCLUSIVE. Do not widen years, lower area, add states, reuse prior events, or substitute sources."
+  },
+  "actions_released_only_if_owner_approves_exact_bundle": [
+    "Freeze the 2026-002 eligibility profile without changing values.",
+    "Admit the five exact source entries for the specified roles and restrictions.",
+    "Perform controlled no-overwrite intake of the exact MTBS and EPA archives with checksum and format validation.",
+    "Capture one hash-bound WFIGS 2021-2022 snapshot using the exact field allowlist and fixed absolute query.",
+    "Query anonymous CMR metadata for the two exact HLS collections.",
+    "Enumerate and account for the complete metadata-defined universe, then run capacity and independent Milestone 1 validation."
+  ],
+  "still_not_authorized_after_approval": [
+    "Open or download HLS imagery, MTBS rasters, severity classes, thresholds, labels, reference rasters, model artifacts, or predictions.",
+    "Authenticate to Earthdata or any external service.",
+    "Choose pilot or final events, draw AOIs, assign train, validation, or test roles, or alter the cohort design.",
+    "Use any denied source field, model output, spectral index, metric, label, error surface, or scene-body observation in eligibility.",
+    "Claim dataset readiness, independent ground truth, generalization, operational utility, or any scientific result."
+  ]
+}

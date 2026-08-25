@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/drwbkr1/burnlens-experiment-four/schemas/candidate-event.schema.json",
+  "title": "BurnLens Experiment Four candidate-event metadata",
+  "description": "Metadata-only candidate representation. Scientific source bodies, labels, model outputs, indices, predictions, metrics, and error surfaces are prohibited.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "candidate_id",
+    "source_record",
+    "identity",
+    "fire",
+    "geography",
+    "availability",
+    "overlap"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "candidate_id": {
+      "type": "string",
+      "pattern": "^E4-CAND-[A-F0-9]{16}$"
+    },
+    "source_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_revision",
+        "source_row_id",
+        "retrieved_at_utc",
+        "row_sha256"
+      ],
+      "properties": {
+        "source_id": { "type": "string", "minLength": 1 },
+        "source_revision": { "type": "string", "minLength": 1 },
+        "source_row_id": { "type": "string", "minLength": 1 },
+        "retrieved_at_utc": { "type": "string", "format": "date-time" },
+        "row_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_name",
+        "normalized_name",
+        "incident_year",
+        "jurisdiction",
+        "unique_fire_identifier",
+        "source_event_id",
+        "source_global_id",
+        "identity_status",
+        "aliases"
+      ],
+      "properties": {
+        "canonical_name": { "type": ["string", "null"], "minLength": 1 },
+        "normalized_name": {
+          "type": ["string", "null"],
+          "pattern": "^[A-Z0-9]+(?: [A-Z0-9]+)*$"
+        },
+        "incident_year": {
+          "type": ["integer", "null"],
+          "minimum": 1900,
+          "maximum": 2100
+        },
+        "jurisdiction": {
+          "type": ["string", "null"],
+          "enum": ["ID", "OR", "WA", null]
+        },
+        "unique_fire_identifier": { "type": ["string", "null"] },
+        "source_event_id": { "type": ["string", "null"] },
+        "source_global_id": {
+          "type": ["string", "null"],
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "identity_status": {
+          "enum": ["exact", "partial", "conflict", "unknown"]
+        },
+        "aliases": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      }
+    },
+    "fire": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "incident_type",
+        "ignition_at",
+        "containment_at",
+        "fire_out_at",
+        "final_report_approved_at",
+        "perimeter_effective_at",
+        "area_acres",
+        "area_source",
+        "perimeter_status"
+      ],
+      "properties": {
+        "incident_type": { "type": ["string", "null"] },
+        "ignition_at": { "type": ["string", "null"], "format": "date-time" },
+        "containment_at": { "type": ["string", "null"], "format": "date-time" },
+        "fire_out_at": { "type": ["string", "null"], "format": "date-time" },
+        "final_report_approved_at": { "type": ["string", "null"], "format": "date-time" },
+        "perimeter_effective_at": { "type": ["string", "null"], "format": "date-time" },
+        "area_acres": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+        "area_source": { "type": ["string", "null"] },
+        "perimeter_status": {
+          "enum": ["final", "current", "historical", "unavailable", "unknown"]
+        }
+      }
+    },
+    "geography": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "centroid_lon",
+        "centroid_lat",
+        "ecology_codes",
+        "geometry_fingerprint"
+      ],
+      "properties": {
+        "centroid_lon": { "type": ["number", "null"], "minimum": -180, "maximum": 180 },
+        "centroid_lat": { "type": ["number", "null"], "minimum": -90, "maximum": 90 },
+        "ecology_codes": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "geometry_fingerprint": {
+          "type": ["string", "null"],
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "availability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "imagery_metadata_status",
+        "reference_metadata_status",
+        "rights_status",
+        "imagery_programs",
+        "reference_programs"
+      ],
+      "properties": {
+        "imagery_metadata_status": {
+          "enum": ["available", "unavailable", "unknown", "not_checked"]
+        },
+        "reference_metadata_status": {
+          "enum": ["available", "unavailable", "unknown", "not_checked"]
+        },
+        "rights_status": {
+          "enum": ["admitted", "unresolved", "incompatible", "not_checked"]
+        },
+        "imagery_programs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "reference_programs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      }
+    },
+    "overlap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prior_event_match_status",
+        "candidate_duplicate_status",
+        "matched_prior_exclusion_ids",
+        "matched_candidate_ids"
+      ],
+      "properties": {
+        "prior_event_match_status": {
+          "enum": ["no_match", "exact_match", "probable_match", "unknown", "not_checked"]
+        },
+        "candidate_duplicate_status": {
+          "enum": ["unique", "duplicate", "probable_duplicate", "unknown", "not_checked"]
+        },
+        "matched_prior_exclusion_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^E4-EXCL-[0-9]{4}$" },
+          "uniqueItems": true
+        },
+        "matched_candidate_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^E4-CAND-[A-F0-9]{16}$" },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

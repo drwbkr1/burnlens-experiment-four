@@ -1,0 +1,745 @@
+{
+  "contract_version": "source-gate/v1",
+  "assessment_id": "E4-SOURCE-GATE-2026-001",
+  "assessed_at": "2026-08-25T22:12:05Z",
+  "authority": {
+    "mode": "inherited",
+    "authority_ref": "goal-service:01a0320c-ae81-7550-ade2-c6c22d4abf93/records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
+    "authorized_actions": [
+      "metadata review",
+      "record assessment evidence",
+      "prepare owner review bundle"
+    ],
+    "expires_at_utc": null
+  },
+  "intended_use": {
+    "summary": "Assess exact official incident, reference-availability, HLS metadata, and ecoregion sources for a 2021-2022 Oregon, Washington, and Idaho metadata-only candidate universe. No source is adopted and no scientific source body is opened by this assessment.",
+    "planned_actions": [
+      "metadata review",
+      "record assessment evidence",
+      "prepare owner review bundle",
+      "adopt exact source revisions after owner approval",
+      "query a hash-bound WFIGS snapshot using an explicit field allowlist",
+      "download the exact MTBS version 12.0 perimeter archive into controlled custody",
+      "query anonymous CMR granule metadata for the exact HLSL30 and HLSS30 collections",
+      "download the exact EPA Level III ecoregion archive into controlled custody",
+      "enumerate the metadata-only candidate universe"
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "NIFC-WFIGS-PERIMETERS-5E72B169",
+      "name": "NIFC WFIGS Interagency Fire Perimeters, ArcGIS item 5e72b1699bf74eefb3f3aff6f4ba5511, FeatureServer layer 0",
+      "locator": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters/FeatureServer/0",
+      "criteria": [
+        {
+          "id": "identity",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://nifc.maps.arcgis.com/sharing/rest/content/items/5e72b1699bf74eefb3f3aff6f4ba5511?f=json",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "Public Feature Service item owned by NIFC_Authoritative; exact item ID and service URL observed."
+            },
+            {
+              "type": "live",
+              "locator": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters/FeatureServer/0?f=pjson",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "Layer 0 schema version 12 observed; service item ID matches; dataLastEditDate is dynamic and must be rebound at intake."
+            }
+          ],
+          "note": "The source is a dynamic service, not a permanent revision. Intake must bind item ID, schema bytes, query, retrieval time, dataLastEditDate, and returned bytes."
+        },
+        {
+          "id": "authority",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://data-nifc.opendata.arcgis.com/pages/d6ef1367fadc4405b5f09c98e52ed972",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "NIFC identifies WFIGS as the authoritative interagency geospatial service and explains IRWIN and FODR provenance."
+            }
+          ],
+          "note": "Authoritative for public best-available interagency incident attribution and perimeters, subject to its documented incompleteness and dynamic updates."
+        },
+        {
+          "id": "access",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://hub.arcgis.com/api/v3/datasets/5e72b1699bf74eefb3f3aff6f4ba5511_0",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "Anonymous public access, query and extract capabilities, JSON/GeoJSON/PBF output, and a 2,000-record page limit were observed."
+            }
+          ],
+          "note": "Use fixed absolute filters and paginated queries. Relative-date queries are prohibited by the publisher warning."
+        },
+        {
+          "id": "rights",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://hub.arcgis.com/api/v3/datasets/5e72b1699bf74eefb3f3aff6f4ba5511_0",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "The dataset is public and the custom terms are a no-warranty and proper-use disclaimer rather than an access, reuse, or attribution prohibition."
+            }
+          ],
+          "note": "Approval covers querying selected public factual incident fields and geometry and publishing derived IDs, hashes, counts, and provenance with NIFC attribution. Republishing the complete source service is not proposed."
+        },
+        {
+          "id": "provenance",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://data-nifc.opendata.arcgis.com/pages/d6ef1367fadc4405b5f09c98e52ed972",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "NIFC states that certified and historic attribution derives from FODR while other records derive from IRWIN; best-available perimeters may combine multiple source systems."
+            }
+          ],
+          "note": "Every retained row must preserve WFIGS GlobalID, source system, source IDs, query, and snapshot identity."
+        },
+        {
+          "id": "integrity",
+          "required": true,
+          "requires_live": false,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "static",
+              "locator": "docs/protocols/CANDIDATE-UNIVERSE-METADATA-PROTOCOL.md",
+              "note": "The frozen protocol requires exact source revision, row hashes, retrieval times, and deterministic replay."
+            }
+          ],
+          "note": "At intake, canonicalize and SHA-256 hash the service definition, exact query manifest, every returned page, aggregate snapshot, and each normalized candidate row."
+        },
+        {
+          "id": "fitness",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://nifc.maps.arcgis.com/sharing/rest/content/items/5e72b1699bf74eefb3f3aff6f4ba5511?f=json",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "The publisher states that certified perimeters and new perimeters beginning in 2021 are included and that data before 2021 are incomplete."
+            },
+            {
+              "type": "live",
+              "locator": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters/FeatureServer/0?f=pjson",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "Required incident IDs, state, type, final-report date, fire-out date, final acres, complex membership, and polygon geometry fields exist."
+            }
+          ],
+          "note": "Fit only as the incident-identity and maturity authority for 2021-2022. It is not the complete candidate universe and does not provide scientific labels."
+        },
+        {
+          "id": "privacy-security",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters/FeatureServer/0?f=pjson",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "The public schema was inspected without credentials. The proposed allowlist omits usernames, personnel, costs, and free-text operational fields."
+            }
+          ],
+          "note": "Query only the approved incident, maturity, identity, complex, state, area, timestamp, and geometry allowlist. No credentials or nonpublic services are permitted."
+        }
+      ]
+    },
+    {
+      "source_id": "USGS-MTBS-PERIMETERS-V12",
+      "name": "Monitoring Trends in Burn Severity Burned Areas Boundaries, version 12.0, April 2025",
+      "locator": "https://www.sciencebase.gov/catalog/item/5e7229b8e4b01d509268afba",
+      "criteria": [
+        {
+          "id": "identity",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://www.sciencebase.gov/catalog/item/5e7229b8e4b01d509268afba?format=json",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "ScienceBase item identifies version 12.0, April 2025, last revision 2025-04-22, and coverage through 2024."
+            }
+          ],
+          "note": "Exact file is mtbs_perims_DD.zip, 374,092,911 bytes, publisher MD5 65278fcb893f94cd0eaf66d966ee7125."
+        },
+        {
+          "id": "authority",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://www.usgs.gov/centers/eros/science/monitoring-trends-burn-severity",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "USGS identifies MTBS as the USGS EROS and USDA Forest Service GTAC interagency burn-mapping program."
+            }
+          ],
+          "note": "Authoritative for the exact completed MTBS inventory and reference-availability record, not for ground truth."
+        },
+        {
+          "id": "access",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://www.sciencebase.gov/catalog/item/5e7229b8e4b01d509268afba?format=json",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "Public ScienceBase metadata provides an anonymous HTTPS file locator, size, format, and checksum."
+            }
+          ],
+          "note": "No account, credential, click-through, or cost was observed for the proposed exact archive."
+        },
+        {
+          "id": "rights",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://www.usgs.gov/centers/eros/science/monitoring-trends-burn-severity",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "USGS marks the MTBS information public domain and states that MTBS data are freely available to the public."
+            },
+            {
+              "type": "live",
+              "locator": "https://www.usgs.gov/faqs/are-usgs-reportspublications-copyrighted",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "USGS-authored data and information are public domain in the United States; USGS requests source acknowledgement."
+            }
+          ],
+          "note": "Retain MTBS, USGS, and USDA Forest Service attribution and version identity in every derived artifact."
+        },
+        {
+          "id": "provenance",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://www.sciencebase.gov/catalog/item/5e7229b8e4b01d509268afba?format=json",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "ScienceBase records USGS and USDA Forest Service originators, USGS publisher, EROS data owner, file metadata, and publication and revision dates."
+            }
+          ],
+          "note": "The exact ScienceBase item and file, not the mutable rolling MTBS download URL, are the proposed custody source."
+        },
+        {
+          "id": "integrity",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://www.sciencebase.gov/catalog/item/5e7229b8e4b01d509268afba?format=json",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "Publisher supplies file size 374,092,911 and MD5 65278fcb893f94cd0eaf66d966ee7125."
+            }
+          ],
+          "note": "Controlled intake must verify publisher MD5, compute SHA-256, validate ZIP members and shapefile structure, and retain the original bytes read-only."
+        },
+        {
+          "id": "fitness",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://mtbs.gov/project-overview",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "MTBS consistently maps large western fires at 1,000 acres or greater and produces 30 m products."
+            },
+            {
+              "type": "live",
+              "locator": "https://mtbs.gov/data-availability",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "The publisher says 2023-2025 mapping remains in progress; 2021-2022 avoids that declared completion boundary."
+            },
+            {
+              "type": "live",
+              "locator": "https://www.sciencebase.gov/catalog/file/get/5e7229b8e4b01d509268afba?f=__disk__8a%2F9c%2Ffc%2F8a9cfc95cb8525ed4d103ff8c7cf67e12b002321",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "FGDC metadata exposes exact identity, fire type, mapped area, centroid, ignition date, mapping program, and geometry fields."
+            }
+          ],
+          "note": "Fit as the versioned universe and reference-availability registry. It is source-dependent remote-sensing evidence, omits unmappable fires, and cannot be called independent ground truth. Threshold, index, scene, and analyst-comment fields are explicitly denied from selection intake."
+        },
+        {
+          "id": "privacy-security",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://www.sciencebase.gov/catalog/file/get/5e7229b8e4b01d509268afba?f=__disk__8a%2F9c%2Ffc%2F8a9cfc95cb8525ed4d103ff8c7cf67e12b002321",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "The proposed shapefile fields are public fire metadata and geometry; no credential, secret, personal, or regulated-data requirement was observed."
+            }
+          ],
+          "note": "Use a strict field allowlist and reject free-text comments and all dNBR, NBR, RdNBR, threshold, scene-selection, label, and metric fields from the eligibility pipeline."
+        }
+      ]
+    },
+    {
+      "source_id": "NASA-HLSL30-2.0-C2021957657",
+      "name": "HLS Landsat Operational Land Imager Surface Reflectance and TOA Brightness Daily Global 30 m version 2.0",
+      "locator": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=HLSL30&version=2.0",
+      "criteria": [
+        {
+          "id": "identity",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=HLSL30&version=2.0",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "CMR concept C2021957657-LPCLOUD, native ID HLSL30V2, version 2.0, revision 93 dated 2026-06-23 observed."
+            }
+          ],
+          "note": "Permanent collection DOI is https://doi.org/10.5067/HLS/HLSL30.002. Rebind the live CMR revision at every metadata snapshot."
+        },
+        {
+          "id": "authority",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://www.earthdata.nasa.gov/data/catalog/lpcloud-hlsl30-2.0",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "NASA Earthdata LP DAAC is the official collection publisher and DOI landing surface."
+            }
+          ],
+          "note": "Authoritative for collection and granule metadata and the HLSL30 v2.0 scientific product."
+        },
+        {
+          "id": "access",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://cmr.earthdata.nasa.gov/opensearch",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "CMR exposes anonymous collection and granule search metadata over HTTPS."
+            }
+          ],
+          "note": "M1 approval covers anonymous CMR metadata only. HLS asset access may require Earthdata Login and remains a later credential and source-body gate."
+        },
+        {
+          "id": "rights",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://forum.earthdata.nasa.gov/viewtopic.php?t=6891",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "LP DAAC states that current data and products have no restrictions on reuse, sale, or redistribution and requests proper citation."
+            },
+            {
+              "type": "live",
+              "locator": "https://earthdata.nasa.gov/earth-observation-data/data-use-policy",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "The collection metadata links NASA data use and citation guidance."
+            }
+          ],
+          "note": "Cite the HLSL30 DOI, LP DAAC distribution, exact collection version, access date, and granule identities used."
+        },
+        {
+          "id": "provenance",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=HLSL30&version=2.0",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "UMM metadata binds provider LPCLOUD, collection identifiers, temporal coverage, format, related documentation, DOI, and current known-issues document."
+            }
+          ],
+          "note": "Retain CMR concept and revision, query bytes, granule concept and revision IDs, native IDs, temporal and spatial metadata, and access timestamps."
+        },
+        {
+          "id": "integrity",
+          "required": true,
+          "requires_live": false,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "static",
+              "locator": "docs/protocols/CANDIDATE-UNIVERSE-METADATA-PROTOCOL.md",
+              "note": "The protocol requires canonical source revision, exact row and replay hashes, and fail-closed unknown handling."
+            }
+          ],
+          "note": "Canonicalize and SHA-256 hash every CMR query and response page. Future imagery intake must separately verify asset identity, size, checksums where supplied, COG structure, and no-overwrite custody."
+        },
+        {
+          "id": "fitness",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://www.earthdata.nasa.gov/data/catalog/lpcloud-hlsl30-2.0",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "The official catalog identifies global 30 m daily HLSL30 surface reflectance, common gridding, QA, and temporal coverage beginning 2013-04-11."
+            }
+          ],
+          "note": "Fit for metadata-level pre/post availability checks. Granule presence is not a cloud-free observation, usable composite, registration pass, or dataset-readiness result."
+        },
+        {
+          "id": "privacy-security",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=HLSL30&version=2.0",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "Public collection metadata contains no personal, regulated, or secret-bearing fields needed by the proposed query."
+            }
+          ],
+          "note": "Use anonymous metadata endpoints only in M1. Do not collect, log, or expose Earthdata credentials."
+        }
+      ]
+    },
+    {
+      "source_id": "NASA-HLSS30-2.0-C2021957295",
+      "name": "HLS Sentinel-2 Multi-spectral Instrument Surface Reflectance Daily Global 30 m version 2.0",
+      "locator": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=HLSS30&version=2.0",
+      "criteria": [
+        {
+          "id": "identity",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=HLSS30&version=2.0",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "CMR concept C2021957295-LPCLOUD, native ID HLSS30V2, version 2.0, revision 95 dated 2026-06-23 observed."
+            }
+          ],
+          "note": "Permanent collection DOI is https://doi.org/10.5067/HLS/HLSS30.002. Rebind the live CMR revision at every metadata snapshot."
+        },
+        {
+          "id": "authority",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://www.earthdata.nasa.gov/data/catalog/lpcloud-hlss30-2.0",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "NASA Earthdata LP DAAC is the official collection publisher and DOI landing surface."
+            }
+          ],
+          "note": "Authoritative for collection and granule metadata and the HLSS30 v2.0 scientific product."
+        },
+        {
+          "id": "access",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://cmr.earthdata.nasa.gov/opensearch",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "CMR exposes anonymous collection and granule search metadata over HTTPS."
+            }
+          ],
+          "note": "M1 approval covers anonymous CMR metadata only. HLS asset access may require Earthdata Login and remains a later credential and source-body gate."
+        },
+        {
+          "id": "rights",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://forum.earthdata.nasa.gov/viewtopic.php?t=6891",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "LP DAAC states that current data and products have no restrictions on reuse, sale, or redistribution and requests proper citation."
+            },
+            {
+              "type": "live",
+              "locator": "https://earthdata.nasa.gov/earth-observation-data/data-use-policy",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "The collection metadata links NASA data use and citation guidance."
+            }
+          ],
+          "note": "Cite the HLSS30 DOI, LP DAAC distribution, exact collection version, access date, and granule identities used."
+        },
+        {
+          "id": "provenance",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=HLSS30&version=2.0",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "UMM metadata binds provider LPCLOUD, collection identifiers, temporal coverage, format, related documentation, DOI, and current known-issues document."
+            }
+          ],
+          "note": "Retain CMR concept and revision, query bytes, granule concept and revision IDs, native IDs, temporal and spatial metadata, and access timestamps."
+        },
+        {
+          "id": "integrity",
+          "required": true,
+          "requires_live": false,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "static",
+              "locator": "docs/protocols/CANDIDATE-UNIVERSE-METADATA-PROTOCOL.md",
+              "note": "The protocol requires canonical source revision, exact row and replay hashes, and fail-closed unknown handling."
+            }
+          ],
+          "note": "Canonicalize and SHA-256 hash every CMR query and response page. Future imagery intake must separately verify asset identity, size, checksums where supplied, COG structure, and no-overwrite custody."
+        },
+        {
+          "id": "fitness",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://www.earthdata.nasa.gov/data/catalog/lpcloud-hlss30-2.0",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "The official catalog identifies global 30 m daily HLSS30 surface reflectance, common gridding, QA, and temporal coverage beginning 2015-11-28."
+            }
+          ],
+          "note": "Fit for metadata-level pre/post availability checks. Granule presence is not a cloud-free observation, usable composite, registration pass, or dataset-readiness result."
+        },
+        {
+          "id": "privacy-security",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=HLSS30&version=2.0",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "Public collection metadata contains no personal, regulated, or secret-bearing fields needed by the proposed query."
+            }
+          ],
+          "note": "Use anonymous metadata endpoints only in M1. Do not collect, log, or expose Earthdata credentials."
+        }
+      ]
+    },
+    {
+      "source_id": "EPA-ECOREGIONS-LEVEL-III-US",
+      "name": "EPA Level III Ecoregions of the Conterminous United States, no-state-boundary archive",
+      "locator": "https://dmap-prod-oms-edc.s3.us-east-1.amazonaws.com/ORD/Ecoregions/us/us_eco_l3.zip",
+      "criteria": [
+        {
+          "id": "identity",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://www.epa.gov/eco-research/level-iii-and-iv-ecoregions-continental-united-states",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "EPA identifies the current Level III no-state-boundary shapefile and its metadata."
+            },
+            {
+              "type": "live",
+              "locator": "https://dmap-prod-oms-edc.s3.us-east-1.amazonaws.com/ORD/Ecoregions/us/us_eco_l3.zip",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "HEAD returned 28,424,315 bytes, Last-Modified 2024-11-14T17:09:20Z, and multipart ETag 2c2e9e749597f2b4d5553586cb6d23ff-2."
+            }
+          ],
+          "note": "Dataset metadata identifies publication date 2013-04-16 and an as-needed maintenance status. The current publisher-linked archive is the proposed exact locator."
+        },
+        {
+          "id": "authority",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://www.epa.gov/eco-research/ecoregions",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "EPA documents the Level III ecoregion framework and its multi-agency derivation and intended ecological stratification use."
+            }
+          ],
+          "note": "Authoritative for the EPA Level III ecological-region classification."
+        },
+        {
+          "id": "access",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://dmap-prod-oms-edc.s3.us-east-1.amazonaws.com/ORD/Ecoregions/us/us_eco_l3.zip",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "The publisher-linked 28 MB ZIP is anonymously available over HTTPS with no observed account, credential, cost, or click-through."
+            }
+          ],
+          "note": "Acquire once through controlled no-overwrite intake after owner approval."
+        },
+        {
+          "id": "rights",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://dmap-prod-oms-edc.s3.us-east-1.amazonaws.com/ORD/Ecoregions/us/Eco_Level_III_US.html",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "FGDC metadata states no access or use constraints and says EPA acknowledgement is appreciated."
+            },
+            {
+              "type": "live",
+              "locator": "https://www.epa.gov/web-policies-and-procedures/epa-disclaimers",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "EPA states that EPA-produced geospatial data are public domain by default unless otherwise specified."
+            }
+          ],
+          "note": "Retain EPA source acknowledgement, archive identity, metadata, and scale limitations."
+        },
+        {
+          "id": "provenance",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://dmap-prod-oms-edc.s3.us-east-1.amazonaws.com/ORD/Ecoregions/us/Eco_Level_III_US.html",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "FGDC metadata records EPA originator, ORD/NHEERL publisher, publication date, methods, source literature, coordinate system, attributes, and revision notes."
+            }
+          ],
+          "note": "Retain source metadata and exact archive alongside the derived dominant-code and coverage fields."
+        },
+        {
+          "id": "integrity",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://dmap-prod-oms-edc.s3.us-east-1.amazonaws.com/ORD/Ecoregions/us/us_eco_l3.zip",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "HTTP metadata supplies exact byte length, last-modified time, and a multipart ETag that is retained as a locator identity but is not treated as a content checksum."
+            }
+          ],
+          "note": "Controlled intake must compute SHA-256, validate ZIP and shapefile structure, inspect the embedded metadata, and preserve exact bytes read-only."
+        },
+        {
+          "id": "fitness",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://dmap-prod-oms-edc.s3.us-east-1.amazonaws.com/ORD/Ecoregions/us/Eco_Level_III_US.html",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "Level III polygons cover the conterminous United States and are intended for broad areas such as states, multiple counties, and river basins at 1:250,000 digitizing scale."
+            }
+          ],
+          "note": "Fit only for event-level ecological stratification and coverage checks, not local ecological truth, pixel labels, or fine-scale management claims."
+        },
+        {
+          "id": "privacy-security",
+          "required": true,
+          "requires_live": true,
+          "status": "pass",
+          "evidence": [
+            {
+              "type": "live",
+              "locator": "https://dmap-prod-oms-edc.s3.us-east-1.amazonaws.com/ORD/Ecoregions/us/Eco_Level_III_US.html",
+              "observed_at": "2026-08-25T22:09:00Z",
+              "note": "FGDC metadata classifies the public geospatial data as having no confidentiality and standard technical controls."
+            }
+          ],
+          "note": "No personal, regulated, credential, executable, or secret-bearing content is required. Validate the archive before processing."
+        }
+      ]
+    }
+  ],
+  "decision": {
+    "status": "ready",
+    "blocking_reasons": [],
+    "live_verification_pending": [],
+    "approved_actions": [
+      "metadata review",
+      "record assessment evidence",
+      "prepare owner review bundle"
+    ]
+  },
+  "write_boundary": {
+    "permitted_without_further_authorization": [
+      "read official publisher metadata and terms",
+      "record assessment evidence",
+      "prepare and validate the owner review bundle"
+    ],
+    "requires_explicit_authorization": [
+      "adopt exact source revisions",
+      "query WFIGS candidate attributes or geometry for enumeration",
+      "download the MTBS version 12.0 perimeter archive",
+      "use HLS granule metadata to classify Experiment Four candidates",
+      "download the EPA Level III ecoregion archive",
+      "open any HLS imagery or other scientific source body",
+      "authenticate to Earthdata or any external service",
+      "select or assign an Experiment Four event",
+      "publish or redistribute third-party source bodies"
+    ]
+  }
+}

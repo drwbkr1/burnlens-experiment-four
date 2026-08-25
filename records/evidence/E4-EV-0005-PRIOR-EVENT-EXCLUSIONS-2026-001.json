@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "evidence_id": "E4-EV-0005",
+  "observed_at_utc": "2026-08-25T21:53:30Z",
+  "scope": "M1-U002 prior-experiment event exclusions from inspected project records",
+  "disposition": "pass",
+  "scientific_evidence": false,
+  "manifest": {
+    "path": "records/metadata/EXPERIMENT-FOUR-PRIOR-EVENT-EXCLUSION-MANIFEST-2026-001.json",
+    "sha256": "c819624011f5353bb085ba4b5a8db38cf0a0ca1c55e9a7741e7af59c0f7d164d",
+    "permanent_exclusions": 68,
+    "experiment_one_accepted_events": 6,
+    "experiment_three_additional_events": 0,
+    "experiment_two_public_accepted_events": 0,
+    "experiment_two_b_local_unique_candidates": 62
+  },
+  "source_readback": [
+    {
+      "surface": "Experiment One public main",
+      "expected": "a741111d82e69689022d2058118ed8f4b9bf3546",
+      "observed": "a741111d82e69689022d2058118ed8f4b9bf3546",
+      "match": true
+    },
+    {
+      "surface": "Experiment Two public HEAD",
+      "expected": "4f35a5563211c95c360344ced50cb29de03accb9",
+      "observed": "4f35a5563211c95c360344ced50cb29de03accb9",
+      "match": true
+    },
+    {
+      "surface": "Experiment Three v1.0.0 tag",
+      "expected": "275eb15ef2839b3d746af0c1c77890552c8ed4b9",
+      "observed": "275eb15ef2839b3d746af0c1c77890552c8ed4b9",
+      "match": true
+    }
+  ],
+  "unaccepted_local_record_readback": [
+    {
+      "path": "records/stage-one/EXPERIMENT-TWO-B-WFIGS-MODEL-BLIND-CANDIDATE-ROSTER-2026-001.json",
+      "sha256": "b1547a04e6306cc5482990734dd4777dde9e75f6406a93af9d42f16be49ad9d7",
+      "match": true
+    },
+    {
+      "path": "records/stage-one/EXPERIMENT-TWO-B-BAER-BACKED-MODEL-BLIND-CANDIDATE-ROSTER-2026-001.json",
+      "sha256": "df45d8be05f1a3162d20effd5a0eb6b9972fe5667e29d0b88aad116fc2dea0cc",
+      "match": true
+    },
+    {
+      "path": "records/stage-one/EXPERIMENT-TWO-B-HLS-V20-FRESH-UNTOUCHED-EVENT-ROSTER-2026-001.json",
+      "sha256": "13e0d4be21f40e8e3905aeeafd313094cc1a3d11b91b5d9c4d8a9cbdef445f16",
+      "match": true
+    }
+  ],
+  "validation": [
+    {
+      "command": "python scripts/validate_prior_event_exclusions.py",
+      "result": "PASS; 68 identities permanently excluded; no source adoption; zero scientific source bodies opened"
+    },
+    {
+      "command": "python scripts/validate_repository.py",
+      "result": "PASS; structural controls only"
+    },
+    {
+      "command": "python -m unittest discover -s tests -v",
+      "result": "PASS; 6 tests"
+    }
+  ],
+  "limitations": [
+    "Experiment One lacks one official incident identifier per event in the inspected accepted records; those six exclusions remain bound to exact project event, geography, time, and source-scene identities with conservative name-year and later geometry-overlap fallback.",
+    "The 62 Experiment Two-B identities come from uncommitted and unpublished local records. They are excluded conservatively but are not represented as accepted prior-project events or scientific evidence.",
+    "No external candidate source was adopted, and no Experiment Four candidate was enumerated or selected."
+  ]
+}

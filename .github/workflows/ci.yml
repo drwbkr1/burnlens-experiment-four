@@ -17,5 +17,11 @@ jobs:
           python-version: "3.12"
       - name: Validate repository controls
         run: python scripts/validate_repository.py
+      - name: Validate prior-event exclusions
+        run: python scripts/validate_prior_event_exclusions.py
+      - name: Validate metadata protocol
+        run: python scripts/validate_metadata_protocol.py
+      - name: Validate source review checkpoint
+        run: python scripts/validate_source_review.py
       - name: Run focused tests
         run: python -m unittest discover -s tests -v

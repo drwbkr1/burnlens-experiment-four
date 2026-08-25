@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "evidence_id": "E4-EV-0007",
+  "observed_at_utc": "2026-08-25T23:24:46Z",
+  "scope": "M1-U004 pre-adoption source, eligibility-profile, rendered owner-review, and response-custody readiness",
+  "disposition": "pass",
+  "scientific_evidence": false,
+  "owner_decision": "pending",
+  "artifacts": [
+    {
+      "path": "records/reviews/E4-M1-SOURCE-ADOPTION-BUNDLE-2026-001.json",
+      "sha256": "7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7"
+    },
+    {
+      "path": "records/reviews/E4-M1-SOURCE-ADOPTION-CONTRACT-2026-001.json",
+      "sha256": "19ae65297a88917873164ce58ff7842a69b3e1b055eac58d73ea74917eed550c"
+    },
+    {
+      "path": "records/reviews/E4-M1-SOURCE-ADOPTION-BLANK-RESPONSE-2026-001.json",
+      "sha256": "25a9e182202c47acb89070739c8ed3a752541733a4c079e7654e60749eeafc34"
+    },
+    {
+      "path": "records/sources/EXPERIMENT-FOUR-SOURCE-GATE-ASSESSMENT-2026-001.json",
+      "sha256": "08dbe07f04963c25d6f35a19b201e1c3e4ae5dd3c59a9de9aaf181c76a90df93"
+    },
+    {
+      "path": "records/sources/EXPERIMENT-FOUR-SOURCE-USE-PROPOSAL-2026-001.json",
+      "sha256": "3fcf8f5fbd9d7263a7dba2e56d71cdb4546cfc83e481ac4b37208d1bf65f70c2"
+    },
+    {
+      "path": "records/metadata/EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-PROPOSAL-2026-002.json",
+      "sha256": "bb69f42b9d1f14903a922fd4320c469198329c3104250ba9853405d053a463a4"
+    },
+    {
+      "path": "records/reviews/E4-M1-SOURCE-ADOPTION-RENDER-RECEIPT-2026-001.json",
+      "sha256": "ebdc5e8b8bcd06fcdf5c523f0a600ced6bc56f01112a33de6e177cdc64966c2b"
+    }
+  ],
+  "source_gate": {
+    "source_count": 5,
+    "required_criteria": 40,
+    "evidence_items": 49,
+    "ready_for_owner_review": true,
+    "sources_adopted": 0
+  },
+  "review_surface": {
+    "desktop_render_verified": true,
+    "narrow_390_by_844_render_verified": true,
+    "blank_decision_verified": true,
+    "blank_attestation_verified": true,
+    "incomplete_export_blocked": true,
+    "hash_binding_verified": true,
+    "software_fixture_export_verified": true,
+    "human_decisions_created": 0
+  },
+  "resume_reconciliation": {
+    "path": "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-003.json",
+    "observed_local_and_remote_main": "3ee76b430521ec8e09788c4c0e775ea7b3da60dc",
+    "retained_historical_bootstrap_checkpoint": "9e244ac3a8c84ec70651aa2a3114da2be25d489d",
+    "corrected_current_surfaces": [
+      "docs/status/STATUS.md",
+      "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json"
+    ]
+  },
+  "retained_failed_attempts": [
+    {
+      "attempt": 1,
+      "finding": "The source-review validator required literal boundary wording and treated JavaScript checked-state logic as a preselected HTML control.",
+      "repair": "Accept only the documented equivalent boundary phrases and detect an actual checked attribute on a decision input.",
+      "post_repair_result": "pass"
+    }
+  ],
+  "validation": [
+    {
+      "command": "python scripts/validate_source_review.py",
+      "result": "PASS; five sources, 40 criteria, zero candidate rows, zero source adoptions; owner decision pending"
+    },
+    {
+      "command": "python -m unittest discover -s tests -v",
+      "result": "PASS; 17 tests"
+    },
+    {
+      "command": "python scripts/validate_repository.py",
+      "result": "PASS; 60 public-safe files checked"
+    },
+    {
+      "command": "validate_source_gate.py",
+      "result": "PASS; five sources, 40 criteria, 49 evidence items, 46 live evidence items, zero stale items"
+    },
+    {
+      "command": "validate_project_control.py and validate_milestone.py",
+      "result": "PASS; inherited authority active and M1-U004 is the sole in-progress unit"
+    },
+    {
+      "command": "prepare_review_bundle.py",
+      "result": "PASS; nine artifacts verified; ready for handoff"
+    },
+    {
+      "command": "review_response.py prepare",
+      "result": "PASS; one blank item; zero human decisions created"
+    }
+  ],
+  "boundary": {
+    "candidate_rows_observed": 0,
+    "scientific_source_bodies_opened": 0,
+    "external_sources_adopted": 0,
+    "profile_status": "proposed",
+    "owner_gate_required": true
+  },
+  "limitations": [
+    "Pre-adoption review readiness does not establish source fitness, dataset readiness, independent ground truth, or a scientific result.",
+    "The exact owner response does not yet exist and must not be inferred from chat or from the software fixture.",
+    "HLS imagery, credentials, event selection, AOIs, roles, training, evaluation, test opening, claims, and release remain prohibited."
+  ]
+}

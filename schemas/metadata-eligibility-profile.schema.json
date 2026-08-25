@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/drwbkr1/burnlens-experiment-four/schemas/metadata-eligibility-profile.schema.json",
+  "title": "BurnLens Experiment Four metadata eligibility profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "profile_id",
+    "status",
+    "jurisdictions",
+    "year_start",
+    "year_end",
+    "minimum_area_acres",
+    "maximum_area_acres",
+    "latest_eligible_ignition_date",
+    "accepted_incident_types",
+    "accepted_perimeter_statuses",
+    "ecology_rule",
+    "required_imagery_metadata_status",
+    "required_reference_metadata_status",
+    "required_rights_status",
+    "prior_exclusion_manifest_sha256",
+    "unknown_policy"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "profile_id": { "type": "string", "pattern": "^E4-ELIGIBILITY-[A-Z0-9-]+$" },
+    "status": { "enum": ["proposed", "frozen"] },
+    "jurisdictions": {
+      "type": "array",
+      "items": { "enum": ["ID", "OR", "WA"] },
+      "minItems": 3,
+      "maxItems": 3,
+      "uniqueItems": true
+    },
+    "year_start": { "type": ["integer", "null"], "minimum": 1900, "maximum": 2100 },
+    "year_end": { "type": ["integer", "null"], "minimum": 1900, "maximum": 2100 },
+    "minimum_area_acres": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+    "maximum_area_acres": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+    "latest_eligible_ignition_date": { "type": ["string", "null"], "format": "date" },
+    "accepted_incident_types": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "accepted_perimeter_statuses": {
+      "type": "array",
+      "items": { "enum": ["final", "current", "historical"] },
+      "uniqueItems": true
+    },
+    "ecology_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "admitted_codes"],
+      "properties": {
+        "mode": { "enum": ["any-recorded", "admitted-codes"] },
+        "admitted_codes": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      }
+    },
+    "required_imagery_metadata_status": { "const": "available" },
+    "required_reference_metadata_status": { "const": "available" },
+    "required_rights_status": { "const": "admitted" },
+    "prior_exclusion_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "unknown_policy": { "const": "unknown-is-not-eligible" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "status": { "const": "frozen" } },
+        "required": ["status"]
+      },
+      "then": {
+        "properties": {
+          "year_start": { "type": "integer" },
+          "year_end": { "type": "integer" },
+          "minimum_area_acres": { "type": "number" },
+          "latest_eligible_ignition_date": { "type": "string" },
+          "accepted_incident_types": { "minItems": 1 },
+          "accepted_perimeter_statuses": { "minItems": 1 }
+        }
+      }
+    }
+  ]
+}

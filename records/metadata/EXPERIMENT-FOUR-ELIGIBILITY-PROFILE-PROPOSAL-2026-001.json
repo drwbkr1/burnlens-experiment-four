@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "E4-ELIGIBILITY-PROPOSAL-2026-001",
+  "status": "proposed",
+  "jurisdictions": [
+    "ID",
+    "OR",
+    "WA"
+  ],
+  "year_start": null,
+  "year_end": null,
+  "minimum_area_acres": null,
+  "maximum_area_acres": null,
+  "latest_eligible_ignition_date": null,
+  "accepted_incident_types": [
+    "Wildfire"
+  ],
+  "accepted_perimeter_statuses": [
+    "final"
+  ],
+  "ecology_rule": {
+    "mode": "any-recorded",
+    "admitted_codes": []
+  },
+  "required_imagery_metadata_status": "available",
+  "required_reference_metadata_status": "available",
+  "required_rights_status": "admitted",
+  "prior_exclusion_manifest_sha256": "c819624011f5353bb085ba4b5a8db38cf0a0ca1c55e9a7741e7af59c0f7d164d",
+  "unknown_policy": "unknown-is-not-eligible"
+}

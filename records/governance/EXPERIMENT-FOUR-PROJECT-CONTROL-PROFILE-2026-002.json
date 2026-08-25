@@ -55,6 +55,7 @@
       "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-001.json",
       "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-001.json",
       "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-002.json",
+      "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-003.json",
       "CHANGELOG.md",
       "docs/status/VERSION-HISTORY.md"
     ]
@@ -138,9 +139,9 @@
     "amendment_required_to_change_active_gate": true
   },
   "current_checkpoint": {
-    "checkpoint_id": "M0-ACCEPTED-9E244AC3-M1-ACTIVE-2026-08-25",
+    "checkpoint_id": "M0-ACCEPTED-3EE76B4-M1-SOURCE-REVIEW-READY-2026-08-25",
     "expected_branch": "codex/metadata-feasibility-001",
     "expected_head": null,
-    "next_action": "Inventory all prior-experiment event identities from read-only public project records before any external source gate"
+    "next_action": "Present bundle 7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7 for the exact M1-U004 owner decision without adopting a source or enumerating candidates"
   }
 }
