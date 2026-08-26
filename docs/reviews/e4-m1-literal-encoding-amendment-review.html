@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BurnLens E4 — Literal encoding amendment review</title>
+  <style>
+    :root { color-scheme: light; --ink:#1f2a2e; --paper:#faf7ef; --panel:#fffdf7; --line:#c9c1b2; --accent:#245f59; --warn:#914a24; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif; }
+    main { max-width:920px; margin:0 auto; padding:32px 20px 64px; }
+    h1 { font-size:clamp(1.8rem,4vw,2.7rem); line-height:1.08; margin:.2em 0; }
+    h2 { margin-top:1.6em; }
+    .eyebrow { color:var(--accent); font-weight:750; letter-spacing:.08em; text-transform:uppercase; font-size:.82rem; }
+    .lede { font-size:1.12rem; max-width:72ch; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:22px 0; }
+    .card, section { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:18px; }
+    .card strong { display:block; font-size:1.55rem; color:var(--warn); }
+    code { background:#eee9dc; border-radius:5px; padding:.08em .32em; overflow-wrap:anywhere; }
+    ul,ol { padding-left:1.3rem; }
+    .choice { display:block; border:1px solid var(--line); border-radius:10px; padding:13px; margin:10px 0; cursor:pointer; }
+    .choice:has(input:checked) { border-color:var(--accent); box-shadow:0 0 0 2px #245f5933; }
+    textarea { width:100%; min-height:110px; margin:8px 0 12px; padding:10px; font:inherit; }
+    button { background:var(--accent); color:white; border:0; border-radius:9px; padding:12px 18px; font-weight:700; cursor:pointer; }
+    button:disabled { opacity:.45; cursor:not-allowed; }
+    .small { font-size:.88rem; color:#4d575a; }
+    #binding { overflow-wrap:anywhere; font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:.86rem; }
+    #message { min-height:1.5em; font-weight:650; }
+    @media (max-width:620px) { .grid { grid-template-columns:1fr; } main { padding:20px 14px 48px; } }
+  </style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">BurnLens Experiment Four · Milestone 1 owner gate</p>
+  <h1>Correct two literal source encodings—or end the route inconclusive</h1>
+  <p class="lede">The scientific scope is unchanged. The reviewed protocol used canonical values where the admitted sources use exact encoded values. No event has been made eligible or selected.</p>
+
+  <div class="grid">
+    <div class="card"><strong>0</strong>WFIGS rows with exact state <code>ID</code>, <code>OR</code>, or <code>WA</code></div>
+    <div class="card"><strong>1,756</strong>WFIGS rows with exact states <code>US-ID</code>, <code>US-OR</code>, or <code>US-WA</code></div>
+    <div class="card"><strong>0</strong>MTBS universe rows with exact incident type <code>WF</code></div>
+    <div class="card"><strong>177 / 187</strong>MTBS universe rows with exact incident type <code>Wildfire</code></div>
+  </div>
+
+  <section>
+    <h2>Exact bounded amendment</h2>
+    <ol>
+      <li>MTBS state is only the first two <code>Event_ID</code> characters and must be <code>ID</code>, <code>OR</code>, or <code>WA</code>.</li>
+      <li>Matched WFIGS <code>attr_POOState</code> must equal exactly <code>US-</code> plus that MTBS state.</li>
+      <li>MTBS <code>Incid_Type</code> must equal exactly <code>Wildfire</code>; WFIGS <code>attr_IncidentTypeCategory</code> must equal exactly <code>WF</code>.</li>
+      <li>No other alias, prefix removal, name mapping, or fallback is allowed. Missing or conflicting evidence remains unknown.</li>
+    </ol>
+    <p>Years, states, area thresholds, prior exclusions, identity, maturity, ecology, HLS metadata, duplicate, capacity, and terminal rules do not change.</p>
+  </section>
+
+  <section>
+    <h2>Owner decision</h2>
+    <p class="small">Review ID: <code>E4-M1-LITERAL-ENCODING-AMENDMENT-2026-001</code></p>
+    <p class="small">Bundle binding: <span id="binding">checking...</span></p>
+    <fieldset id="choices">
+      <label class="choice"><input type="radio" name="decision" value="approve"> <strong>Approve</strong> — freeze only these exact representation mappings and resume M1-U005.</label>
+      <label class="choice"><input type="radio" name="decision" value="reject"> <strong>Reject</strong> — retain the current literals and close Milestone 1 <code>INCONCLUSIVE</code>.</label>
+      <label class="choice"><input type="radio" name="decision" value="uncertain"> <strong>Uncertain</strong> — change nothing and retain the gate with my note.</label>
+    </fieldset>
+    <label for="notes"><strong>Notes</strong> (optional, maximum 2,000 characters)</label>
+    <textarea id="notes" maxlength="2000"></textarea>
+    <label><input id="attestation" type="checkbox"> I reviewed the exact hash-bound bundle and intend the selected decision.</label>
+    <p><button id="export" type="button">Export completed response</button></p>
+    <p id="message" role="status" aria-live="polite"></p>
+    <p class="small">No choice is preselected. Export remains blocked until the bundle hash is valid, one decision is selected, and the attestation is checked.</p>
+  </section>
+</main>
+<script>
+  const REVIEW_ID = "E4-M1-LITERAL-ENCODING-AMENDMENT-2026-001";
+  const ITEM_ID = "E4-M1-LITERAL-ENCODING-AMENDMENT-BUNDLE";
+  const hashPattern = /^[0-9a-f]{64}$/;
+  const params = new URLSearchParams(location.search);
+  const evidenceHash = params.get("evidence") || "";
+  const binding = document.getElementById("binding");
+  const exportButton = document.getElementById("export");
+  const message = document.getElementById("message");
+  const notes = document.getElementById("notes");
+  const attestation = document.getElementById("attestation");
+  let reviewStartedAt = new Date().toISOString();
+  if (hashPattern.test(evidenceHash)) {
+    binding.textContent = evidenceHash;
+  } else {
+    binding.textContent = "INVALID OR MISSING — open this page from the exact review handoff";
+    binding.style.color = "#a83d2d";
+    exportButton.disabled = true;
+  }
+  function selectedDecision() {
+    return document.querySelector('input[name="decision"]:checked')?.value || null;
+  }
+  function completedResponse(completedAt) {
+    return {
+      response_schema_version: "e4-human-protocol-amendment-response-v1",
+      review_id: REVIEW_ID,
+      completed: true,
+      review_started_at_utc: reviewStartedAt,
+      review_completed_at_utc: completedAt,
+      reviewer: {attestation: true},
+      responses: [{item_id: ITEM_ID, evidence_sha256: evidenceHash, decision: selectedDecision(), notes: notes.value}]
+    };
+  }
+  async function sha256Hex(text) {
+    const bytes = new TextEncoder().encode(text);
+    const digest = await crypto.subtle.digest("SHA-256", bytes);
+    return [...new Uint8Array(digest)].map(value => value.toString(16).padStart(2,"0")).join("");
+  }
+  async function exportResponse() {
+    message.textContent = "";
+    if (!hashPattern.test(evidenceHash)) return;
+    if (!selectedDecision()) { message.textContent = "Select one decision."; return; }
+    if (!attestation.checked) { message.textContent = "Complete the attestation."; return; }
+    const payload = JSON.stringify(completedResponse(new Date().toISOString()), null, 2) + "\n";
+    const digest = await sha256Hex(payload);
+    const fileName = `${REVIEW_ID}-response-${digest.slice(0,16)}.json`;
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(new Blob([payload], {type:"application/json"}));
+    link.download = fileName;
+    link.click();
+    URL.revokeObjectURL(link.href);
+    message.textContent = `Exported ${fileName}`;
+  }
+  exportButton.addEventListener("click", exportResponse);
+</script>
+</body>
+</html>

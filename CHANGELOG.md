@@ -24,3 +24,6 @@ history remains in its dedicated append-only records.
 - Exact owner-approved Milestone 1 source-adoption checkpoint, frozen
   eligibility profile, five-source registry, private-custody aggregate receipt,
   and independent repository validator.
+- No-overwrite MTBS/EPA intake, dependency-free archive/DBF controls, 187-row
+  MTBS universe preflight, and an exact owner-review gate for two zero-match
+  literal source encodings.

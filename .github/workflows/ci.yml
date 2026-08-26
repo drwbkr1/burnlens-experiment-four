@@ -25,5 +25,7 @@ jobs:
         run: python scripts/validate_source_review.py
       - name: Validate source adoption checkpoint
         run: python scripts/validate_source_adoption.py
+      - name: Validate literal encoding owner-review checkpoint
+        run: python scripts/validate_literal_encoding_review.py
       - name: Run focused tests
         run: python -m unittest discover -s tests -v

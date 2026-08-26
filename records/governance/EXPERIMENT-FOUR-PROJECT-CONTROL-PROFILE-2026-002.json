@@ -56,6 +56,7 @@
       "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-001.json",
       "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-002.json",
       "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-003.json",
+      "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-004.json",
       "CHANGELOG.md",
       "docs/status/VERSION-HISTORY.md"
     ]
@@ -139,9 +140,9 @@
     "amendment_required_to_change_active_gate": true
   },
   "current_checkpoint": {
-    "checkpoint_id": "M1-U004-SOURCE-ADOPTION-PASS-897926590C470978-2026-08-26",
-    "expected_branch": "codex/metadata-feasibility-001",
+    "checkpoint_id": "M1-U005-LITERAL-ENCODING-OWNER-GATE-3FF69CE0-2026-08-26",
+    "expected_branch": "codex/m1-candidate-universe-001",
     "expected_head": null,
-    "next_action": "Validate and merge the exact M1-U004 source-adoption checkpoint, then activate M1-U005 before controlled no-overwrite intake or candidate-universe enumeration"
+    "next_action": "Present bundle 3ff69ce031313db2010706cf481a63c24d45a88cfb23c2f6bb7a38d96f7b972a and wait for an exact approve, reject, or uncertain response before additional source-row capture"
   }
 }

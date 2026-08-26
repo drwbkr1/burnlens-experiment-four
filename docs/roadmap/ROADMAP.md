@@ -19,7 +19,8 @@ passing CI, state reconciliation, and activation of Milestone 1.
 ## Milestone 1 — Candidate-universe feasibility
 
 **Status:** Active under issue #2; metadata only. M1-U004 source adoption
-passed; M1-U005 complete-universe enumeration is next after checkpoint merge.
+passed. M1-U005 has verified intake and 187 MTBS preflight rows but is stopped
+at an exact owner gate for literal WFIGS-state and MTBS-type encodings.
 
 Enumerate the complete metadata-defined candidate universe, exclude prior-
 experiment events, test source identity and availability without opening

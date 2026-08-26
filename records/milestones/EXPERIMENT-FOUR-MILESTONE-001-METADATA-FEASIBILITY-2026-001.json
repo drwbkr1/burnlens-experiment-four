@@ -300,7 +300,7 @@
       ],
       "action_class": "metadata_capture",
       "human_gate": false,
-      "status": "planned",
+      "status": "in_progress",
       "inputs": [
         "Admitted exact metadata sources",
         "Frozen schema",
@@ -313,12 +313,18 @@
       ],
       "gates": {
         "completeness": "pending",
-        "identity": "pending",
+        "identity": "blocked_pending_owner_literal_encoding_decision",
         "replay": "pending",
-        "model_independence": "pending"
+        "model_independence": "pass",
+        "controlled_intake": "pass",
+        "literal_encoding_semantics": "pending_owner"
       },
       "disposition": null,
-      "retained_failures": [],
+      "retained_failures": [
+        "Activation attempt 1: the status update removed the last literal Milestone 0 history sentence required by the repository claim-boundary validator; the explicit historical statement was restored and validation passed",
+        "MTBS preflight attempt 1: the proposal evidence locator resolved to metadata XML rather than the approved ZIP; no body was downloaded, and the exact ZIP locator was resolved from the approved ScienceBase item before controlled intake",
+        "Protocol finding 1: frozen literal state and MTBS incident-type predicates each match zero admitted-source rows; no normalization was inferred and an exact owner amendment gate was prepared"
+      ],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M1-COMPLETE-UNIVERSE"
@@ -437,8 +443,8 @@
     ]
   },
   "handoff": {
-    "current_checkpoint": "M1-U004 passed: exact response 897926590c470978cca2c5d8d424212f5372c445af8a9df05384f70bdcb7f83c reconciled to one approval; five exact metadata sources are admitted, eligibility profile E4-ELIGIBILITY-2026-001 is frozen, and zero candidate rows or scientific source bodies were opened at decision time.",
-    "next_action": "Validate and merge the exact M1-U004 checkpoint, then activate M1-U005 and perform only the approved controlled intake and metadata-universe actions.",
+    "current_checkpoint": "M1-U005 has promoted both exact metadata archives and enumerated 187 MTBS preflight rows with zero eligibility decisions. Exact frozen literals conflict with admitted WFIGS state and MTBS incident-type encodings, so the unit is stopped at an owner protocol gate.",
+    "next_action": "Present literal-encoding amendment bundle 3ff69ce031313db2010706cf481a63c24d45a88cfb23c2f6bb7a38d96f7b972a; lock and reconcile only an exact returned owner response before WFIGS snapshot capture, CMR queries, or eligibility evaluation.",
     "do_not_carry_forward": [
       "Any assumption that a prior event name is a complete event identity",
       "Any source authority inferred from anonymous discovery",

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "receipt_id": "E4-M1-LITERAL-ENCODING-AMENDMENT-RENDER-2026-001",
+  "observed_at_utc": "2026-08-26T01:33:37Z",
+  "surface_ref": "docs/reviews/e4-m1-literal-encoding-amendment-review.html",
+  "surface_sha256": "4c6315172b75b192e5c22075c8fdd0b0faea12befecd29038bc19d170b954ece",
+  "browser_surface": "in-app browser local HTTP render",
+  "viewport": {
+    "width": 1280,
+    "height": 720,
+    "device_pixel_ratio": 1.5
+  },
+  "visual_checks": {
+    "title_and_scope_visible": true,
+    "four_source_encoding_counts_visible": true,
+    "exact_amendment_visible": true,
+    "three_decision_controls_visible": true,
+    "notes_and_attestation_visible": true,
+    "responsive_grid_rule_present": true,
+    "horizontal_overflow_observed": false
+  },
+  "dom_checks": {
+    "section_count": 2,
+    "owner_decision_heading_count": 1,
+    "decision_radio_count": 3,
+    "preselected_decision_count": 0,
+    "blank_attestation": true,
+    "missing_binding_disables_export": true
+  },
+  "valid_hash_fixture_checks": {
+    "fixture": "64 lowercase hexadecimal characters",
+    "fixture_is_not_a_human_decision": true,
+    "binding_displayed_exactly": true,
+    "preselected_decision_count": 0,
+    "blank_attestation": true,
+    "export_without_decision_message": "Select one decision.",
+    "export_without_attestation_message": "Complete the attestation.",
+    "completed_response_exported": true,
+    "fixture_response_file": "E4-M1-LITERAL-ENCODING-AMENDMENT-2026-001-response-3ffd1520640bc793.json",
+    "fixture_response_sha256": "3ffd1520640bc7934d5d41cbd920f1a188dee903e6f74bbdcc07bd27ec4c3ef9",
+    "fixture_evidence_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "human_decisions_created": 0
+  },
+  "retained_test_attempts": [
+    {
+      "attempt": 1,
+      "finding": "The browser's instrumented evaluate context did not expose HTMLElement.click or MouseEvent constructors.",
+      "resolution": "The same safeguards were exercised through browser locators; both incomplete-export checks passed."
+    }
+  ],
+  "result": "pass_blank_incomplete_and_software_fixture_export_controls"
+}
