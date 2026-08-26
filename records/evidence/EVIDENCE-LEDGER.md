@@ -9,6 +9,7 @@
 | `E4-EV-0005` | 2026-08-25 | Prior-experiment event exclusion inventory | `PASS` for inspected-record exclusion completeness | `E4-EV-0005-PRIOR-EVENT-EXCLUSIONS-2026-001.json`; 68 identities permanently excluded, including 62 conservative exclusions from hash-bound unpublished Experiment Two-B rosters |
 | `E4-EV-0006` | 2026-08-25 | Candidate-universe metadata schema freeze | `PASS` for schema and evaluator controls; profile values pending | `E4-EV-0006-METADATA-SCHEMA-FREEZE-2026-001.json`; zero candidate rows observed, zero external sources adopted, 14 tests passed after one retained allowlist repair |
 | `E4-EV-0007` | 2026-08-25 | Exact source and eligibility-profile owner review checkpoint | `PASS` for pre-adoption review readiness; owner decision pending | `E4-EV-0007-SOURCE-REVIEW-CHECKPOINT-2026-001.json`; bundle `7423219b7d233885...`, five exact sources, 40 source-gate criteria, responsive blank review surface, zero candidate rows, zero source adoptions |
+| `E4-EV-0008` | 2026-08-26 | Exact owner source-adoption decision | `PASS` for M1-U004 source adoption only | `E4-EV-0008-SOURCE-ADOPTION-APPROVAL-2026-001.json`; one exact approval, five admitted metadata sources, frozen eligibility profile, restricted private response custody, zero candidate rows and zero scientific source bodies at decision time |
 
 No entry is scientific evidence unless it explicitly says so. Bootstrap control
 passes do not authorize source use, data claims, training, evaluation, or release.

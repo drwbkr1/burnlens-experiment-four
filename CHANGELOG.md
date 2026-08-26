@@ -21,3 +21,6 @@ history remains in its dedicated append-only records.
   repository.
 - Approved prospective fresh-event benchmark direction, authority boundaries,
   roadmap, current status, evidence ledger, decision register, and validation.
+- Exact owner-approved Milestone 1 source-adoption checkpoint, frozen
+  eligibility profile, five-source registry, private-custody aggregate receipt,
+  and independent repository validator.

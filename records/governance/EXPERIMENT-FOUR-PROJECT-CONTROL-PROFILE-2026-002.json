@@ -139,9 +139,9 @@
     "amendment_required_to_change_active_gate": true
   },
   "current_checkpoint": {
-    "checkpoint_id": "M0-ACCEPTED-3EE76B4-M1-SOURCE-REVIEW-READY-2026-08-25",
+    "checkpoint_id": "M1-U004-SOURCE-ADOPTION-PASS-897926590C470978-2026-08-26",
     "expected_branch": "codex/metadata-feasibility-001",
     "expected_head": null,
-    "next_action": "Present bundle 7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7 for the exact M1-U004 owner decision without adopting a source or enumerating candidates"
+    "next_action": "Validate and merge the exact M1-U004 source-adoption checkpoint, then activate M1-U005 before controlled no-overwrite intake or candidate-universe enumeration"
   }
 }

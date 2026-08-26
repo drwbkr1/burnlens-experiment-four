@@ -18,7 +18,8 @@ passing CI, state reconciliation, and activation of Milestone 1.
 
 ## Milestone 1 — Candidate-universe feasibility
 
-**Status:** Active under issue #2; metadata only.
+**Status:** Active under issue #2; metadata only. M1-U004 source adoption
+passed; M1-U005 complete-universe enumeration is next after checkpoint merge.
 
 Enumerate the complete metadata-defined candidate universe, exclude prior-
 experiment events, test source identity and availability without opening

@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "E4-ADMITTED-SOURCE-REGISTRY-2026-001",
+  "status": "admitted",
+  "adopted_at_utc": "2026-08-26T00:42:17Z",
+  "source_gate_ref": "records/sources/EXPERIMENT-FOUR-SOURCE-GATE-ASSESSMENT-2026-001.json",
+  "source_gate_sha256": "08dbe07f04963c25d6f35a19b201e1c3e4ae5dd3c59a9de9aaf181c76a90df93",
+  "source_use_proposal_ref": "records/sources/EXPERIMENT-FOUR-SOURCE-USE-PROPOSAL-2026-001.json",
+  "source_use_proposal_sha256": "3fcf8f5fbd9d7263a7dba2e56d71cdb4546cfc83e481ac4b37208d1bf65f70c2",
+  "eligibility_profile_ref": "records/metadata/EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-2026-001.json",
+  "prior_exclusion_manifest_sha256": "c819624011f5353bb085ba4b5a8db38cf0a0ca1c55e9a7741e7af59c0f7d164d",
+  "owner_review": {
+    "review_id": "E4-M1-SOURCE-ADOPTION-2026-001",
+    "bundle_sha256": "7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7",
+    "contract_sha256": "19ae65297a88917873164ce58ff7842a69b3e1b055eac58d73ea74917eed550c",
+    "locked_response_sha256": "897926590c470978cca2c5d8d424212f5372c445af8a9df05384f70bdcb7f83c",
+    "lock_receipt_sha256": "b7db031e433e7d3cce51a523b86ae0f65e764ce0e7597f43178e92681a38e3a4",
+    "reconciliation_sha256": "0dac0fdeff3f0f8d52fc54f7bab72c8a1aecfc3986dcefab37d8a9c01e8e453a",
+    "decision_counts": {
+      "approve": 1,
+      "reject": 0,
+      "uncertain": 0
+    },
+    "notes_included": false,
+    "raw_private_artifacts_committed": false
+  },
+  "sources": [
+    {
+      "source_id": "NIFC-WFIGS-PERIMETERS-5E72B169",
+      "name": "NIFC WFIGS Interagency Fire Perimeters, ArcGIS item 5e72b1699bf74eefb3f3aff6f4ba5511, FeatureServer layer 0",
+      "locator": "https://services3.arcgis.com/T4QMspbfLg3qTGWY/arcgis/rest/services/WFIGS_Interagency_Perimeters/FeatureServer/0",
+      "identity": {
+        "arcgis_item_id": "5e72b1699bf74eefb3f3aff6f4ba5511",
+        "layer_id": 0,
+        "revision_policy": "Dynamic service; freeze exact schema, query, UTC retrieval time, dataLastEditDate, page bytes, and aggregate SHA-256 at intake."
+      },
+      "role": "Exact incident identifiers, wildfire type, state, final-report maturity, complex membership, and approved public incident perimeter.",
+      "admitted_actions": [
+        "Capture one hash-bound 2021-2022 metadata snapshot using the approved field allowlist and fixed absolute query."
+      ]
+    },
+    {
+      "source_id": "USGS-MTBS-PERIMETERS-V12",
+      "name": "Monitoring Trends in Burn Severity Burned Areas Boundaries, version 12.0, April 2025",
+      "locator": "https://www.sciencebase.gov/catalog/item/5e7229b8e4b01d509268afba",
+      "identity": {
+        "sciencebase_item_id": "5e7229b8e4b01d509268afba",
+        "version": "12.0",
+        "edition": "April 2025",
+        "file_name": "mtbs_perims_DD.zip",
+        "file_size_bytes": 374092911,
+        "publisher_md5": "65278fcb893f94cd0eaf66d966ee7125"
+      },
+      "role": "Versioned census of completed MTBS mappings and reference-product availability; not independent ground truth.",
+      "admitted_actions": [
+        "Perform controlled no-overwrite archive intake with checksum and format validation.",
+        "Use only the approved metadata field allowlist for complete-universe enumeration."
+      ]
+    },
+    {
+      "source_id": "NASA-HLSL30-2.0-C2021957657",
+      "name": "HLS Landsat Operational Land Imager Surface Reflectance and TOA Brightness Daily Global 30 m version 2.0",
+      "locator": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=HLSL30&version=2.0",
+      "identity": {
+        "concept_id": "C2021957657-LPCLOUD",
+        "version": "2.0",
+        "cmr_revision_observed": 93,
+        "doi": "https://doi.org/10.5067/HLS/HLSL30.002"
+      },
+      "role": "Anonymous granule-metadata availability only during Milestone 1.",
+      "admitted_actions": [
+        "Query anonymous CMR granule metadata for the exact collection and frozen broad feasibility intervals."
+      ]
+    },
+    {
+      "source_id": "NASA-HLSS30-2.0-C2021957295",
+      "name": "HLS Sentinel-2 Multi-spectral Instrument Surface Reflectance Daily Global 30 m version 2.0",
+      "locator": "https://cmr.earthdata.nasa.gov/search/collections.umm_json?short_name=HLSS30&version=2.0",
+      "identity": {
+        "concept_id": "C2021957295-LPCLOUD",
+        "version": "2.0",
+        "cmr_revision_observed": 95,
+        "doi": "https://doi.org/10.5067/HLS/HLSS30.002"
+      },
+      "role": "Anonymous granule-metadata availability only during Milestone 1.",
+      "admitted_actions": [
+        "Query anonymous CMR granule metadata for the exact collection and frozen broad feasibility intervals."
+      ]
+    },
+    {
+      "source_id": "EPA-ECOREGIONS-LEVEL-III-US",
+      "name": "EPA Level III Ecoregions of the Conterminous United States, no-state-boundary archive",
+      "locator": "https://dmap-prod-oms-edc.s3.us-east-1.amazonaws.com/ORD/Ecoregions/us/us_eco_l3.zip",
+      "identity": {
+        "file_name": "us_eco_l3.zip",
+        "file_size_bytes_observed": 28424315,
+        "last_modified_observed": "2024-11-14T17:09:20Z"
+      },
+      "role": "Event-level ecological stratification only; not local ecological truth or a pixel label.",
+      "admitted_actions": [
+        "Perform controlled no-overwrite archive intake with checksum and format validation.",
+        "Apply only the frozen event-level coverage and dominant-code rule."
+      ]
+    }
+  ],
+  "released_actions": [
+    "Freeze the 2026-002 eligibility profile without changing values.",
+    "Admit the five exact source entries for the specified roles and restrictions.",
+    "Perform controlled no-overwrite intake of the exact MTBS and EPA archives with checksum and format validation.",
+    "Capture one hash-bound WFIGS 2021-2022 snapshot using the exact field allowlist and fixed absolute query.",
+    "Query anonymous CMR metadata for the two exact HLS collections.",
+    "Enumerate and account for the complete metadata-defined universe, then run capacity and independent Milestone 1 validation."
+  ],
+  "still_not_authorized": [
+    "Open or download HLS imagery, MTBS rasters, severity classes, thresholds, labels, reference rasters, model artifacts, or predictions.",
+    "Authenticate to Earthdata or any external service.",
+    "Choose pilot or final events, draw AOIs, assign train, validation, or test roles, or alter the cohort design.",
+    "Use any denied source field, model output, spectral index, metric, label, error surface, or scene-body observation in eligibility.",
+    "Claim dataset readiness, independent ground truth, generalization, operational utility, or any scientific result."
+  ],
+  "boundary_at_adoption": {
+    "candidate_rows_observed": 0,
+    "scientific_source_bodies_opened": 0,
+    "hls_imagery_opened": 0,
+    "credentials_used": 0,
+    "pilot_or_final_events_selected": 0
+  }
+}

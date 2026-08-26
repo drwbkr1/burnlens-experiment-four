@@ -110,8 +110,12 @@
     },
     {
       "id": "EXIT-M1-SOURCES-GATED",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "records/evidence/E4-EV-0008-SOURCE-ADOPTION-APPROVAL-2026-001.json",
+        "records/metadata/EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-2026-001.json",
+        "records/sources/EXPERIMENT-FOUR-ADMITTED-SOURCE-REGISTRY-2026-001.json"
+      ]
     },
     {
       "id": "EXIT-M1-COMPLETE-UNIVERSE",
@@ -252,7 +256,7 @@
       ],
       "action_class": "external_source_dependency_runtime_or_service_adoption",
       "human_gate": true,
-      "status": "in_progress",
+      "status": "complete",
       "inputs": [
         "Frozen metadata schema",
         "Official publisher documentation and metadata-only probes"
@@ -261,26 +265,30 @@
         "records/reviews/E4-M1-SOURCE-ADOPTION-BUNDLE-2026-001.json",
         "records/reviews/E4-M1-SOURCE-ADOPTION-CONTRACT-2026-001.json",
         "docs/reviews/e4-m1-source-adoption-review.html",
-        "Exact owner decision",
-        "Admitted-source registry or terminal stop"
+        "records/evidence/E4-EV-0008-SOURCE-ADOPTION-APPROVAL-2026-001.json",
+        "records/metadata/EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-2026-001.json",
+        "records/sources/EXPERIMENT-FOUR-ADMITTED-SOURCE-REGISTRY-2026-001.json"
       ],
       "gates": {
         "provenance": "pass",
         "rights_terms": "pass",
         "identity_revision": "pass",
-        "owner_decision": "pending"
+        "owner_decision": "pass"
       },
-      "disposition": null,
+      "disposition": "pass",
       "retained_failures": [
-        "Attempt 1: source-review validation used literal wording and any checked token instead of testing accepted semantic boundary phrases and the actual radio checked attribute; the validator was narrowly repaired and passed"
+        "Attempt 1: source-review validation used literal wording and any checked token instead of testing accepted semantic boundary phrases and the actual radio checked attribute; the validator was narrowly repaired and passed",
+        "Lock candidate 1: the known software fixture was rejected because its evidence binding did not match the exact owner-review bundle; the single exact human response was locked without reading decision or note values"
       ],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M1-SOURCES-GATED"
         ],
-        "observed": [],
+        "observed": [
+          "EXIT-M1-SOURCES-GATED"
+        ],
         "decision_value": "advances_exit",
-        "rationale": "No external metadata source becomes authoritative through inspection alone."
+        "rationale": "The exact hash-bound owner response reconciled to one approval, freezing the reviewed eligibility values and admitting only the five reviewed metadata sources under retained restrictions."
       },
       "next_dependency": "M1-U005-ENUMERATE-UNIVERSE"
     },
@@ -424,17 +432,18 @@
       "canonical repository and revision identity",
       "complete prior-event exclusion inventory",
       "schema and reason-code validation",
-      "no model-output selection fields"
+      "no model-output selection fields",
+      "exact source gate and owner decision"
     ]
   },
   "handoff": {
-    "current_checkpoint": "Milestone 0 accepted; Milestone 1 source review bundle 7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7 is prepared with zero source adoptions and zero candidate rows.",
-    "next_action": "Present the exact M1-U004 bundle and wait for the owner decision; lock and reconcile only an exact returned response.",
+    "current_checkpoint": "M1-U004 passed: exact response 897926590c470978cca2c5d8d424212f5372c445af8a9df05384f70bdcb7f83c reconciled to one approval; five exact metadata sources are admitted, eligibility profile E4-ELIGIBILITY-2026-001 is frozen, and zero candidate rows or scientific source bodies were opened at decision time.",
+    "next_action": "Validate and merge the exact M1-U004 checkpoint, then activate M1-U005 and perform only the approved controlled intake and metadata-universe actions.",
     "do_not_carry_forward": [
       "Any assumption that a prior event name is a complete event identity",
       "Any source authority inferred from anonymous discovery",
       "Any prior dataset, label, model output, threshold, metric, or scientific disposition",
-      "Any authority to open source bodies, adopt a source, select events, train, evaluate, or release"
+      "Any authority beyond the exact five admitted metadata sources and reviewed Milestone 1 actions, including HLS imagery, credentials, event selection, training, evaluation, test opening, claims, or release"
     ]
   }
 }

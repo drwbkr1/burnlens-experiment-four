@@ -31,12 +31,20 @@
 - The complete local bootstrap candidate passed repository validation, five
   focused unit tests, the project-control validator, and the milestone
   validator after two retained repair cycles.
-- There is no admitted external source, dataset, reference label, model,
-  dependency runtime, training run, inference, evaluation, metric, tag,
-  release, or deployment.
+- Exactly five official metadata sources are admitted for the bounded Milestone
+  1 actions in the owner-reviewed proposal. No candidate row or scientific
+  source body had been opened at the adoption decision.
+- There is no admitted scientific dataset, reference label, model, dependency
+  runtime, training run, inference, evaluation, metric, tag, release, or
+  deployment.
 - The exact Milestone 1 source review bundle is prepared and render-verified at
   SHA-256 `7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7`.
-  Its owner decision is pending; preparation did not admit a source.
+  The exact returned response was locked at SHA-256
+  `897926590c470978cca2c5d8d424212f5372c445af8a9df05384f70bdcb7f83c`
+  and reconciled to one approval, with no notes included in public records.
+- Eligibility profile `E4-ELIGIBILITY-2026-001` is frozen without changing the
+  reviewed 2026-002 proposal values. The five-source registry retains all
+  post-approval prohibitions, including HLS imagery and event selection.
 
 Missing is not passed. The accepted checkpoint proves repository controls only;
 it is not scientific evidence or source approval.
@@ -59,15 +67,16 @@ it is not scientific evidence or source approval.
 | Surface | State |
 | --- | --- |
 | Prior-event permanent exclusions | `68` |
-| External metadata sources admitted | `0` |
+| External metadata sources admitted | `5` exact sources |
 | Experiment Four candidates enumerated | `0` |
 | Candidate metadata schema | `FROZEN` |
-| Eligibility profile values | `PROPOSED 2026-002`; owner gate required |
+| Eligibility profile values | `FROZEN E4-ELIGIBILITY-2026-001` |
 | Candidate source rows observed | `0` |
-| Source review bundle | `READY`; owner decision pending |
+| Source review bundle | `APPROVED`; exact response locked and reconciled |
 
 ## Immediate next action
 
-Present the exact hash-bound source review bundle and wait for the owner's
-`approve`, `reject`, or `uncertain` response. Do not adopt a source or enumerate
-candidates before an exact returned response is locked and reconciled.
+Validate and merge the exact M1-U004 source-adoption checkpoint. Then activate
+M1-U005 before controlled no-overwrite intake, the WFIGS snapshot, anonymous
+CMR queries, or complete-universe enumeration. Do not open HLS imagery, use
+credentials, or select pilot or final events.

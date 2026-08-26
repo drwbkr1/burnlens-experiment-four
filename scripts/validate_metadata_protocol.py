@@ -28,6 +28,18 @@ PROFILE_PROPOSAL = (
     / "metadata"
     / "EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-PROPOSAL-2026-001.json"
 )
+APPROVED_PROFILE_PROPOSAL = (
+    ROOT
+    / "records"
+    / "metadata"
+    / "EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-PROPOSAL-2026-002.json"
+)
+FROZEN_PROFILE = (
+    ROOT
+    / "records"
+    / "metadata"
+    / "EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-2026-001.json"
+)
 
 
 def _load(path: Path, errors: list[str]) -> dict[str, Any]:
@@ -62,6 +74,8 @@ def validate() -> list[str]:
     profile_schema = _load(PROFILE_SCHEMA, errors)
     freeze = _load(FREEZE_RECORD, errors)
     proposal = _load(PROFILE_PROPOSAL, errors)
+    approved_proposal = _load(APPROVED_PROFILE_PROPOSAL, errors)
+    frozen_profile = _load(FROZEN_PROFILE, errors)
 
     for label, schema in (
         ("candidate", candidate_schema),
@@ -99,6 +113,14 @@ def validate() -> list[str]:
     if proposal.get("unknown_policy") != "unknown-is-not-eligible":
         errors.append("proposal must fail closed on unknown evidence")
 
+    if approved_proposal.get("status") != "proposed":
+        errors.append("the reviewed 2026-002 profile proposal must remain historical")
+    expected_frozen = dict(approved_proposal)
+    expected_frozen["profile_id"] = "E4-ELIGIBILITY-2026-001"
+    expected_frozen["status"] = "frozen"
+    if frozen_profile != expected_frozen:
+        errors.append("frozen profile differs from the exact owner-reviewed values")
+
     if freeze.get("evaluator", {}).get("version") != metadata_eligibility.EVALUATOR_VERSION:
         errors.append("freeze record and evaluator versions differ")
     if freeze.get("evaluator", {}).get("reason_order") != list(
@@ -124,7 +146,7 @@ def main() -> int:
             print(f"- {error}")
         return 1
     print("Metadata protocol: PASS (schema, semantics, and evaluator aligned)")
-    print("Eligibility profile: PROPOSED; candidate rows observed: 0")
+    print("Eligibility profile: FROZEN from exact reviewed values; candidate rows observed: 0")
     return 0
 
 

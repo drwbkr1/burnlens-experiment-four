@@ -33,6 +33,7 @@ REQUIRED_PATHS = (
     "docs/devlog/2026-08-25-metadata-schema-freeze.md",
     "docs/devlog/2026-08-25-prior-event-exclusions.md",
     "docs/devlog/2026-08-25-source-review-checkpoint.md",
+    "docs/devlog/2026-08-26-source-adoption-approval.md",
     "docs/governance/CHECKPOINT-POLICY.md",
     "docs/governance/EXPERIMENT-FOUR-EXECUTION-GOAL.md",
     "docs/protocols/CANDIDATE-UNIVERSE-METADATA-PROTOCOL.md",
@@ -48,6 +49,7 @@ REQUIRED_PATHS = (
     "records/evidence/E4-EV-0005-PRIOR-EVENT-EXCLUSIONS-2026-001.json",
     "records/evidence/E4-EV-0006-METADATA-SCHEMA-FREEZE-2026-001.json",
     "records/evidence/E4-EV-0007-SOURCE-REVIEW-CHECKPOINT-2026-001.json",
+    "records/evidence/E4-EV-0008-SOURCE-ADOPTION-APPROVAL-2026-001.json",
     "records/governance/ACTIVE-PROJECT-CONTROL-PROFILE",
     "records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
     "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
@@ -55,6 +57,7 @@ REQUIRED_PATHS = (
     "records/metadata/EXPERIMENT-FOUR-PRIOR-EVENT-EXCLUSION-MANIFEST-2026-001.json",
     "records/metadata/EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-PROPOSAL-2026-001.json",
     "records/metadata/EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-PROPOSAL-2026-002.json",
+    "records/metadata/EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-2026-001.json",
     "records/metadata/EXPERIMENT-FOUR-METADATA-SCHEMA-FREEZE-2026-001.json",
     "records/reviews/E4-M1-SOURCE-ADOPTION-BLANK-RESPONSE-2026-001.json",
     "records/reviews/E4-M1-SOURCE-ADOPTION-BUNDLE-2026-001.json",
@@ -62,6 +65,7 @@ REQUIRED_PATHS = (
     "records/reviews/E4-M1-SOURCE-ADOPTION-RENDER-RECEIPT-2026-001.json",
     "records/sources/EXPERIMENT-FOUR-SOURCE-GATE-ASSESSMENT-2026-001.json",
     "records/sources/EXPERIMENT-FOUR-SOURCE-USE-PROPOSAL-2026-001.json",
+    "records/sources/EXPERIMENT-FOUR-ADMITTED-SOURCE-REGISTRY-2026-001.json",
     "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-001.json",
     "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-002.json",
     "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-003.json",
@@ -69,6 +73,7 @@ REQUIRED_PATHS = (
     "scripts/validate_prior_event_exclusions.py",
     "scripts/validate_metadata_protocol.py",
     "scripts/validate_source_review.py",
+    "scripts/validate_source_adoption.py",
     "schemas/candidate-event.schema.json",
     "schemas/metadata-eligibility-profile.schema.json",
     "src/burnlens_e4/__init__.py",
@@ -76,6 +81,7 @@ REQUIRED_PATHS = (
     "tests/test_repository_controls.py",
     "tests/test_metadata_eligibility.py",
     "tests/test_source_review.py",
+    "tests/test_source_adoption.py",
 )
 
 ALLOWED_TOP_LEVEL = {
@@ -279,7 +285,7 @@ def check_claim_boundaries(errors: list[str]) -> None:
     normalized_readme = " ".join(readme.lower().split())
     normalized_goal = " ".join(goal.lower().split())
     required_readme = (
-        "there is no admitted external source, scientific dataset",
+        "five exact official metadata sources are admitted",
         "not official fire information",
         "dataset_readiness",
         "comparative_status",
