@@ -191,8 +191,8 @@ def main() -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("Source review: PASS (5 sources, 40 criteria, 0 candidate rows, 0 source adoptions)")
-    print("Owner decision: PENDING")
+    print("Historical pre-adoption source review: PASS (5 sources, 40 criteria, 0 candidate rows)")
+    print("Snapshot state: owner decision pending at package handoff; current adoption is validated separately")
     return 0
 
 

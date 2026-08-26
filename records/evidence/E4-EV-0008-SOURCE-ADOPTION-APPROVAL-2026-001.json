@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "evidence_id": "E4-EV-0008",
+  "observed_at_utc": "2026-08-26T00:42:17Z",
+  "scope": "M1-U004 exact owner response custody, reconciliation, frozen eligibility profile, and five-source adoption",
+  "disposition": "pass",
+  "scientific_evidence": false,
+  "owner_decision": "approve",
+  "review_binding": {
+    "review_id": "E4-M1-SOURCE-ADOPTION-2026-001",
+    "bundle_sha256": "7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7",
+    "contract_sha256": "19ae65297a88917873164ce58ff7842a69b3e1b055eac58d73ea74917eed550c",
+    "locked_response_sha256": "897926590c470978cca2c5d8d424212f5372c445af8a9df05384f70bdcb7f83c",
+    "lock_receipt_sha256": "b7db031e433e7d3cce51a523b86ae0f65e764ce0e7597f43178e92681a38e3a4",
+    "reconciliation_sha256": "0dac0fdeff3f0f8d52fc54f7bab72c8a1aecfc3986dcefab37d8a9c01e8e453a",
+    "human_decision_count": 1,
+    "decision_counts": {
+      "approve": 1,
+      "reject": 0,
+      "uncertain": 0
+    },
+    "notes_included": false,
+    "human_decisions_fabricated": false,
+    "downstream_authorization_created_by_reconciliation": false
+  },
+  "custody": {
+    "class": "private review custody outside Git",
+    "inheritance_disabled": true,
+    "explicit_full_control_principals": [
+      "owner account",
+      "NT AUTHORITY\\SYSTEM",
+      "BUILTIN\\Administrators"
+    ],
+    "raw_response_committed": false,
+    "raw_receipt_committed": false,
+    "raw_reconciliation_committed": false
+  },
+  "ambiguity_control": {
+    "candidate_response_count": 2,
+    "valid_exact_response_count": 1,
+    "rejected_software_fixture_sha256": "429f032622d6c673a2e9d0436d272a0b288da09936ed746b6bb3732563f53c3e",
+    "rejection_reason": "Evidence binding did not match the exact review bundle.",
+    "decision_values_read_during_lock": false,
+    "note_values_read_during_lock": false
+  },
+  "artifacts": [
+    {
+      "path": "records/metadata/EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-2026-001.json",
+      "role": "owner-approved frozen eligibility values"
+    },
+    {
+      "path": "records/sources/EXPERIMENT-FOUR-ADMITTED-SOURCE-REGISTRY-2026-001.json",
+      "role": "five exact source identities, roles, released actions, and retained restrictions"
+    }
+  ],
+  "adoption": {
+    "source_count": 5,
+    "eligibility_profile_status": "frozen",
+    "candidate_rows_observed_at_decision": 0,
+    "scientific_source_bodies_opened_at_decision": 0,
+    "next_dependency": "M1-U005-ENUMERATE-UNIVERSE"
+  },
+  "validation": [
+    {
+      "command": "python scripts/validate_source_adoption.py",
+      "result": "PASS; one exact approval, five exact admitted sources, frozen profile, zero candidate rows and zero scientific source bodies at decision"
+    },
+    {
+      "command": "python scripts/validate_source_review.py",
+      "result": "PASS; historical pre-adoption package remains byte-bound and unchanged"
+    },
+    {
+      "command": "python scripts/validate_metadata_protocol.py and python scripts/validate_prior_event_exclusions.py",
+      "result": "PASS; frozen profile equals reviewed values and 68 prior identities remain permanently excluded"
+    },
+    {
+      "command": "python scripts/validate_repository.py and python -m unittest discover -s tests -v",
+      "result": "PASS; 66 public-safe files and 20 focused tests"
+    },
+    {
+      "command": "validate_project_control.py and validate_milestone.py",
+      "result": "PASS; inherited authority active, no active unit, and M1-U005 is the sole authorized ready unit"
+    },
+    {
+      "command": "validate_source_gate.py",
+      "result": "PASS; five sources, 40 criteria, 49 evidence items, 46 live evidence items, zero stale items at assessment time"
+    }
+  ],
+  "limitations": [
+    "Source adoption authorizes only the exact metadata actions in the reviewed proposal; it is not dataset readiness or scientific evidence.",
+    "HLS imagery, credentials, event selection, AOIs, split roles, denied source fields, training, evaluation, sealed test opening, claims, and release remain unauthorized.",
+    "The private response, lock receipt, and reconciliation are represented publicly only by hashes and aggregate decision facts."
+  ]
+}

@@ -144,7 +144,7 @@ def main() -> int:
             print(f"- {error}")
         return 1
     print("Prior-event exclusions: PASS (68 identities permanently excluded)")
-    print("External source adoption: NONE; scientific source bodies opened: 0")
+    print("Manifest snapshot boundary: 0 source adoptions and 0 scientific source bodies")
     return 0
 
 

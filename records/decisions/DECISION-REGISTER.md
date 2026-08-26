@@ -37,3 +37,13 @@
   separate and outcome-independent.
 - **Reason:** Engineering success cannot substitute for dataset or scientific
   validity, and negative science can still be complete.
+
+## E4-DEC-0006 — Admit the exact Milestone 1 metadata package
+
+- **Date:** 2026-08-25
+- **Decision:** Approve the exact five-source package and freeze eligibility
+  profile `E4-ELIGIBILITY-2026-001` without changing the reviewed values.
+- **Reason:** The exact returned response passed hash-bound locking and
+  reconciliation. Approval releases only the reviewed metadata actions; HLS
+  imagery, credentials, event selection, training, evaluation, and release
+  remain gated.

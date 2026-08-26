@@ -23,5 +23,7 @@ jobs:
         run: python scripts/validate_metadata_protocol.py
       - name: Validate source review checkpoint
         run: python scripts/validate_source_review.py
+      - name: Validate source adoption checkpoint
+        run: python scripts/validate_source_adoption.py
       - name: Run focused tests
         run: python -m unittest discover -s tests -v

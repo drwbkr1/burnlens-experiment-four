@@ -10,9 +10,11 @@ Pacific Northwest cohort before model evaluation.
 Milestone 0 established and live-verified the repository control plane.
 Milestone 1 is active under
 [issue #2](https://github.com/drwbkr1/burnlens-experiment-four/issues/2) for
-metadata-only candidate-universe feasibility. There is no admitted external
-source, scientific dataset, model, training run, evaluation, metric, tag,
-release, deployment, or operational product.
+metadata-only candidate-universe feasibility. There is no admitted scientific
+dataset, model, training run, evaluation, metric, tag, release, deployment, or
+operational product. Five exact official metadata sources are admitted only
+for the bounded Milestone 1 actions in the owner-reviewed proposal; zero
+candidate rows had been opened at adoption.
 
 ## Research question
 
@@ -24,8 +26,9 @@ release, deployment, or operational product.
 The planned design uses six permanently excluded pilot events and a final
 30-event Oregon/Washington/Idaho cohort with 16 training, 6 validation, and 8
 sealed test events. HLS v2 L30 and S30 are the proposed imagery backbone. Exact
-source adoption, temporal windows, QA rules, reference evidence, masks, and
-model protocols remain gated by the milestone sequence.
+metadata source adoption is complete, but HLS imagery, temporal windows, QA
+rules, reference evidence, masks, and model protocols remain gated by the
+milestone sequence.
 
 ## Separate outcomes
 
