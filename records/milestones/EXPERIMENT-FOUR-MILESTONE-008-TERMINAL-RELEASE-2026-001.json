@@ -91,8 +91,14 @@
   "exit_conditions": [
     {
       "id": "EXIT-M8-RELEASE-CANDIDATE",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "substantive candidate commit c8a6b8fcefba7d838c221ff00f1e43f45f69e362",
+        "substantive candidate tree a7bfa2577e13946c6d0547881d9b0eba30abbf46",
+        "docs/releases/v0.1.0-terminal-inconclusive.md",
+        "records/releases/EXPERIMENT-FOUR-TERMINAL-OUTCOMES-2026-001.json",
+        "scripts/build_terminal_release_package.py"
+      ]
     },
     {
       "id": "EXIT-M8-RELEASE-AUDIT",
@@ -158,32 +164,36 @@
       ],
       "action_class": "software_implementation",
       "human_gate": false,
-      "status": "in_progress",
+      "status": "complete",
       "inputs": [
         "Live Milestone 1 evidence",
         "Terminal outcomes",
         "Project claim envelope"
       ],
       "outputs": [
-        "v0.1.0 candidate tree",
-        "Deterministic replay ZIP and evidence manifest",
-        "Public release notes and limitations"
+        "substantive candidate commit c8a6b8fcefba7d838c221ff00f1e43f45f69e362",
+        "substantive candidate tree a7bfa2577e13946c6d0547881d9b0eba30abbf46",
+        "docs/releases/v0.1.0-terminal-inconclusive.md",
+        "records/releases/EXPERIMENT-FOUR-TERMINAL-OUTCOMES-2026-001.json",
+        "scripts/build_terminal_release_package.py"
       ],
       "gates": {
-        "public_safe": "pending",
-        "deterministic_package": "pending",
-        "claims": "pending",
-        "limitations": "pending"
+        "public_safe": "pass",
+        "deterministic_package": "pass_implementation_and_tests",
+        "claims": "pass",
+        "limitations": "pass"
       },
-      "disposition": null,
+      "disposition": "pass",
       "retained_failures": [],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M8-RELEASE-CANDIDATE"
         ],
-        "observed": [],
-        "decision_value": "unknown",
-        "rationale": "Owner review must bind one exact candidate and exact release assets."
+        "observed": [
+          "EXIT-M8-RELEASE-CANDIDATE"
+        ],
+        "decision_value": "advances_exit",
+        "rationale": "The substantive candidate freezes truthful terminal claims, limitations, controls, and deterministic replay packaging. The successor control commit closes this unit without changing those claims."
       },
       "next_dependency": "M8-U003-AUDIT-AND-PREPARE-REVIEW"
     },
@@ -195,7 +205,7 @@
       ],
       "action_class": "deterministic_validation",
       "human_gate": false,
-      "status": "planned",
+      "status": "in_progress",
       "inputs": [
         "Exact candidate commit and tree",
         "Exact replay assets",
@@ -387,12 +397,14 @@
       "terminal state reconciliation"
     ],
     "completed_checks": [
-      "canonical repository and revision identity"
+      "canonical repository and revision identity",
+      "complete diff and structured-data validation",
+      "full tests and clean candidate replay"
     ]
   },
   "handoff": {
-    "current_checkpoint": "Milestone 8 controls are active from live main 92a44fe143a4d2d23bb4f415dc37489480d1b590. Final release remains unapproved and NOT_RELEASED.",
-    "next_action": "Build and audit the exact public-safe v0.1.0 candidate and replay assets, then stop at the final scientific release owner gate.",
+    "current_checkpoint": "The substantive v0.1.0 terminal release candidate is frozen at commit c8a6b8fcefba7d838c221ff00f1e43f45f69e362 and tree a7bfa2577e13946c6d0547881d9b0eba30abbf46. Final release remains unapproved and NOT_RELEASED.",
+    "next_action": "Freeze this unit-closure successor, build exact replay assets from its clean commit, run the candidate-bound release audit, and stop at the final scientific release owner gate.",
     "do_not_carry_forward": [
       "Any authority to rescue or rerun the Milestone 1 result",
       "Any authority to activate Milestones 2 through 7",

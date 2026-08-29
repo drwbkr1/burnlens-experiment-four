@@ -123,6 +123,8 @@ it is not scientific evidence or source approval.
 
 ## Immediate next action
 
-Build and audit the exact public-safe `v0.1.0` terminal evidence candidate, then
-present one hash-bound owner review for final scientific release. Do not create
-the tag or GitHub release before that exact approval.
+Freeze the release-candidate unit closure, build the deterministic replay ZIP
+and evidence manifest from that clean exact commit, and complete the
+candidate-bound release audit. Then present one hash-bound owner review for
+final scientific release. Do not create the tag or GitHub release before that
+exact approval.

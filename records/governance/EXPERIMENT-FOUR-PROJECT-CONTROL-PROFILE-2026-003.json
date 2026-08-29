@@ -149,9 +149,9 @@
     "amendment_required_to_change_active_gate": true
   },
   "current_checkpoint": {
-    "checkpoint_id": "M8-U002-RELEASE-CANDIDATE-ACTIVE-92A44FE-2026-08-29",
+    "checkpoint_id": "M8-U003-RELEASE-AUDIT-ACTIVE-C8A6B8F-2026-08-29",
     "expected_branch": "codex/m8-terminal-release-closeout",
     "expected_head": null,
-    "next_action": "Build and audit the exact public-safe v0.1.0 terminal evidence candidate, then stop at the hash-bound final scientific release owner gate."
+    "next_action": "Freeze the release-candidate unit closure, build exact replay assets from the resulting clean commit, audit candidate and live surfaces, and stop at the hash-bound final scientific release owner gate."
   }
 }
