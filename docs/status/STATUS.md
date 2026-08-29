@@ -5,11 +5,11 @@
 | Status date | 2026-08-29 |
 | Canonical remote | `https://github.com/drwbkr1/burnlens-experiment-four` |
 | Canonical checkout | `C:\Projects\Active\burnlens-experiment-four` |
-| Working version | `0.1.0-m1-metadata-feasibility` |
-| Live accepted `main` | `3c3c86930513e4e40dcec8bfb37d782b0f22d789` |
+| Working version | `0.1.0` terminal release candidate |
+| Live accepted `main` | `92a44fe143a4d2d23bb4f415dc37489480d1b590` |
 | Retained bootstrap evidence checkpoint | `9e244ac3a8c84ec70651aa2a3114da2be25d489d` |
-| Active work | Milestone 1 terminal checkpoint publication under issue #2 on `codex/m1-candidate-universe-001` |
-| Overall state | Milestone 1 `INCONCLUSIVE`; independently validated zero-slot source shortfall; Milestone 2 not authorized |
+| Active work | Milestone 8 terminal evidence closeout under issue #6 on `codex/m8-terminal-release-closeout` |
+| Overall state | Milestone 1 `INCONCLUSIVE`; live checkpoint verified; final release candidate preparation active |
 
 ## Current truth
 
@@ -74,8 +74,13 @@
   zero in Idaho, Oregon, and Washington and zero total, versus 12 per state and
   36 total required.
 - Milestone 1 is therefore `INCONCLUSIVE`. No fallback source field or relaxed
-  requirement is permitted, Milestone 2 is not authorized, and PR #5 is the
-  pending public checkpoint rather than a scientific release.
+  requirement is permitted and Milestone 2 is not authorized.
+- PR #5 merged as `92a44fe143a4d2d23bb4f415dc37489480d1b590` on
+  2026-08-29. Post-merge GitHub Actions run `33264616638` passed, and direct
+  live reads verified the status and independent-validation blobs.
+- Milestone 8 is active for release audit, exact owner review, and terminal
+  publication only. There is still no tag, GitHub release, or final scientific
+  release approval.
 
 Missing is not passed. The accepted checkpoint proves repository controls only;
 it is not scientific evidence or source approval.
@@ -118,6 +123,8 @@ it is not scientific evidence or source approval.
 
 ## Immediate next action
 
-Publish and live-verify the exact Milestone 1 `INCONCLUSIVE` checkpoint through
-PR #5. Do not activate Milestone 2, open imagery or labels, select events, or
-substitute a fallback field. Final scientific release remains separately gated.
+Freeze the release-candidate unit closure, build the deterministic replay ZIP
+and evidence manifest from that clean exact commit, and complete the
+candidate-bound release audit. Then present one hash-bound owner review for
+final scientific release. Do not create the tag or GitHub release before that
+exact approval.

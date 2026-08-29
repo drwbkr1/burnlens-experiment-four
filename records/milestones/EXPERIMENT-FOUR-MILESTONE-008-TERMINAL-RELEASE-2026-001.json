@@ -1,0 +1,415 @@
+{
+  "schema_version": "1.0",
+  "milestone_id": "EXPERIMENT-FOUR-MILESTONE-008-TERMINAL-RELEASE-2026-001",
+  "project_profile_ref": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-003.json",
+  "status": "active",
+  "authority": {
+    "mode": "inherited",
+    "authority_ref": "goal-service:01a0320c-ae81-7550-ade2-c6c22d4abf93/records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
+    "authorized_action_classes": [
+      "read_only_inspection",
+      "external_state_verification",
+      "deterministic_validation",
+      "routine_qa",
+      "metadata_capture",
+      "evidence_recording",
+      "project_control",
+      "update_project_records",
+      "reversible_remediation",
+      "version_control_write",
+      "github_issue_management",
+      "github_pull_request_management",
+      "public_repository_publication",
+      "software_implementation"
+    ],
+    "user_instruction": "Execute the approved BurnLens Experiment Four long-running goal through exact terminal evidence release and live verification.",
+    "repository_controls": [
+      "AGENTS.md",
+      "docs/governance/EXPERIMENT-FOUR-EXECUTION-GOAL.md",
+      "docs/governance/CHECKPOINT-POLICY.md",
+      "records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
+      "https://github.com/drwbkr1/burnlens-experiment-four/issues/6"
+    ],
+    "active_contract": "records/milestones/EXPERIMENT-FOUR-MILESTONE-008-TERMINAL-RELEASE-2026-001.json",
+    "verified_at_utc": "2026-08-29T17:12:00Z",
+    "expires_at_utc": null
+  },
+  "scope": {
+    "objective": "Publish and independently verify a public-safe terminal evidence release that preserves the Milestone 1 INCONCLUSIVE result and exact limitations.",
+    "allowed_paths": [
+      ".github/**",
+      "AGENTS.md",
+      "CHANGELOG.md",
+      "README.md",
+      "VERSION",
+      "docs/**",
+      "pyproject.toml",
+      "records/**",
+      "scripts/**",
+      "src/**",
+      "tests/**"
+    ],
+    "forbidden_work": [
+      "Change, rescue, rerun, or reinterpret the frozen Milestone 1 scientific disposition",
+      "Activate Milestones 2 through 7",
+      "Select events or open imagery, labels, models, predictions, metrics, or sealed test evidence",
+      "Publish source bodies, private review responses, credentials, or restricted runtime artifacts",
+      "Create a tag, GitHub release, or final scientific release before one exact owner approval",
+      "Begin or imply a successor experiment"
+    ],
+    "reversible_actions": [
+      "Create public-safe release records, notes, deterministic packaging code, tests, audit receipts, and review surfaces",
+      "Manage issue #6, the closeout branch, and its pull request",
+      "Verify live repository metadata, checks, blobs, branch protection, and candidate-bound assets"
+    ],
+    "stop_conditions": [
+      "The release audit is blocked or identifies unsupported claims, private data, secrets, or mismatched evidence",
+      "The exact owner response is absent, ambiguous, stale, changed-bundle, or not an approval",
+      "An action would change the scientific result or exceed the exact release authority",
+      "An action falls outside the authorized action classes"
+    ]
+  },
+  "entry_conditions": [
+    {
+      "id": "ENTRY-M8-M1-LIVE",
+      "status": "pass",
+      "evidence": [
+        "Merged PR #5",
+        "main 92a44fe143a4d2d23bb4f415dc37489480d1b590",
+        "GitHub Actions run 33264616638",
+        "records/evidence/E4-EV-0013-M1-INDEPENDENT-VALIDATION-2026-001.json"
+      ]
+    },
+    {
+      "id": "ENTRY-M8-ISSUE",
+      "status": "pass",
+      "evidence": [
+        "https://github.com/drwbkr1/burnlens-experiment-four/issues/6"
+      ]
+    }
+  ],
+  "exit_conditions": [
+    {
+      "id": "EXIT-M8-RELEASE-CANDIDATE",
+      "status": "pass",
+      "evidence": [
+        "substantive candidate commit c8a6b8fcefba7d838c221ff00f1e43f45f69e362",
+        "substantive candidate tree a7bfa2577e13946c6d0547881d9b0eba30abbf46",
+        "docs/releases/v0.1.0-terminal-inconclusive.md",
+        "records/releases/EXPERIMENT-FOUR-TERMINAL-OUTCOMES-2026-001.json",
+        "scripts/build_terminal_release_package.py"
+      ]
+    },
+    {
+      "id": "EXIT-M8-RELEASE-AUDIT",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "EXIT-M8-OWNER-APPROVAL",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "EXIT-M8-LIVE-RELEASE",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "EXIT-M8-TERMINAL-RECONCILIATION",
+      "status": "pending",
+      "evidence": []
+    }
+  ],
+  "units": [
+    {
+      "id": "M8-U001-ACTIVATE-CLOSEOUT",
+      "purpose": "Activate exact issue-backed closeout controls from the live Milestone 1 terminal checkpoint.",
+      "depends_on": [],
+      "action_class": "project_control",
+      "human_gate": false,
+      "status": "complete",
+      "inputs": [
+        "Live main 92a44fe143a4d2d23bb4f415dc37489480d1b590",
+        "Issue #6",
+        "Standing goal authority"
+      ],
+      "outputs": [
+        "Active profile 2026-003",
+        "Milestone 8 contract",
+        "Issue-backed codex/m8-terminal-release-closeout branch"
+      ],
+      "gates": {
+        "m1_terminal_checkpoint": "pass",
+        "scope": "pass",
+        "final_release_gate_retained": "pass"
+      },
+      "disposition": "pass",
+      "retained_failures": [
+        "Activation validation attempt 1: the active profile retained standing metadata_capture authority while the contract omitted it, README dropped one required literal historical source-admission boundary, and two unit decision values used unsupported labels; the narrow control repair retained identical authority and explicit claim boundaries."
+      ],
+      "exit_condition_delta": {
+        "expected": [],
+        "observed": [],
+        "decision_value": "enables_dependency",
+        "rationale": "The live INCONCLUSIVE checkpoint enables release closeout but does not itself authorize final release."
+      },
+      "next_dependency": "M8-U002-BUILD-RELEASE-CANDIDATE"
+    },
+    {
+      "id": "M8-U002-BUILD-RELEASE-CANDIDATE",
+      "purpose": "Build the exact public-safe terminal claims, limitations, version, and deterministic replay package candidate.",
+      "depends_on": [
+        "M8-U001-ACTIVATE-CLOSEOUT"
+      ],
+      "action_class": "software_implementation",
+      "human_gate": false,
+      "status": "complete",
+      "inputs": [
+        "Live Milestone 1 evidence",
+        "Terminal outcomes",
+        "Project claim envelope"
+      ],
+      "outputs": [
+        "substantive candidate commit c8a6b8fcefba7d838c221ff00f1e43f45f69e362",
+        "substantive candidate tree a7bfa2577e13946c6d0547881d9b0eba30abbf46",
+        "docs/releases/v0.1.0-terminal-inconclusive.md",
+        "records/releases/EXPERIMENT-FOUR-TERMINAL-OUTCOMES-2026-001.json",
+        "scripts/build_terminal_release_package.py"
+      ],
+      "gates": {
+        "public_safe": "pass",
+        "deterministic_package": "pass_implementation_and_tests",
+        "claims": "pass",
+        "limitations": "pass"
+      },
+      "disposition": "pass",
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M8-RELEASE-CANDIDATE"
+        ],
+        "observed": [
+          "EXIT-M8-RELEASE-CANDIDATE"
+        ],
+        "decision_value": "advances_exit",
+        "rationale": "The substantive candidate freezes truthful terminal claims, limitations, controls, and deterministic replay packaging. The successor control commit closes this unit without changing those claims."
+      },
+      "next_dependency": "M8-U003-AUDIT-AND-PREPARE-REVIEW"
+    },
+    {
+      "id": "M8-U003-AUDIT-AND-PREPARE-REVIEW",
+      "purpose": "Independently audit local, candidate, custody, and live GitHub surfaces and prepare one exact review bundle.",
+      "depends_on": [
+        "M8-U002-BUILD-RELEASE-CANDIDATE"
+      ],
+      "action_class": "deterministic_validation",
+      "human_gate": false,
+      "status": "in_progress",
+      "inputs": [
+        "Exact candidate commit and tree",
+        "Exact replay assets",
+        "Project real-surface registry"
+      ],
+      "outputs": [
+        "Candidate-bound release audit",
+        "Real-surface evaluation receipt",
+        "Render-verified owner review bundle"
+      ],
+      "gates": {
+        "scope_and_diff": "pending",
+        "tests_and_replay": "pending",
+        "privacy_and_security": "pending",
+        "live_surfaces": "pending",
+        "review_bundle": "pending"
+      },
+      "disposition": null,
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M8-RELEASE-AUDIT"
+        ],
+        "observed": [],
+        "decision_value": "unknown",
+        "rationale": "Final approval requires independently verified candidate and live-surface evidence."
+      },
+      "next_dependency": "M8-U004-FINAL-RELEASE-REVIEW"
+    },
+    {
+      "id": "M8-U004-FINAL-RELEASE-REVIEW",
+      "purpose": "Obtain and lock one exact owner decision on the complete terminal release candidate.",
+      "depends_on": [
+        "M8-U003-AUDIT-AND-PREPARE-REVIEW"
+      ],
+      "action_class": "final_scientific_release",
+      "human_gate": true,
+      "status": "planned",
+      "inputs": [
+        "Exact release review bundle and contract"
+      ],
+      "outputs": [
+        "Private no-overwrite owner response",
+        "Aggregate public approval or rejection receipt"
+      ],
+      "gates": {
+        "bundle_binding": "pending",
+        "owner_decision": "pending",
+        "response_custody": "pending"
+      },
+      "disposition": null,
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M8-OWNER-APPROVAL"
+        ],
+        "observed": [],
+        "decision_value": "unknown",
+        "rationale": "Final scientific release is a genuine hard stop."
+      },
+      "next_dependency": "M8-U005-PUBLISH-EXACT-RELEASE"
+    },
+    {
+      "id": "M8-U005-PUBLISH-EXACT-RELEASE",
+      "purpose": "After exact approval only, merge the approved tree and create the exact tag, GitHub release, and assets.",
+      "depends_on": [
+        "M8-U004-FINAL-RELEASE-REVIEW"
+      ],
+      "action_class": "public_repository_publication",
+      "human_gate": false,
+      "status": "planned",
+      "inputs": [
+        "Locked exact release approval",
+        "Approved candidate tree and assets"
+      ],
+      "outputs": [
+        "Merged release revision",
+        "Exact v0.1.0 tag",
+        "GitHub release and assets"
+      ],
+      "gates": {
+        "approval_exact": "pending",
+        "candidate_tree_exact": "pending",
+        "tag_and_assets": "pending"
+      },
+      "disposition": null,
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M8-LIVE-RELEASE"
+        ],
+        "observed": [],
+        "decision_value": "unknown",
+        "rationale": "Only the exact approved candidate and assets may be published."
+      },
+      "next_dependency": "M8-U006-VERIFY-LIVE-RELEASE"
+    },
+    {
+      "id": "M8-U006-VERIFY-LIVE-RELEASE",
+      "purpose": "Independently verify merge tree, tag peel, release object, downloaded asset hashes, claims, and limitations.",
+      "depends_on": [
+        "M8-U005-PUBLISH-EXACT-RELEASE"
+      ],
+      "action_class": "external_state_verification",
+      "human_gate": false,
+      "status": "planned",
+      "inputs": [
+        "Live GitHub release surfaces"
+      ],
+      "outputs": [
+        "Independent live release receipt"
+      ],
+      "gates": {
+        "revision_and_tree": "pending",
+        "tag": "pending",
+        "release_object": "pending",
+        "downloaded_assets": "pending",
+        "claims_and_limitations": "pending"
+      },
+      "disposition": null,
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M8-LIVE-RELEASE"
+        ],
+        "observed": [],
+        "decision_value": "unknown",
+        "rationale": "A created release is not verified until its live exact surfaces pass."
+      },
+      "next_dependency": "M8-U007-TERMINAL-RECONCILIATION"
+    },
+    {
+      "id": "M8-U007-TERMINAL-RECONCILIATION",
+      "purpose": "Align all active project records to the independently verified release and terminally close without a successor.",
+      "depends_on": [
+        "M8-U006-VERIFY-LIVE-RELEASE"
+      ],
+      "action_class": "update_project_records",
+      "human_gate": false,
+      "status": "planned",
+      "inputs": [
+        "Independent live release receipt"
+      ],
+      "outputs": [
+        "Aligned terminal reconciliation",
+        "Complete Milestone 8 contract"
+      ],
+      "gates": {
+        "status": "pending",
+        "roadmap": "pending",
+        "profile": "pending",
+        "issue": "pending",
+        "goal": "pending"
+      },
+      "disposition": null,
+      "retained_failures": [],
+      "exit_condition_delta": {
+        "expected": [
+          "EXIT-M8-TERMINAL-RECONCILIATION"
+        ],
+        "observed": [],
+        "decision_value": "unknown",
+        "rationale": "The goal closes only when repository and live release truth agree."
+      },
+      "next_dependency": null
+    }
+  ],
+  "path_efficiency": {
+    "max_consecutive_no_progress_units": 2,
+    "review_action_class": "project_control",
+    "review_human_gate": false
+  },
+  "verification": {
+    "changed_risks": [
+      "documentation and control truth",
+      "deterministic replay package",
+      "public claims and privacy",
+      "security and custody boundary",
+      "external publication"
+    ],
+    "required_checks": [
+      "canonical repository and revision identity",
+      "complete diff and structured-data validation",
+      "full tests and clean candidate replay",
+      "public-safe privacy and secret scan",
+      "candidate-bound real-surface audit",
+      "exact owner release decision",
+      "live merge tree, tag, release, and downloaded asset verification",
+      "terminal state reconciliation"
+    ],
+    "completed_checks": [
+      "canonical repository and revision identity",
+      "complete diff and structured-data validation",
+      "full tests and clean candidate replay"
+    ]
+  },
+  "handoff": {
+    "current_checkpoint": "The substantive v0.1.0 terminal release candidate is frozen at commit c8a6b8fcefba7d838c221ff00f1e43f45f69e362 and tree a7bfa2577e13946c6d0547881d9b0eba30abbf46. Final release remains unapproved and NOT_RELEASED.",
+    "next_action": "Freeze this unit-closure successor, build exact replay assets from its clean commit, run the candidate-bound release audit, and stop at the final scientific release owner gate.",
+    "do_not_carry_forward": [
+      "Any authority to rescue or rerun the Milestone 1 result",
+      "Any authority to activate Milestones 2 through 7",
+      "Any private review response, source body, credential, imagery, label, model, prediction, or metric",
+      "Any final release authority before one exact owner approval"
+    ]
+  }
+}

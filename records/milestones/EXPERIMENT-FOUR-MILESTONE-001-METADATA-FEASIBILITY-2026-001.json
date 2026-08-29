@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "milestone_id": "EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001",
   "project_profile_ref": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
-  "status": "active",
+  "status": "complete",
   "authority": {
     "mode": "inherited",
     "authority_ref": "goal-service:01a0320c-ae81-7550-ade2-c6c22d4abf93/records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
@@ -459,12 +459,13 @@
       "exact source gate and owner decision",
       "candidate-universe completeness and replay",
       "storage, compute, and review capacity",
-      "independent bundle validation"
+      "independent bundle validation",
+      "complete diff and live publication verification"
     ]
   },
   "handoff": {
-    "current_checkpoint": "Milestone 1 method and independent replay pass, but the frozen candidate universe supports zero selectable slots versus 36 required. The scientific disposition is INCONCLUSIVE, no candidate or role was selected, and Milestone 2 is not authorized.",
-    "next_action": "Publish and live-verify the exact Milestone 1 INCONCLUSIVE checkpoint through PR #5; do not activate Milestone 2.",
+    "current_checkpoint": "Milestone 1 is complete and live-verified at merge commit 92a44fe143a4d2d23bb4f415dc37489480d1b590 with passing GitHub Actions run 33264616638. The scientific disposition is INCONCLUSIVE, no candidate or role was selected, and Milestone 2 is not authorized.",
+    "next_action": "Activate Milestone 8 terminal evidence closeout under issue #6; preserve the INCONCLUSIVE result and stop at the final scientific release owner gate.",
     "do_not_carry_forward": [
       "Any assumption that a prior event name is a complete event identity",
       "Any source authority inferred from anonymous discovery",
