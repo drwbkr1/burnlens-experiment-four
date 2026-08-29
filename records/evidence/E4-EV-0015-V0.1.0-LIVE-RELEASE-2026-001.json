@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "evidence_id": "E4-EV-0015",
+  "recorded_at_utc": "2026-08-29T17:35:57Z",
+  "scope": "Independent verification of the exact public v0.1.0 terminal evidence release.",
+  "release": {
+    "url": "https://github.com/drwbkr1/burnlens-experiment-four/releases/tag/v0.1.0",
+    "tag": "v0.1.0",
+    "title": "BurnLens Experiment Four v0.1.0 - Terminal INCONCLUSIVE evidence",
+    "published_at_utc": "2026-08-29T17:32:48Z",
+    "draft": false,
+    "prerelease": false,
+    "release_commit": "fa28edc35847947dc69001ba72bc8f956d86b37c",
+    "release_tree": "f604f48976befc090dcf158dd9dd6019f48f2eea"
+  },
+  "merge": {
+    "pull_request": "https://github.com/drwbkr1/burnlens-experiment-four/pull/7",
+    "approved_head": "c666701d1104225dd91dd0483f87dbd160706291",
+    "merged_at_utc": "2026-08-29T17:31:44Z",
+    "merge_commit": "fa28edc35847947dc69001ba72bc8f956d86b37c",
+    "tree_matches_approved_tree": true
+  },
+  "post_merge_validation": {
+    "workflow": "repository-controls",
+    "run_id": 33265867285,
+    "url": "https://github.com/drwbkr1/burnlens-experiment-four/actions/runs/33265867285",
+    "head_sha": "fa28edc35847947dc69001ba72bc8f956d86b37c",
+    "conclusion": "success"
+  },
+  "assets": [
+    {"name": "burnlens-experiment-four-v0.1.0-evidence-manifest.json", "bytes": 21667, "sha256": "f980bd1f9a4af733baf06f829721706cfc2f6f2678330dbdc91bc9a881457ed4"},
+    {"name": "burnlens-experiment-four-v0.1.0-replay.zip", "bytes": 210784, "sha256": "6677cc7324f257a607c82f48c2fe008d3828e57fa844eb9ff141fa575b0d2cae"},
+    {"name": "E4-M8-FINAL-RELEASE-OWNER-REVIEW-2026-001.md", "bytes": 2731, "sha256": "470be411104a041d6456408437f308da2413848e14e8cc67fdf6c0b0957c92f0"},
+    {"name": "E4-M8-FINAL-RELEASE-RENDER-RECEIPT-2026-001.json", "bytes": 1347, "sha256": "bb2bcab0dd52feb1ddcfa11c9084acaac64a296d4398ca2884063f33e0c915a9"},
+    {"name": "E4-M8-FINAL-RELEASE-REVIEW-BUNDLE-2026-001.json", "bytes": 5648, "sha256": "2cce3a7bbbeea8eb3e264720b8d54f8259878b76b78c8c2ddd6d362887bec92d"},
+    {"name": "e4-m8-final-release-review.html", "bytes": 11047, "sha256": "d0107d793814bb365c2da682ad0449dda3b0a8909db067947ef690d648590ca9"},
+    {"name": "E4-M8-REAL-SURFACE-EVALUATION-2026-001.json", "bytes": 439, "sha256": "6e6f684b684f79cabc0d7c1482d5394110ddb5fa7761eced3bf309f21d4c20bf"},
+    {"name": "E4-M8-REAL-SURFACE-MATRIX-2026-001.json", "bytes": 2722, "sha256": "111e30c997867a71b76570bc4692db4e26e7d877c8c1fefcd6852dc1cf834134"},
+    {"name": "E4-M8-RELEASE-AUDIT-2026-001.json", "bytes": 10049, "sha256": "ebeb3a78070f0fb515b9cd6dfbb3644fd3bab78c01a340c2985e4c85ea71f731"},
+    {"name": "E4-M8-RELEASE-AUDIT-EVALUATION-2026-001.json", "bytes": 730, "sha256": "156399a7c92856f19e675c48a147234d3f3c05d9360c9ddc21d3101e07d53fc3"}
+  ],
+  "independent_download_verification": {
+    "asset_count": 10,
+    "all_api_digests_match": true,
+    "all_downloaded_sha256_match": true,
+    "manifest_entry_count": 116,
+    "replay_zip_entry_count": 116,
+    "replay_zip_unique_entry_count": 116,
+    "unexpected_private_or_source_body_paths": 0,
+    "release_notes_match_reviewed_body": true,
+    "scientific_disposition_preserved": "INCONCLUSIVE"
+  },
+  "disposition": "PASS"
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "evidence_id": "E4-EV-0014",
+  "recorded_at_utc": "2026-08-29T17:30:49Z",
+  "review_id": "E4-M8-FINAL-RELEASE-2026-001",
+  "scope": "Aggregate-only evidence for the exact final scientific release decision; the response and note fields remain in private custody.",
+  "bindings": {
+    "review_bundle_sha256": "2cce3a7bbbeea8eb3e264720b8d54f8259878b76b78c8c2ddd6d362887bec92d",
+    "contract_sha256": "ba388a58d934b38407050835fbce7292dfbe8e71e1d38b2b5bdf5cf8b3a29ecf",
+    "response_sha256": "ff65620ef0f2a2129a1f83b7f0e59c473268059387ea8784e4ed249e0fff7450",
+    "lock_receipt_sha256": "5420f06c6cb1b7ba077d65410dcb59e459573b669a35d121ff3dad580102ecc6",
+    "private_reconciliation_sha256": "2342214e828a9b4ae086d4552a884cb3781bb56511b9836d446505581dd08578"
+  },
+  "custody": {
+    "classification": "private_review_custody",
+    "exact_response_preserved_without_overwrite": true,
+    "decision_values_read_before_lock": false,
+    "note_values_read_before_lock": false,
+    "response_or_note_content_published": false
+  },
+  "aggregate_result": {
+    "human_decision_count": 1,
+    "decision_counts": {
+      "approve": 1,
+      "reject": 0,
+      "uncertain": 0
+    },
+    "notes_included": false,
+    "human_decisions_fabricated": false
+  },
+  "authorized_consequence": {
+    "approved_tree": "f604f48976befc090dcf158dd9dd6019f48f2eea",
+    "tag": "v0.1.0",
+    "release_title": "BurnLens Experiment Four v0.1.0 - Terminal INCONCLUSIVE evidence",
+    "publication_scope": "Merge PR #7 only at the approved tree; publish the exact release and ten exact bundle-bound assets; independently verify every live surface before terminal reconciliation."
+  },
+  "disposition": "PASS"
+}

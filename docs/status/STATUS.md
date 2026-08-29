@@ -5,126 +5,83 @@
 | Status date | 2026-08-29 |
 | Canonical remote | `https://github.com/drwbkr1/burnlens-experiment-four` |
 | Canonical checkout | `C:\Projects\Active\burnlens-experiment-four` |
-| Working version | `0.1.0` terminal release candidate |
-| Live accepted `main` | `92a44fe143a4d2d23bb4f415dc37489480d1b590` |
-| Retained bootstrap evidence checkpoint | `9e244ac3a8c84ec70651aa2a3114da2be25d489d` |
-| Active work | Milestone 8 terminal evidence closeout under issue #6 on `codex/m8-terminal-release-closeout` |
-| Overall state | Milestone 1 `INCONCLUSIVE`; live checkpoint verified; final release candidate preparation active |
+| Version | `0.1.0` |
+| Reviewed release revision | `fa28edc35847947dc69001ba72bc8f956d86b37c` |
+| Reviewed release tree | `f604f48976befc090dcf158dd9dd6019f48f2eea` |
+| Release | [v0.1.0](https://github.com/drwbkr1/burnlens-experiment-four/releases/tag/v0.1.0) |
+| Overall state | Terminal; Milestone 1 `INCONCLUSIVE`; release status `PASS` |
+| Successor | Not authorized |
 
 ## Current truth
 
-- The owner created the public repository on 2026-08-25.
-- Milestone 0 remains accepted as the historical repository bootstrap; its
-  evidence does not establish source fitness or a scientific result.
-- The repository entered as verified empty and now has one accepted bootstrap
-  checkpoint on `main`.
-- Secret scanning and push protection are enabled.
-- GitHub Actions run `32901591615` passed against the exact accepted commit.
-- Live README and workflow Git blobs matched local object identities.
-- `main` requires strict `validate` status, pull requests, linear history, and
-  conversation resolution; force pushes and deletion are denied.
-- Issue #1 records the accepted bootstrap; issue #2 controls Milestone 1.
-- Live local and remote `main` resolve to `3c3c86930513e4e40dcec8bfb37d782b0f22d789`;
-  the earlier `9e244ac3a8c84ec70651aa2a3114da2be25d489d` bootstrap
-  evidence remains historical and unchanged.
-- The prior-event exclusion manifest permanently excludes 68 identities: six
-  accepted Experiment One/Three events and 62 conservative candidates from
-  exact, hash-bound, unpublished Experiment Two-B roster records.
-- The complete local bootstrap candidate passed repository validation, five
-  focused unit tests, the project-control validator, and the milestone
-  validator after two retained repair cycles.
-- Exactly five official metadata sources are admitted for the bounded Milestone
-  1 actions in the owner-reviewed proposal. No candidate row or scientific
-  source body had been opened at the adoption decision.
-- There is no admitted scientific dataset, reference label, model, dependency
-  runtime, training run, inference, evaluation, metric, tag, release, or
-  deployment.
-- The exact Milestone 1 source review bundle is prepared and render-verified at
-  SHA-256 `7423219b7d23388546fb7d1db0d66e83ade8958fe20ee97fc19ab95952ba62f7`.
-  The exact returned response was locked at SHA-256
-  `897926590c470978cca2c5d8d424212f5372c445af8a9df05384f70bdcb7f83c`
-  and reconciled to one approval, with no notes included in public records.
-- Eligibility profile `E4-ELIGIBILITY-2026-001` is frozen without changing the
-  reviewed 2026-002 proposal values. The five-source registry retains all
-  post-approval prohibitions, including HLS imagery and event selection.
-- PR #4 merged the exact M1-U004 checkpoint, and post-merge GitHub Actions run
-  `32916876216` passed. Both exact Milestone 1 archives remain promoted
-  read-only with verified hashes.
-- The MTBS preflight accounts for 187 complete pre-exclusion universe rows
-  without opening denied field values. It created zero eligibility decisions.
-- M1-U005 retained a protocol failure: WFIGS uses exact states `US-ID`,
-  `US-OR`, and `US-WA` while the original frozen text said `ID`, `OR`, and
-  `WA`; MTBS uses exact type `Wildfire` while one frozen sentence said `WF`.
-  The zero-match result remains retained evidence and no normalization was
-  implicit.
-- The exact literal-encoding owner-review bundle is render-verified at SHA-256
-  `3ff69ce031313db2010706cf481a63c24d45a88cfb23c2f6bb7a38d96f7b972a`.
-- The returned amendment response was locked at SHA-256
-  `8b19e3002fee9df9349e88932474b17e4ba061e6348930efe6d5ed1feaad2fcc`
-  and reconciled to one approval. Exact `US-` state pairs and the exact
-  `Wildfire`/`WF` pair are frozen; no other rule changed.
-- The bounded WFIGS snapshot contains 1,756 features and was stable during
-  capture. All 1,756 reviewed `attr_FinalAcres` values are null.
-- The complete universe accounts for all 187 MTBS candidates: 171 have one
-  exact WFIGS identity match and 16 have no exact WFIGS match. Zero candidates
-  can proceed to ecology or HLS because a required antecedent is failed or
-  unknown.
-- Independent validation reproduced all snapshot, identity, geometry-hash,
-  evaluator, leakage, and capacity checks. The maximum selectable capacity is
-  zero in Idaho, Oregon, and Washington and zero total, versus 12 per state and
-  36 total required.
-- Milestone 1 is therefore `INCONCLUSIVE`. No fallback source field or relaxed
-  requirement is permitted and Milestone 2 is not authorized.
-- PR #5 merged as `92a44fe143a4d2d23bb4f415dc37489480d1b590` on
-  2026-08-29. Post-merge GitHub Actions run `33264616638` passed, and direct
-  live reads verified the status and independent-validation blobs.
-- Milestone 8 is active for release audit, exact owner review, and terminal
-  publication only. There is still no tag, GitHub release, or final scientific
-  release approval.
+- Milestone 0 remains the accepted historical repository-control bootstrap. Its
+  structural pass is not scientific evidence.
+- The complete frozen Milestone 1 universe accounts for all 187 candidates.
+  The bounded 1,756-feature WFIGS snapshot has zero non-null reviewed
+  `attr_FinalAcres` values.
+- Independent replay verified a maximum of zero selectable slots in Idaho,
+  Oregon, and Washington and zero total, versus 12 per state and 36 required.
+- Milestone 1 and the data route are therefore `INCONCLUSIVE`. No fallback
+  field, source substitution, threshold reduction, cohort expansion, wider
+  year/state scope, or prior-event reuse was allowed.
+- Milestones 2 through 7 were never authorized. No event, HLS imagery, label,
+  model, training run, inference, metric, or sealed test evidence was opened.
+- The final review bundle was SHA-256
+  `2cce3a7bbbeea8eb3e264720b8d54f8259878b76b78c8c2ddd6d362887bec92d`.
+  The exact response was locked under the approved private ACL before reveal.
+  Public aggregate evidence records approve 1, reject 0, uncertain 0, with no
+  response or note content published.
+- PR #7 merged only approved tree
+  `f604f48976befc090dcf158dd9dd6019f48f2eea` as release commit
+  `fa28edc35847947dc69001ba72bc8f956d86b37c`. Post-merge GitHub Actions run
+  `33265867285` passed.
+- Tag `v0.1.0`, the release title/body, and all ten approved release assets were
+  independently read back. Every API digest and fresh-download SHA-256 matched.
+  The replay ZIP and manifest each contain 116 unique expected entries and no
+  private-review or scientific source-body paths.
+- Milestone 8, the active project profile, roadmap, status, terminal outcomes,
+  evidence ledger, decision register, and release history are reconciled to
+  this verified state. No successor experiment is implied or authorized.
 
-Missing is not passed. The accepted checkpoint proves repository controls only;
-it is not scientific evidence or source approval.
+Missing is not passed. A verified release means the exact evidence package was
+published and replayed correctly; it does not convert an `INCONCLUSIVE`
+scientific route into a scientific pass.
 
-## Scientific state
+## Terminal outcomes
 
 | Surface | State |
 | --- | --- |
 | Candidate universe | `187 / 187` accounted; `0` ready and `0` selected |
 | Pilot events | `0 / 6` |
 | Final cohort | `0 / 30` |
-| Dataset readiness | `NOT EVALUATED` |
+| Dataset readiness | `NOT_EVALUATED` |
 | Training runs | `0` |
 | Test openings | `0 / 1` |
 | Evaluations | `0` |
-| Releases | `0` |
 | Milestone 1 disposition | `INCONCLUSIVE` |
 | Lifecycle status | `INCONCLUSIVE` |
-| Comparative status | `NOT EVALUATED` |
-| Release status | `NOT RELEASED` |
+| Comparative status | `NOT_EVALUATED` |
+| Release status | `PASS` |
+| Public releases | `1` exact terminal evidence release |
 
 ## Metadata controls
 
 | Surface | State |
 | --- | --- |
 | Prior-event permanent exclusions | `68` |
-| External metadata sources admitted | `5` exact sources |
-| Experiment Four candidates enumerated | `187 / 187`; `0` eligibility assignments and `0` selections |
+| External metadata sources admitted | `5` exact sources for bounded Milestone 1 use only |
+| Experiment Four candidates enumerated | `187 / 187`; `0` selections |
 | Candidate metadata schema | `FROZEN` |
-| Eligibility profile values | `FROZEN E4-ELIGIBILITY-2026-001` |
-| Candidate source rows observed | `187` MTBS rows |
-| Source review bundle | `APPROVED`; exact response locked and reconciled |
+| Eligibility profile | `FROZEN E4-ELIGIBILITY-2026-001` |
 | Exact metadata archives | `2 / 2 PROMOTED`; no-overwrite and hash verified |
-| Literal encoding amendment | `APPROVED`; representation-only mapping frozen |
-| Amendment review bundle | `APPROVED`; exact response locked and reconciled |
+| Literal-encoding amendment | `APPROVED`; representation-only mapping frozen |
 | Bounded WFIGS snapshot | `1,756` features; `0` non-null reviewed final-acre values |
-| Exact MTBS/WFIGS matches | `171`; remaining `16` have no exact match |
+| Exact MTBS/WFIGS identity matches | `171`; `16` have no exact match |
 | Maximum selectable slots | `0 / 36`; `0 / 12` in each state |
 | Independent M1 validation | `PASS`; scientific disposition `INCONCLUSIVE` |
 
 ## Immediate next action
 
-Freeze the release-candidate unit closure, build the deterministic replay ZIP
-and evidence manifest from that clean exact commit, and complete the
-candidate-bound release audit. Then present one hash-bound owner review for
-final scientific release. Do not create the tag or GitHub release before that
-exact approval.
+None. Experiment Four is terminally closed. Any successor requires a new,
+explicitly approved goal and must preserve this release and its failed route as
+immutable prior evidence.

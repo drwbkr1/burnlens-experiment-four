@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "milestone_id": "EXPERIMENT-FOUR-MILESTONE-008-TERMINAL-RELEASE-2026-001",
-  "project_profile_ref": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-003.json",
-  "status": "active",
+  "project_profile_ref": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-004.json",
+  "status": "complete",
   "authority": {
     "mode": "inherited",
     "authority_ref": "goal-service:01a0320c-ae81-7550-ade2-c6c22d4abf93/records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
@@ -31,7 +31,7 @@
       "https://github.com/drwbkr1/burnlens-experiment-four/issues/6"
     ],
     "active_contract": "records/milestones/EXPERIMENT-FOUR-MILESTONE-008-TERMINAL-RELEASE-2026-001.json",
-    "verified_at_utc": "2026-08-29T17:12:00Z",
+    "verified_at_utc": "2026-08-29T17:35:57Z",
     "expires_at_utc": null
   },
   "scope": {
@@ -93,32 +93,40 @@
       "id": "EXIT-M8-RELEASE-CANDIDATE",
       "status": "pass",
       "evidence": [
-        "substantive candidate commit c8a6b8fcefba7d838c221ff00f1e43f45f69e362",
-        "substantive candidate tree a7bfa2577e13946c6d0547881d9b0eba30abbf46",
-        "docs/releases/v0.1.0-terminal-inconclusive.md",
-        "records/releases/EXPERIMENT-FOUR-TERMINAL-OUTCOMES-2026-001.json",
-        "scripts/build_terminal_release_package.py"
+        "final approved candidate c666701d1104225dd91dd0483f87dbd160706291",
+        "approved candidate tree f604f48976befc090dcf158dd9dd6019f48f2eea",
+        "https://github.com/drwbkr1/burnlens-experiment-four/pull/7"
       ]
     },
     {
       "id": "EXIT-M8-RELEASE-AUDIT",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "E4-M8-RELEASE-AUDIT-2026-001.json sha256 ebeb3a78070f0fb515b9cd6dfbb3644fd3bab78c01a340c2985e4c85ea71f731",
+        "E4-M8-RELEASE-AUDIT-EVALUATION-2026-001.json sha256 156399a7c92856f19e675c48a147234d3f3c05d9360c9ddc21d3101e07d53fc3",
+        "E4-M8-REAL-SURFACE-EVALUATION-2026-001.json sha256 6e6f684b684f79cabc0d7c1482d5394110ddb5fa7761eced3bf309f21d4c20bf"
+      ]
     },
     {
       "id": "EXIT-M8-OWNER-APPROVAL",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "records/evidence/E4-EV-0014-FINAL-RELEASE-APPROVAL-2026-001.json"
+      ]
     },
     {
       "id": "EXIT-M8-LIVE-RELEASE",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "records/evidence/E4-EV-0015-V0.1.0-LIVE-RELEASE-2026-001.json"
+      ]
     },
     {
       "id": "EXIT-M8-TERMINAL-RECONCILIATION",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-010.json"
+      ]
     }
   ],
   "units": [
@@ -173,6 +181,8 @@
       "outputs": [
         "substantive candidate commit c8a6b8fcefba7d838c221ff00f1e43f45f69e362",
         "substantive candidate tree a7bfa2577e13946c6d0547881d9b0eba30abbf46",
+        "final approved candidate commit c666701d1104225dd91dd0483f87dbd160706291",
+        "final approved candidate tree f604f48976befc090dcf158dd9dd6019f48f2eea",
         "docs/releases/v0.1.0-terminal-inconclusive.md",
         "records/releases/EXPERIMENT-FOUR-TERMINAL-OUTCOMES-2026-001.json",
         "scripts/build_terminal_release_package.py"
@@ -205,33 +215,40 @@
       ],
       "action_class": "deterministic_validation",
       "human_gate": false,
-      "status": "in_progress",
+      "status": "complete",
       "inputs": [
         "Exact candidate commit and tree",
         "Exact replay assets",
         "Project real-surface registry"
       ],
       "outputs": [
-        "Candidate-bound release audit",
-        "Real-surface evaluation receipt",
-        "Render-verified owner review bundle"
+        "E4-M8-RELEASE-AUDIT-2026-001.json sha256 ebeb3a78070f0fb515b9cd6dfbb3644fd3bab78c01a340c2985e4c85ea71f731",
+        "E4-M8-REAL-SURFACE-MATRIX-2026-001.json sha256 111e30c997867a71b76570bc4692db4e26e7d877c8c1fefcd6852dc1cf834134",
+        "E4-M8-REAL-SURFACE-EVALUATION-2026-001.json sha256 6e6f684b684f79cabc0d7c1482d5394110ddb5fa7761eced3bf309f21d4c20bf",
+        "E4-M8-FINAL-RELEASE-REVIEW-BUNDLE-2026-001.json sha256 2cce3a7bbbeea8eb3e264720b8d54f8259878b76b78c8c2ddd6d362887bec92d",
+        "three matching deterministic builds including a fresh GitHub clone"
       ],
       "gates": {
-        "scope_and_diff": "pending",
-        "tests_and_replay": "pending",
-        "privacy_and_security": "pending",
-        "live_surfaces": "pending",
-        "review_bundle": "pending"
+        "scope_and_diff": "pass",
+        "tests_and_replay": "pass",
+        "privacy_and_security": "pass",
+        "live_surfaces": "pass",
+        "review_bundle": "pass"
       },
-      "disposition": null,
-      "retained_failures": [],
+      "disposition": "pass",
+      "retained_failures": [
+        "The first audit evaluation used an unsupported disposition vocabulary and was blocked; the assessor was corrected without changing evidence.",
+        "A detached-HEAD clean replay failed the repository branch-identity control; the failure was retained and a fresh GitHub clone replay passed."
+      ],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M8-RELEASE-AUDIT"
         ],
-        "observed": [],
-        "decision_value": "unknown",
-        "rationale": "Final approval requires independently verified candidate and live-surface evidence."
+        "observed": [
+          "EXIT-M8-RELEASE-AUDIT"
+        ],
+        "decision_value": "advances_exit",
+        "rationale": "The exact approved candidate, three deterministic package builds, public-safety checks, real-surface matrix, and render-verified review bundle all passed."
       },
       "next_dependency": "M8-U004-FINAL-RELEASE-REVIEW"
     },
@@ -243,28 +260,32 @@
       ],
       "action_class": "final_scientific_release",
       "human_gate": true,
-      "status": "planned",
+      "status": "complete",
       "inputs": [
         "Exact release review bundle and contract"
       ],
       "outputs": [
-        "Private no-overwrite owner response",
-        "Aggregate public approval or rejection receipt"
+        "private no-overwrite response sha256 ff65620ef0f2a2129a1f83b7f0e59c473268059387ea8784e4ed249e0fff7450",
+        "records/evidence/E4-EV-0014-FINAL-RELEASE-APPROVAL-2026-001.json"
       ],
       "gates": {
-        "bundle_binding": "pending",
-        "owner_decision": "pending",
-        "response_custody": "pending"
+        "bundle_binding": "pass",
+        "owner_decision": "pass",
+        "response_custody": "pass"
       },
-      "disposition": null,
-      "retained_failures": [],
+      "disposition": "pass",
+      "retained_failures": [
+        "The first lock attempt rejected the browser's generic export filename before response content was read. Exact bytes were copied no-overwrite to the required hash-bound filename and then locked under the approved private ACL."
+      ],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M8-OWNER-APPROVAL"
         ],
-        "observed": [],
-        "decision_value": "unknown",
-        "rationale": "Final scientific release is a genuine hard stop."
+        "observed": [
+          "EXIT-M8-OWNER-APPROVAL"
+        ],
+        "decision_value": "advances_exit",
+        "rationale": "The exact response was locked before reveal and aggregate-only reconciliation recorded approve 1, reject 0, uncertain 0 with no notes published."
       },
       "next_dependency": "M8-U005-PUBLISH-EXACT-RELEASE"
     },
@@ -276,30 +297,33 @@
       ],
       "action_class": "public_repository_publication",
       "human_gate": false,
-      "status": "planned",
+      "status": "complete",
       "inputs": [
         "Locked exact release approval",
         "Approved candidate tree and assets"
       ],
       "outputs": [
-        "Merged release revision",
-        "Exact v0.1.0 tag",
-        "GitHub release and assets"
+        "PR #7 merged as fa28edc35847947dc69001ba72bc8f956d86b37c",
+        "approved tree f604f48976befc090dcf158dd9dd6019f48f2eea",
+        "tag v0.1.0",
+        "https://github.com/drwbkr1/burnlens-experiment-four/releases/tag/v0.1.0"
       ],
       "gates": {
-        "approval_exact": "pending",
-        "candidate_tree_exact": "pending",
-        "tag_and_assets": "pending"
+        "approval_exact": "pass",
+        "candidate_tree_exact": "pass",
+        "tag_and_assets": "pass"
       },
-      "disposition": null,
+      "disposition": "pass",
       "retained_failures": [],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M8-LIVE-RELEASE"
         ],
-        "observed": [],
-        "decision_value": "unknown",
-        "rationale": "Only the exact approved candidate and assets may be published."
+        "observed": [
+          "EXIT-M8-LIVE-RELEASE"
+        ],
+        "decision_value": "advances_exit",
+        "rationale": "Only the approved tree and exact ten bundle-bound assets were published."
       },
       "next_dependency": "M8-U006-VERIFY-LIVE-RELEASE"
     },
@@ -311,29 +335,31 @@
       ],
       "action_class": "external_state_verification",
       "human_gate": false,
-      "status": "planned",
+      "status": "complete",
       "inputs": [
         "Live GitHub release surfaces"
       ],
       "outputs": [
-        "Independent live release receipt"
+        "records/evidence/E4-EV-0015-V0.1.0-LIVE-RELEASE-2026-001.json"
       ],
       "gates": {
-        "revision_and_tree": "pending",
-        "tag": "pending",
-        "release_object": "pending",
-        "downloaded_assets": "pending",
-        "claims_and_limitations": "pending"
+        "revision_and_tree": "pass",
+        "tag": "pass",
+        "release_object": "pass",
+        "downloaded_assets": "pass",
+        "claims_and_limitations": "pass"
       },
-      "disposition": null,
+      "disposition": "pass",
       "retained_failures": [],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M8-LIVE-RELEASE"
         ],
-        "observed": [],
-        "decision_value": "unknown",
-        "rationale": "A created release is not verified until its live exact surfaces pass."
+        "observed": [
+          "EXIT-M8-LIVE-RELEASE"
+        ],
+        "decision_value": "advances_exit",
+        "rationale": "The live tag, release object, post-merge checks, all ten API digests, all ten fresh-download hashes, and replay entry boundaries passed."
       },
       "next_dependency": "M8-U007-TERMINAL-RECONCILIATION"
     },
@@ -345,30 +371,34 @@
       ],
       "action_class": "update_project_records",
       "human_gate": false,
-      "status": "planned",
+      "status": "complete",
       "inputs": [
         "Independent live release receipt"
       ],
       "outputs": [
-        "Aligned terminal reconciliation",
-        "Complete Milestone 8 contract"
+        "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-009.json",
+        "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-010.json",
+        "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-004.json",
+        "records/releases/EXPERIMENT-FOUR-TERMINAL-OUTCOMES-2026-002.json"
       ],
       "gates": {
-        "status": "pending",
-        "roadmap": "pending",
-        "profile": "pending",
-        "issue": "pending",
-        "goal": "pending"
+        "status": "pass",
+        "roadmap": "pass",
+        "profile": "pass",
+        "issue": "pass",
+        "goal": "pass"
       },
-      "disposition": null,
+      "disposition": "pass",
       "retained_failures": [],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M8-TERMINAL-RECONCILIATION"
         ],
-        "observed": [],
-        "decision_value": "unknown",
-        "rationale": "The goal closes only when repository and live release truth agree."
+        "observed": [
+          "EXIT-M8-TERMINAL-RECONCILIATION"
+        ],
+        "decision_value": "advances_exit",
+        "rationale": "All terminal records were merged and read back before issue and goal closure; no successor was activated."
       },
       "next_dependency": null
     }
@@ -399,17 +429,28 @@
     "completed_checks": [
       "canonical repository and revision identity",
       "complete diff and structured-data validation",
-      "full tests and clean candidate replay"
+      "full tests and three matching clean candidate replays",
+      "public-safe privacy and secret scan",
+      "candidate-bound real-surface audit",
+      "exact owner release decision locked before reveal",
+      "live merge tree, tag, release, and downloaded asset verification",
+      "terminal state reconciliation"
     ]
   },
   "handoff": {
-    "current_checkpoint": "The substantive v0.1.0 terminal release candidate is frozen at commit c8a6b8fcefba7d838c221ff00f1e43f45f69e362 and tree a7bfa2577e13946c6d0547881d9b0eba30abbf46. Final release remains unapproved and NOT_RELEASED.",
-    "next_action": "Freeze this unit-closure successor, build exact replay assets from its clean commit, run the candidate-bound release audit, and stop at the final scientific release owner gate.",
+    "current_checkpoint": "v0.1.0 and its terminal reconciliation records are live and independently verified. Issues #2 and #6 and the long-running goal are closed without a successor.",
+    "next_action": null,
     "do_not_carry_forward": [
       "Any authority to rescue or rerun the Milestone 1 result",
       "Any authority to activate Milestones 2 through 7",
-      "Any private review response, source body, credential, imagery, label, model, prediction, or metric",
-      "Any final release authority before one exact owner approval"
+      "Any private review response, note, source body, credential, imagery, label, model, prediction, or metric",
+      "Any implied successor experiment"
     ]
+  },
+  "terminal_outcomes": {
+    "dataset_readiness": "NOT_EVALUATED",
+    "lifecycle_status": "INCONCLUSIVE",
+    "comparative_status": "NOT_EVALUATED",
+    "release_status": "PASS"
   }
 }

@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "reconciliation_id": "EXPERIMENT-FOUR-STATE-2026-010",
+  "observed_at_utc": "2026-08-29T17:35:57Z",
+  "purpose": "Bind active project truth to the exact verified v0.1.0 release without changing the scientific result.",
+  "current_truth": {
+    "milestone_1": "INCONCLUSIVE",
+    "dataset_readiness": "NOT_EVALUATED",
+    "lifecycle_status": "INCONCLUSIVE",
+    "comparative_status": "NOT_EVALUATED",
+    "release_status": "PASS",
+    "release_commit": "fa28edc35847947dc69001ba72bc8f956d86b37c",
+    "release_tree": "f604f48976befc090dcf158dd9dd6019f48f2eea",
+    "tag": "v0.1.0",
+    "milestones_2_through_7_authorized": false,
+    "successor_authorized": false
+  },
+  "aligned_surfaces": [
+    "README.md",
+    "CHANGELOG.md",
+    "docs/status/STATUS.md",
+    "docs/status/VERSION-HISTORY.md",
+    "docs/roadmap/ROADMAP.md",
+    "records/evidence/EVIDENCE-LEDGER.md",
+    "records/decisions/DECISION-REGISTER.md",
+    "records/releases/EXPERIMENT-FOUR-TERMINAL-OUTCOMES-2026-002.json",
+    "records/milestones/EXPERIMENT-FOUR-MILESTONE-008-TERMINAL-RELEASE-2026-001.json",
+    "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-004.json"
+  ],
+  "retained_history": [
+    "The generic-filename lock attempt was rejected before response content was read; the exact bytes were copied no-overwrite to an accepted hash-bound filename and then locked.",
+    "The candidate release record and exact reviewed release note retain their conditional NOT_RELEASED text as historical pre-publication evidence.",
+    "Milestone 1 remains INCONCLUSIVE and no fallback, rerun, or downstream activation occurred."
+  ],
+  "classification": "ALIGNED",
+  "terminal": true
+}

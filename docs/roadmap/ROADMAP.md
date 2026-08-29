@@ -79,8 +79,10 @@ outcomes without rescue.
 
 ## Milestone 8 — Evidence and terminal release
 
-**Status:** Active closeout under issue #6; final release gate remains pending.
+**Status:** Complete and live-verified on 2026-08-29. Exact owner approval was
+locked before reveal; PR #7 merged only the approved tree; tag `v0.1.0`, the
+release object, and all ten downloaded assets passed independent verification.
 
-Produce public-safe reviewer evidence, audit dataset/model/security/docs/release
-truth, obtain final release approval, verify live assets and archives, reconcile
-records, and terminally close without starting a successor.
+Produced public-safe reviewer evidence, audited release truth, obtained exact
+final approval, verified live assets and archives, reconciled active records,
+and terminally closed without starting a successor.

@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-004",
+  "project": {
+    "name": "BurnLens Experiment Four",
+    "canonical_root": ".",
+    "repository_identity": {
+      "expected_remote": "https://github.com/drwbkr1/burnlens-experiment-four.git",
+      "default_branch": "main"
+    },
+    "custody_roots": [
+      "C:\\Projects\\Active\\burnlens-experiment-four",
+      "C:\\Projects\\Active\\burnlens-experiment-four-custody",
+      "C:\\Projects\\Active\\burnlens-experiment-four-private",
+      "C:\\Projects\\Active\\burnlens-experiment-four-runtime"
+    ],
+    "forbidden_roots": ["C:\\Users\\drewb\\OneDrive"]
+  },
+  "authority": {
+    "mode": "inherited",
+    "authority_ref": "goal-service:01a0320c-ae81-7550-ade2-c6c22d4abf93/records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
+    "authorized_action_classes": [
+      "read_only_inspection",
+      "external_state_verification",
+      "deterministic_validation",
+      "routine_qa",
+      "metadata_capture",
+      "evidence_recording",
+      "project_control",
+      "update_project_records",
+      "reversible_remediation",
+      "version_control_write",
+      "github_issue_management",
+      "github_pull_request_management",
+      "public_repository_publication",
+      "software_implementation"
+    ],
+    "verified_at_utc": "2026-08-29T17:35:57Z",
+    "expires_at_utc": null
+  },
+  "control_surfaces": {
+    "instructions": [
+      "AGENTS.md",
+      "docs/governance/EXPERIMENT-FOUR-EXECUTION-GOAL.md",
+      "docs/governance/CHECKPOINT-POLICY.md",
+      "records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md"
+    ],
+    "status": "docs/status/STATUS.md",
+    "roadmap": "docs/roadmap/ROADMAP.md",
+    "active_contract": "records/milestones/EXPERIMENT-FOUR-MILESTONE-008-TERMINAL-RELEASE-2026-001.json",
+    "evidence_ledger": "records/evidence/EVIDENCE-LEDGER.md",
+    "terminal_outcomes": "records/releases/EXPERIMENT-FOUR-TERMINAL-OUTCOMES-2026-002.json",
+    "history": [
+      "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-001.json",
+      "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+      "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-003.json",
+      "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-001.json",
+      "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-002.json",
+      "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-003.json",
+      "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-004.json",
+      "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-005.json",
+      "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-006.json",
+      "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-007.json",
+      "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-008.json",
+      "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-009.json",
+      "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-010.json",
+      "records/releases/EXPERIMENT-FOUR-TERMINAL-OUTCOMES-2026-001.json",
+      "CHANGELOG.md",
+      "docs/status/VERSION-HISTORY.md"
+    ]
+  },
+  "cycle": {
+    "canonical_probe": {"procedure_ref": "command:python scripts/validate_repository.py", "surface_id": "repository_control"},
+    "priority_ref": "docs/roadmap/ROADMAP.md"
+  },
+  "evaluation": {
+    "procedure_ref": "command:python scripts/validate_repository.py",
+    "evidence_roots": ["records/evidence", "records/reconciliations", "records/releases"]
+  },
+  "real_surfaces": [
+    {
+      "id": "repository_control",
+      "risk_classes": ["documentation", "security", "runtime"],
+      "procedure_ref": "command:python scripts/validate_repository.py && python -m unittest discover -s tests -v",
+      "receipt_root": "records/evidence",
+      "external": false
+    },
+    {
+      "id": "github_public_repository",
+      "risk_classes": ["public", "external", "security"],
+      "procedure_ref": "uri:https://github.com/drwbkr1/burnlens-experiment-four/releases/tag/v0.1.0",
+      "receipt_root": "records/releases",
+      "external": true
+    }
+  ],
+  "gate_policy": {
+    "default_human_action_classes": [
+      "normative_scientific_decision",
+      "external_source_dependency_runtime_or_service_adoption",
+      "credential_or_identity",
+      "terms_acceptance",
+      "spending",
+      "human_reference_review",
+      "cohort_or_protocol_change",
+      "access_ownership_visibility_or_custody_change",
+      "destructive_or_irreversible_action",
+      "security_testing",
+      "sealed_test_opening",
+      "unsupported_publication",
+      "final_scientific_release",
+      "authority_broadening"
+    ],
+    "default_non_human_action_classes": [
+      "read_only_inspection",
+      "external_state_verification",
+      "deterministic_validation",
+      "routine_qa",
+      "metadata_capture",
+      "evidence_recording",
+      "project_control",
+      "update_project_records",
+      "reversible_remediation",
+      "version_control_write",
+      "github_issue_management",
+      "github_pull_request_management",
+      "public_repository_publication",
+      "software_implementation"
+    ],
+    "completed_human_gates": [
+      {"unit_id": "M8-U004-FINAL-RELEASE-REVIEW", "result_ref": "records/evidence/E4-EV-0014-FINAL-RELEASE-APPROVAL-2026-001.json"}
+    ],
+    "amendment_required_to_change_completed_gate": true
+  },
+  "current_checkpoint": {
+    "checkpoint_id": "M8-TERMINAL-VERIFIED-V0.1.0-2026-08-29",
+    "expected_branch": "main",
+    "expected_head": null,
+    "next_action": null,
+    "terminal": true,
+    "successor_authorized": false
+  }
+}
