@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "reconciliation_id": "EXPERIMENT-FOUR-STATE-2026-007",
+  "project_profile_ref": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+  "authority": {
+    "mode": "inherited",
+    "authority_ref": "goal-service:01a0320c-ae81-7550-ade2-c6c22d4abf93/records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
+    "authorized_action_classes": [
+      "update_project_records",
+      "project_control"
+    ],
+    "verified_at_utc": "2026-08-29T17:12:00Z",
+    "expires_at_utc": null
+  },
+  "observed_at_utc": "2026-08-29T17:12:00Z",
+  "live_facts": [
+    {
+      "id": "main.accepted_commit",
+      "status": "observed",
+      "value": "92a44fe143a4d2d23bb4f415dc37489480d1b590",
+      "source_ref": "GitHub refs/heads/main and merged PR #5",
+      "observed_at_utc": "2026-08-29T17:12:00Z"
+    },
+    {
+      "id": "m1.publication",
+      "status": "observed",
+      "value": "live_verified",
+      "source_ref": "PR #5 and GitHub Actions run 33264616638",
+      "observed_at_utc": "2026-08-29T17:12:00Z"
+    },
+    {
+      "id": "project.phase",
+      "status": "observed",
+      "value": "Milestone 8 terminal evidence closeout active",
+      "source_ref": "Issue #6 and codex/m8-terminal-release-closeout",
+      "observed_at_utc": "2026-08-29T17:12:00Z"
+    },
+    {
+      "id": "profile.active",
+      "status": "observed",
+      "value": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-003.json",
+      "source_ref": "Milestone 8 activation",
+      "observed_at_utc": "2026-08-29T17:12:00Z"
+    },
+    {
+      "id": "m1.contract_status",
+      "status": "observed",
+      "value": "complete",
+      "source_ref": "all Milestone 1 exits passed and live publication verified",
+      "observed_at_utc": "2026-08-29T17:12:00Z"
+    }
+  ],
+  "recorded_claims": [
+    {
+      "id": "status.main",
+      "fact_id": "main.accepted_commit",
+      "surface_ref": "docs/status/STATUS.md",
+      "scope": "current",
+      "claimed_value": "3c3c86930513e4e40dcec8bfb37d782b0f22d789",
+      "evidence_ref": "Live accepted main field before correction"
+    },
+    {
+      "id": "roadmap.m1-publication",
+      "fact_id": "m1.publication",
+      "surface_ref": "docs/roadmap/ROADMAP.md",
+      "scope": "current",
+      "claimed_value": "PR #5 pending",
+      "evidence_ref": "Milestone 1 status before correction"
+    },
+    {
+      "id": "readme.phase",
+      "fact_id": "project.phase",
+      "surface_ref": "README.md",
+      "scope": "current",
+      "claimed_value": "Milestone 1 active; literal encoding owner review pending",
+      "evidence_ref": "Current status before correction"
+    },
+    {
+      "id": "profile.pointer",
+      "fact_id": "profile.active",
+      "surface_ref": "records/governance/ACTIVE-PROJECT-CONTROL-PROFILE",
+      "scope": "current",
+      "claimed_value": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+      "evidence_ref": "Profile pointer before correction"
+    },
+    {
+      "id": "m1.contract",
+      "fact_id": "m1.contract_status",
+      "surface_ref": "records/milestones/EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001.json",
+      "scope": "current",
+      "claimed_value": "active",
+      "evidence_ref": "Contract status before correction"
+    }
+  ],
+  "required_fact_ids": [
+    "main.accepted_commit",
+    "m1.publication",
+    "project.phase",
+    "profile.active",
+    "m1.contract_status"
+  ],
+  "reconciliation": {
+    "requested_action_class": "update_project_records",
+    "intended_surfaces": [
+      "README.md",
+      "docs/status/STATUS.md",
+      "docs/roadmap/ROADMAP.md",
+      "records/governance/ACTIVE-PROJECT-CONTROL-PROFILE",
+      "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-003.json",
+      "records/milestones/EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001.json",
+      "records/milestones/EXPERIMENT-FOUR-MILESTONE-008-TERMINAL-RELEASE-2026-001.json"
+    ],
+    "limitations": [
+      "This correction activates terminal closeout but does not approve or create the final tag or GitHub release."
+    ]
+  }
+}

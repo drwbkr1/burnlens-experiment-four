@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "record_id": "EXPERIMENT-FOUR-TERMINAL-OUTCOMES-2026-001",
+  "recorded_at_utc": "2026-08-29T17:12:00Z",
+  "source_milestone": "EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001",
+  "source_evidence": [
+    "records/evidence/E4-EV-0011-COMPLETE-CANDIDATE-UNIVERSE-2026-001.json",
+    "records/evidence/E4-EV-0012-M1-CAPACITY-SHORTFALL-2026-001.json",
+    "records/evidence/E4-EV-0013-M1-INDEPENDENT-VALIDATION-2026-001.json"
+  ],
+  "outcomes": {
+    "milestone_1": "INCONCLUSIVE",
+    "dataset_readiness": "NOT_EVALUATED",
+    "lifecycle_status": "INCONCLUSIVE",
+    "comparative_status": "NOT_EVALUATED",
+    "release_status": "NOT_RELEASED"
+  },
+  "capacity": {
+    "candidate_count": 187,
+    "maximum_selectable_slots": 0,
+    "required_selectable_slots": 36
+  },
+  "downstream_milestones_authorized": [],
+  "terminal_release_gate": "pending_exact_owner_decision",
+  "prohibited_rescue": [
+    "fallback field",
+    "source substitution",
+    "threshold reduction",
+    "cohort expansion",
+    "year or state widening",
+    "prior-event reuse"
+  ]
+}

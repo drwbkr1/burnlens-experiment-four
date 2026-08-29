@@ -1,6 +1,6 @@
 [project]
 name = "burnlens-experiment-four"
-version = "0.1.0.dev0"
+version = "0.1.0"
 description = "Prospective fresh-event benchmark control plane"
 requires-python = ">=3.11"
 

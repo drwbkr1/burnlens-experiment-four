@@ -18,8 +18,8 @@ passing CI, state reconciliation, and activation of Milestone 1.
 
 ## Milestone 1 — Candidate-universe feasibility
 
-**Status:** Terminal `INCONCLUSIVE` on 2026-08-29; public checkpoint pending in
-PR #5. The complete frozen universe accounts for 187 candidates, but every one
+**Status:** Terminal `INCONCLUSIVE` and live-verified on 2026-08-29 at
+`92a44fe143a4d2d23bb4f415dc37489480d1b590`. The complete frozen universe accounts for 187 candidates, but every one
 of the 1,756 bounded WFIGS records has a null reviewed final-acre field. The
 independently validated maximum is zero selectable slots versus 36 required.
 No fallback or design relaxation is allowed, and Milestone 2 is not authorized.
@@ -79,7 +79,7 @@ outcomes without rescue.
 
 ## Milestone 8 — Evidence and terminal release
 
-**Status:** Required closeout only; final release gate remains pending.
+**Status:** Active closeout under issue #6; final release gate remains pending.
 
 Produce public-safe reviewer evidence, audit dataset/model/security/docs/release
 truth, obtain final release approval, verify live assets and archives, reconcile

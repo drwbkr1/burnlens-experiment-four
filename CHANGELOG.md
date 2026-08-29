@@ -41,3 +41,12 @@ history remains in its dedicated append-only records.
   selectable slots versus 36 required under the frozen source package. No
   fallback field, cohort relaxation, event selection, imagery, label, model,
   metric, or Milestone 2 activation was permitted.
+
+## 0.1.0 — terminal release candidate
+
+- Bind the complete Milestone 1 `INCONCLUSIVE` evidence to the live merge
+  commit and passing post-merge repository controls.
+- Reconcile README, status, roadmap, version, active contract, and project
+  profile into Milestone 8 terminal closeout.
+- Add deterministic full-repository replay packaging, exact terminal outcomes,
+  and public release notes. Tag and GitHub release remain owner-gated.

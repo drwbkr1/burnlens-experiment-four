@@ -8,19 +8,22 @@ Pacific Northwest cohort before model evaluation.
 ## Current status
 
 Milestone 0 established and live-verified the repository control plane.
-Milestone 1 is active under
-[issue #2](https://github.com/drwbkr1/burnlens-experiment-four/issues/2) for
-metadata-only candidate-universe feasibility. There is no admitted scientific
-dataset, model, training run, evaluation, metric, tag, release, deployment, or
-operational product. Five exact official metadata sources are admitted only
-for the bounded Milestone 1 actions in the owner-reviewed proposal; zero
-candidate rows had been opened at adoption.
+Milestone 1 then accounted for the complete 187-candidate metadata universe
+under [issue #2](https://github.com/drwbkr1/burnlens-experiment-four/issues/2).
+Five exact official metadata sources are admitted only for the bounded
+Milestone 1 evidence route; admission never authorized scientific source-body
+publication or downstream model work.
+Its bounded 1,756-feature WFIGS snapshot contains zero non-null values for the
+reviewed final-acre field, so independent replay establishes a maximum of zero
+selectable slots versus 36 required. Milestone 1 and the data route therefore
+close `INCONCLUSIVE` without a fallback field or design relaxation.
 
-M1-U005 has since promoted the exact MTBS and EPA metadata archives and
-accounted for 187 MTBS preflight rows. Eligibility remains unassigned while an
-exact owner review resolves two literal source-encoding conflicts; no WFIGS
-feature snapshot, HLS query, imagery, event selection, or scientific result
-has followed the conflict.
+Milestones 2 through 7 are not authorized. Milestone 8 terminal evidence
+closeout proceeds under
+[issue #6](https://github.com/drwbkr1/burnlens-experiment-four/issues/6), with
+final scientific release still requiring one exact owner decision. No event
+was selected; no HLS imagery, label, model, training run, inference, metric, or
+sealed test evidence was opened.
 
 ## Research question
 
@@ -29,12 +32,11 @@ has followed the conflict.
 > model-assisted event selection, label admission, threshold selection, or
 > post-test rescue?
 
-The planned design uses six permanently excluded pilot events and a final
+The frozen design called for six permanently excluded pilot events and a final
 30-event Oregon/Washington/Idaho cohort with 16 training, 6 validation, and 8
-sealed test events. HLS v2 L30 and S30 are the proposed imagery backbone. Exact
-metadata source adoption is complete, but HLS imagery, temporal windows, QA
-rules, reference evidence, masks, and model protocols remain gated by the
-milestone sequence.
+sealed test events. That design was never populated because its metadata-level
+source antecedent failed. HLS imagery, temporal windows, QA rules, reference
+evidence, masks, and model protocols remain unevaluated rather than passed.
 
 ## Separate outcomes
 
@@ -47,8 +49,11 @@ milestone sequence.
 - `release_status` records whether the exact public release was independently
   verified.
 
-A valid negative model result may accompany a successful dataset and lifecycle.
-Completion depends on truthful closure, not favorable metrics.
+Current terminal outcomes are `dataset_readiness=NOT_EVALUATED`,
+`lifecycle_status=INCONCLUSIVE`, `comparative_status=NOT_EVALUATED`, and
+`release_status=NOT_RELEASED` until the exact public release is approved and
+independently verified. Completion depends on truthful closure, not favorable
+metrics.
 
 ## Claim limits
 
