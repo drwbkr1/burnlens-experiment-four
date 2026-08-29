@@ -15,6 +15,8 @@ history remains in its dedicated append-only records.
 
 ## Unreleased
 
+No successor work is authorized.
+
 ### Added
 
 - Truthful Milestone 0 bootstrap control plane for the verified empty public
@@ -42,11 +44,16 @@ history remains in its dedicated append-only records.
   fallback field, cohort relaxation, event selection, imagery, label, model,
   metric, or Milestone 2 activation was permitted.
 
-## 0.1.0 — terminal release candidate
+## 0.1.0 — 2026-08-29
 
-- Bind the complete Milestone 1 `INCONCLUSIVE` evidence to the live merge
-  commit and passing post-merge repository controls.
-- Reconcile README, status, roadmap, version, active contract, and project
-  profile into Milestone 8 terminal closeout.
-- Add deterministic full-repository replay packaging, exact terminal outcomes,
-  and public release notes. Tag and GitHub release remain owner-gated.
+- Bound the complete Milestone 1 `INCONCLUSIVE` evidence to approved tree
+  `f604f48976befc090dcf158dd9dd6019f48f2eea` and release commit
+  `fa28edc35847947dc69001ba72bc8f956d86b37c`.
+- Locked the exact final-release response in restricted private custody before
+  reveal and retained only aggregate approval evidence publicly.
+- Published tag `v0.1.0` and the exact ten-asset terminal evidence release.
+- Independently verified the tag, release object, post-merge CI, all downloaded
+  asset hashes, 116-entry replay manifest, and public-safety boundaries.
+- Reconciled README, status, roadmap, version history, terminal outcomes,
+  milestone contract, and active project profile without changing the
+  scientific result or authorizing a successor.

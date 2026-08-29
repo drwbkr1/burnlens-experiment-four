@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "reconciliation_id": "EXPERIMENT-FOUR-STATE-2026-009",
+  "observed_at_utc": "2026-08-29T17:35:57Z",
+  "purpose": "Record the post-release drift before correcting active project surfaces.",
+  "live_facts": {
+    "release_status": "PASS",
+    "release_url": "https://github.com/drwbkr1/burnlens-experiment-four/releases/tag/v0.1.0",
+    "tag_commit": "fa28edc35847947dc69001ba72bc8f956d86b37c",
+    "tag_tree": "f604f48976befc090dcf158dd9dd6019f48f2eea",
+    "asset_count": 10,
+    "post_merge_ci": "PASS"
+  },
+  "stale_current_claims": [
+    "README and status still say release_status=NOT_RELEASED.",
+    "Roadmap still says the Milestone 8 owner gate is pending.",
+    "Active profile still points to candidate-audit work.",
+    "Milestone 8 contract still leaves audit, review, publication, verification, and reconciliation pending."
+  ],
+  "classification": "DRIFT",
+  "correction_scope": "Update only active public-safe controls and add successor records; retain every historical candidate and failed-attempt record."
+}

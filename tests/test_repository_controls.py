@@ -52,6 +52,9 @@ class RepositoryControlTests(unittest.TestCase):
             profile["control_surfaces"]["active_contract"],
             contract_path.relative_to(ROOT).as_posix(),
         )
+        self.assertEqual("complete", contract["status"])
+        self.assertTrue(profile["current_checkpoint"]["terminal"])
+        self.assertIsNone(profile["current_checkpoint"]["next_action"])
 
     def test_no_prohibited_scientific_artifacts(self) -> None:
         violations = [

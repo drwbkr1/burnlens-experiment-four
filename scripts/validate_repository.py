@@ -62,10 +62,13 @@ REQUIRED_PATHS = (
     "records/evidence/E4-EV-0011-COMPLETE-CANDIDATE-UNIVERSE-2026-001.json",
     "records/evidence/E4-EV-0012-M1-CAPACITY-SHORTFALL-2026-001.json",
     "records/evidence/E4-EV-0013-M1-INDEPENDENT-VALIDATION-2026-001.json",
+    "records/evidence/E4-EV-0014-FINAL-RELEASE-APPROVAL-2026-001.json",
+    "records/evidence/E4-EV-0015-V0.1.0-LIVE-RELEASE-2026-001.json",
     "records/governance/ACTIVE-PROJECT-CONTROL-PROFILE",
     "records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
     "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
     "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-003.json",
+    "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-004.json",
     "records/intake/E4-M1-SOURCE-INTAKE-2026-001.json",
     "records/milestones/EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001.json",
     "records/milestones/EXPERIMENT-FOUR-MILESTONE-008-TERMINAL-RELEASE-2026-001.json",
@@ -93,7 +96,10 @@ REQUIRED_PATHS = (
     "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-006.json",
     "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-007.json",
     "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-008.json",
+    "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-009.json",
+    "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-010.json",
     "records/releases/EXPERIMENT-FOUR-TERMINAL-OUTCOMES-2026-001.json",
+    "records/releases/EXPERIMENT-FOUR-TERMINAL-OUTCOMES-2026-002.json",
     "docs/releases/v0.1.0-terminal-inconclusive.md",
     "scripts/validate_repository.py",
     "scripts/validate_prior_event_exclusions.py",
@@ -318,8 +324,14 @@ def check_control_alignment(errors: list[str]) -> None:
         errors.append("project profile active_contract does not match the resolved contract")
     if contract.get("project_profile_ref") != relative(profile_path):
         errors.append("active milestone does not reference the active project profile")
-    if contract.get("status") != "active":
-        errors.append("the pointer-selected milestone contract must be active")
+    contract_status = contract.get("status")
+    terminal_checkpoint = profile.get("current_checkpoint", {}).get("terminal") is True
+    if contract_status not in {"active", "complete"}:
+        errors.append("the pointer-selected milestone contract must be active or complete")
+    elif contract_status == "complete" and not terminal_checkpoint:
+        errors.append("a complete pointer-selected milestone requires a terminal checkpoint")
+    elif contract_status == "active" and terminal_checkpoint:
+        errors.append("a terminal checkpoint cannot point to an active milestone")
 
     profile_actions = set(profile.get("authority", {}).get("authorized_action_classes", []))
     contract_actions = set(contract.get("authority", {}).get("authorized_action_classes", []))

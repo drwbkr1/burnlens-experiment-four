@@ -18,12 +18,12 @@ reviewed final-acre field, so independent replay establishes a maximum of zero
 selectable slots versus 36 required. Milestone 1 and the data route therefore
 close `INCONCLUSIVE` without a fallback field or design relaxation.
 
-Milestones 2 through 7 are not authorized. Milestone 8 terminal evidence
-closeout proceeds under
-[issue #6](https://github.com/drwbkr1/burnlens-experiment-four/issues/6), with
-final scientific release still requiring one exact owner decision. No event
-was selected; no HLS imagery, label, model, training run, inference, metric, or
-sealed test evidence was opened.
+Milestones 2 through 7 are not authorized. Milestone 8 completed the exact
+owner-reviewed terminal closeout, and
+[v0.1.0](https://github.com/drwbkr1/burnlens-experiment-four/releases/tag/v0.1.0)
+is independently verified with all ten approved assets matching their recorded
+hashes. No event was selected; no HLS imagery, label, model, training run,
+inference, metric, or sealed test evidence was opened.
 
 ## Research question
 
@@ -51,8 +51,9 @@ evidence, masks, and model protocols remain unevaluated rather than passed.
 
 Current terminal outcomes are `dataset_readiness=NOT_EVALUATED`,
 `lifecycle_status=INCONCLUSIVE`, `comparative_status=NOT_EVALUATED`, and
-`release_status=NOT_RELEASED` until the exact public release is approved and
-independently verified. Completion depends on truthful closure, not favorable
+`release_status=PASS`. The release pass means only that the exact approved
+public evidence package was independently verified; it does not change the
+scientific result. Completion depends on truthful closure, not favorable
 metrics.
 
 ## Claim limits

@@ -71,3 +71,14 @@
   1,756 bounded snapshot features. Independent replay therefore verifies a
   maximum of zero selectable slots versus 36 required. Any rescue would define
   a different experiment.
+
+## E4-DEC-0009 — Publish the exact terminal evidence release
+
+- **Date:** 2026-08-29
+- **Decision:** After one exact hash-bound owner approval, merge only tree
+  `f604f48976befc090dcf158dd9dd6019f48f2eea`, create tag `v0.1.0`, and
+  publish only the ten bundle-bound release assets.
+- **Reason:** The candidate-bound audit passed, the exact private response was
+  locked before reveal, and aggregate reconciliation recorded one approval.
+  Independent live verification then established `release_status=PASS`; it did
+  not alter Milestone 1 `INCONCLUSIVE` or authorize downstream work.
