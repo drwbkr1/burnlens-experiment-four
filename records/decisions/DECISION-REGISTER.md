@@ -47,3 +47,27 @@
   reconciliation. Approval releases only the reviewed metadata actions; HLS
   imagery, credentials, event selection, training, evaluation, and release
   remain gated.
+
+## E4-DEC-0007 — Freeze exact source-representation mappings
+
+- **Date:** 2026-08-29
+- **Decision:** Map only MTBS `Event_ID` state prefixes `ID`/`OR`/`WA` to exact
+  WFIGS states `US-ID`/`US-OR`/`US-WA`, and map exact MTBS `Wildfire` to exact
+  WFIGS `WF` while retaining canonical candidate type `Wildfire`.
+- **Reason:** The reviewed literals matched zero source rows because the
+  admitted sources encode the same approved concepts differently. One exact
+  owner approval permits only these representation pairs; all aliases,
+  fallbacks, thresholds, exclusions, cohort rules, and terminal rules remain
+  unchanged.
+
+## E4-DEC-0008 — Close Milestone 1 INCONCLUSIVE without rescue
+
+- **Date:** 2026-08-29
+- **Decision:** End the Experiment Four data route at Milestone 1 as
+  `INCONCLUSIVE`; do not activate Milestone 2 and do not substitute a fallback
+  field, source, cohort rule, threshold, year, state, or prior event.
+- **Reason:** The complete frozen universe contains 187 accounted candidates,
+  but the reviewed WFIGS `attr_FinalAcres` value is null for every one of the
+  1,756 bounded snapshot features. Independent replay therefore verifies a
+  maximum of zero selectable slots versus 36 required. Any rescue would define
+  a different experiment.

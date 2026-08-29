@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "reconciliation_id": "EXPERIMENT-FOUR-STATE-2026-006",
+  "project_profile_ref": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+  "authority": {
+    "mode": "inherited",
+    "authority_ref": "goal-service:01a0320c-ae81-7550-ade2-c6c22d4abf93/records/governance/EXPERIMENT-FOUR-AUTHORITY-2026-001.md",
+    "authorized_action_classes": [
+      "update_project_records"
+    ],
+    "verified_at_utc": "2026-08-29T16:55:44Z",
+    "expires_at_utc": null
+  },
+  "observed_at_utc": "2026-08-29T16:55:44Z",
+  "live_facts": [
+    {
+      "id": "m1.disposition",
+      "status": "observed",
+      "value": "INCONCLUSIVE",
+      "source_ref": "runtime validation E4-M1-INDEPENDENT-VALIDATION-2026-001 sha256 117cc9eccc510bb876972dd7edaee0abe8b3e59d381a1c60f29ee18aefcba2dc",
+      "observed_at_utc": "2026-08-29T16:55:44Z"
+    },
+    {
+      "id": "m1.maximum_selectable_slots",
+      "status": "observed",
+      "value": 0,
+      "source_ref": "records/evidence/E4-EV-0012-M1-CAPACITY-SHORTFALL-2026-001.json",
+      "observed_at_utc": "2026-08-29T16:55:44Z"
+    },
+    {
+      "id": "checkpoint.id",
+      "status": "observed",
+      "value": "M1-INCONCLUSIVE-VALIDATED-117CC9EC-2026-08-29",
+      "source_ref": "records/evidence/E4-EV-0013-M1-INDEPENDENT-VALIDATION-2026-001.json",
+      "observed_at_utc": "2026-08-29T16:55:44Z"
+    },
+    {
+      "id": "next_action",
+      "status": "observed",
+      "value": "Publish and live-verify the exact Milestone 1 INCONCLUSIVE checkpoint through PR #5; do not activate Milestone 2.",
+      "source_ref": "records/milestones/EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001.json",
+      "observed_at_utc": "2026-08-29T16:55:44Z"
+    }
+  ],
+  "recorded_claims": [
+    {
+      "id": "status.overall-state",
+      "fact_id": "m1.disposition",
+      "surface_ref": "docs/status/STATUS.md",
+      "scope": "current",
+      "claimed_value": "INCONCLUSIVE",
+      "evidence_ref": "Overall state field and Scientific state table"
+    },
+    {
+      "id": "status.maximum-selectable-slots",
+      "fact_id": "m1.maximum_selectable_slots",
+      "surface_ref": "docs/status/STATUS.md",
+      "scope": "current",
+      "claimed_value": 0,
+      "evidence_ref": "Metadata controls maximum selectable slots row"
+    },
+    {
+      "id": "roadmap.m1-status",
+      "fact_id": "m1.disposition",
+      "surface_ref": "docs/roadmap/ROADMAP.md",
+      "scope": "current",
+      "claimed_value": "INCONCLUSIVE",
+      "evidence_ref": "Milestone 1 status paragraph"
+    },
+    {
+      "id": "profile.checkpoint",
+      "fact_id": "checkpoint.id",
+      "surface_ref": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+      "scope": "current",
+      "claimed_value": "M1-INCONCLUSIVE-VALIDATED-117CC9EC-2026-08-29",
+      "evidence_ref": "current_checkpoint.checkpoint_id"
+    },
+    {
+      "id": "milestone.next-action",
+      "fact_id": "next_action",
+      "surface_ref": "records/milestones/EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001.json",
+      "scope": "current",
+      "claimed_value": "Publish and live-verify the exact Milestone 1 INCONCLUSIVE checkpoint through PR #5; do not activate Milestone 2.",
+      "evidence_ref": "handoff.next_action"
+    }
+  ],
+  "required_fact_ids": [
+    "m1.disposition",
+    "m1.maximum_selectable_slots",
+    "checkpoint.id",
+    "next_action"
+  ],
+  "reconciliation": {
+    "requested_action_class": "update_project_records",
+    "intended_surfaces": [
+      "docs/status/STATUS.md",
+      "docs/roadmap/ROADMAP.md",
+      "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+      "records/milestones/EXPERIMENT-FOUR-MILESTONE-001-METADATA-FEASIBILITY-2026-001.json"
+    ],
+    "limitations": [
+      "This reconciliation does not merge PR #5, publish a release, activate Milestone 2, or create scientific evidence."
+    ]
+  }
+}

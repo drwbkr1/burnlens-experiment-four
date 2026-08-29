@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "evidence_id": "E4-EV-0011",
+  "observed_at_utc": "2026-08-29T16:49:00Z",
+  "scope": "M1-U005 exact WFIGS snapshot, MTBS/WFIGS reconciliation, and complete candidate-universe accounting",
+  "disposition": "PASS_complete_universe_with_terminal_source_shortfall",
+  "scientific_evidence": false,
+  "inputs": {
+    "amendment_sha256": "92271332583f03f36115e6e1cb2ac3362942c2cd804a8e881155c9465b45cb08",
+    "eligibility_profile_sha256": "1f82e96413c60e861311d1447c0a97d5d2233917d1ed04cd059128bace2d666b",
+    "prior_exclusion_manifest_sha256": "c819624011f5353bb085ba4b5a8db38cf0a0ca1c55e9a7741e7af59c0f7d164d",
+    "mtbs_preflight_manifest_sha256": "0cec99372a86b789ad939c70ab2c62081644664ba5a2cfe26538aae026e10729",
+    "mtbs_shp_sha256": "9c7303214552e73f0e9ea7f2583647d39a70be8ac08876f5e6cbdf3065525c97",
+    "mtbs_shx_sha256": "9eacc77f78a9a2e06178c5e424ed0e93339a2c020f0de72fa42899a3d8dd2c53"
+  },
+  "wfigs_snapshot": {
+    "snapshot_id": "E4-M1-WFIGS-SNAPSHOT-2026-001",
+    "manifest_sha256": "f7be6c00c15013240b4fac7d36d322e1676e97633f99083fb8f46e707ffb932b",
+    "page_sha256": "4af2891fcbcf291a0305faec77f6127ea7fd76ce837e7c9a5225ead84f74409b",
+    "feature_count": 1756,
+    "page_count": 1,
+    "data_last_edit_date_epoch_ms": 1788021611210,
+    "data_last_edit_date_stable_during_capture": true,
+    "approved_fields_only": true,
+    "geometry_returned": true,
+    "non_null_attr_FinalAcres_count": 0
+  },
+  "complete_universe": {
+    "identity_maturity_manifest_sha256": "155c6529d2e16170b44bc49c98f9cb5325ad34d7a78d8b0628bba40ff62c2246",
+    "candidate_universe_manifest_sha256": "ff0f4b8d97dad43ff4424d531292a1c14dd19db735294157f11a68a0afcbdffe",
+    "candidate_count": 187,
+    "unique_candidate_id_count": 187,
+    "source_gate_status_counts": {
+      "excluded_before_geometry_hls": 28,
+      "unknown_before_geometry_hls": 159,
+      "ready_for_geometry_hls": 0
+    },
+    "source_gate_reason_counts": {
+      "MTBS_INCIDENT_TYPE_MISMATCH": 10,
+      "NO_EXACT_WFIGS_MATCH": 16,
+      "PRIOR_EVENT_MATCH": 18,
+      "WFIGS_AREA_UNKNOWN": 171,
+      "WFIGS_INCIDENT_TYPE_MISMATCH": 1,
+      "WFIGS_MATURITY_INCOMPLETE": 28
+    },
+    "all_pre_exclusion_rows_accounted": true,
+    "candidate_eligibility_assignments_created": 0,
+    "candidate_or_role_selections_created": 0
+  },
+  "retained_failures": [
+    {
+      "attempt": "E4-M1-MTBS-WFIGS-IDENTITY-MATURITY-2026-001",
+      "sha256": "d6c43363231265add24b0bf8d351b874a4e5d8c8a4370598aaab623aa7ed6490",
+      "failure": "The first adapter classified missing WFIGS final acres as below minimum instead of unknown. It was retained and superseded without overwrite."
+    }
+  ],
+  "boundary": {
+    "ecology_evaluated": false,
+    "hls_metadata_queried": false,
+    "why_not_needed": "Every row already fails or remains unknown on a required frozen antecedent. Ecology or HLS evidence cannot rescue missing exact WFIGS final acres or a missing exact identity.",
+    "imagery_opened": 0,
+    "labels_models_predictions_or_metrics_opened": 0,
+    "credentials_used": 0
+  },
+  "next_action": "Apply the frozen 36-slot terminal rule in M1-U006 and independently replay the complete shortfall evidence."
+}

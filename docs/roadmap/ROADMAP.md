@@ -18,9 +18,11 @@ passing CI, state reconciliation, and activation of Milestone 1.
 
 ## Milestone 1 — Candidate-universe feasibility
 
-**Status:** Active under issue #2; metadata only. M1-U004 source adoption
-passed. M1-U005 has verified intake and 187 MTBS preflight rows but is stopped
-at an exact owner gate for literal WFIGS-state and MTBS-type encodings.
+**Status:** Terminal `INCONCLUSIVE` on 2026-08-29; public checkpoint pending in
+PR #5. The complete frozen universe accounts for 187 candidates, but every one
+of the 1,756 bounded WFIGS records has a null reviewed final-acre field. The
+independently validated maximum is zero selectable slots versus 36 required.
+No fallback or design relaxation is allowed, and Milestone 2 is not authorized.
 
 Enumerate the complete metadata-defined candidate universe, exclude prior-
 experiment events, test source identity and availability without opening
@@ -29,7 +31,7 @@ whether six pilots plus thirty final events can satisfy the frozen design.
 
 ## Milestone 2 — Excluded pilot
 
-**Status:** Planned.
+**Status:** Not authorized; terminal Milestone 1 antecedent failed.
 
 Gate and acquire only six permanently excluded pilot events. Validate imagery,
 reference, QA, compositing, registration, masks, custody, and review workflow.
@@ -37,7 +39,7 @@ No pilot event may enter the final cohort.
 
 ## Milestone 3 — Prospective protocol freeze
 
-**Status:** Planned.
+**Status:** Not authorized; terminal Milestone 1 antecedent failed.
 
 Freeze eligibility, selection, roles, AOIs, imagery, references, labels,
 unknowns, leakage controls, models, training, metrics, uncertainty, artifacts,
@@ -45,7 +47,7 @@ replay, exceptions, and terminal decisions before final-cohort acquisition.
 
 ## Milestone 4 — Final cohort seal and intake
 
-**Status:** Planned.
+**Status:** Not authorized; terminal Milestone 1 antecedent failed.
 
 Select exactly thirty events under the frozen metadata rules, assign whole-
 event roles, seal identities and AOIs, and acquire exact source bodies through
@@ -53,7 +55,7 @@ no-overwrite controlled intake. Test custody remains isolated.
 
 ## Milestone 5 — References and dataset audit
 
-**Status:** Planned.
+**Status:** Not authorized; terminal Milestone 1 antecedent failed.
 
 Construct burned/unchanged/unknown masks, complete required independent review,
 measure agreement and uncertainty, prove separation, and run an independent
@@ -61,7 +63,7 @@ dataset-readiness audit. No model training unless readiness is `PASS`.
 
 ## Milestone 6 — Frozen training and validation
 
-**Status:** Planned.
+**Status:** Not authorized; terminal Milestone 1 antecedent failed.
 
 Preflight and train every declared model seed, select checkpoints and thresholds
 using validation only, verify reload and exact replay, and seal the complete
@@ -69,7 +71,7 @@ test-opening bundle.
 
 ## Milestone 7 — One sealed test opening
 
-**Status:** Planned; explicit owner gate.
+**Status:** Not authorized; terminal Milestone 1 antecedent failed.
 
 Open all eight test events once, evaluate every frozen model and control on
 identical masks, preserve event-level evidence, and assign terminal scientific
@@ -77,7 +79,7 @@ outcomes without rescue.
 
 ## Milestone 8 — Evidence and terminal release
 
-**Status:** Planned; final release gate.
+**Status:** Required closeout only; final release gate remains pending.
 
 Produce public-safe reviewer evidence, audit dataset/model/security/docs/release
 truth, obtain final release approval, verify live assets and archives, reconcile

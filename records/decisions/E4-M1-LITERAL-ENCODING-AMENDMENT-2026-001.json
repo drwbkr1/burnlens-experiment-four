@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "amendment_id": "E4-M1-LITERAL-ENCODING-AMENDMENT-2026-001",
+  "status": "frozen_approved",
+  "frozen_at_utc": "2026-08-29T16:37:35Z",
+  "proposal_ref": "records/decisions/E4-M1-LITERAL-ENCODING-AMENDMENT-PROPOSAL-2026-001.json",
+  "proposal_sha256": "da574acf7187605239f5b8f300397c48755bc5c36598d6ab86b5e6b4e8b8811f",
+  "owner_review": {
+    "review_id": "E4-M1-LITERAL-ENCODING-AMENDMENT-2026-001",
+    "bundle_sha256": "3ff69ce031313db2010706cf481a63c24d45a88cfb23c2f6bb7a38d96f7b972a",
+    "contract_sha256": "378223d8cd52ea1df88fc001afdffcdbbca3a0db4b35cc6f5e21e9d9cbe434a9",
+    "locked_response_sha256": "8b19e3002fee9df9349e88932474b17e4ba061e6348930efe6d5ed1feaad2fcc",
+    "lock_receipt_sha256": "e5a4e5a159743378c4a559be1bfa1b755fd08732f2ffffa892c9c0c4d191992f",
+    "reconciliation_sha256": "ae77d66e31ecb605ff3feaddbfe9bd06f73107748eb691d4f2fa3044b62741cf",
+    "decision_counts": {
+      "approve": 1,
+      "reject": 0,
+      "uncertain": 0
+    },
+    "notes_included": false,
+    "raw_private_artifacts_committed": false
+  },
+  "exact_source_representation_mappings": {
+    "state": {
+      "canonical_values": [
+        "ID",
+        "OR",
+        "WA"
+      ],
+      "mtbs_rule": "Derive state only from the first two Event_ID characters and require the result to be exactly ID, OR, or WA.",
+      "wfigs_rule": "Require attr_POOState to equal exactly US- plus the canonical MTBS state.",
+      "allowed_exact_pairs": [
+        {
+          "canonical": "ID",
+          "wfigs": "US-ID"
+        },
+        {
+          "canonical": "OR",
+          "wfigs": "US-OR"
+        },
+        {
+          "canonical": "WA",
+          "wfigs": "US-WA"
+        }
+      ],
+      "other_alias_prefix_name_or_fallback_mapping_allowed": false
+    },
+    "incident_type": {
+      "canonical_value": "Wildfire",
+      "mtbs_exact_value": "Wildfire",
+      "wfigs_exact_value": "WF",
+      "other_alias_or_fallback_mapping_allowed": false
+    },
+    "conflict_rule": "Any missing value, non-exact identifier match, state disagreement after the one declared representation mapping, or category disagreement is unknown and not eligible.",
+    "wfigs_snapshot_query_rule": "The fixed snapshot query may filter only the approved 2021-2022 discovery-date window and exact state values US-ID, US-OR, and US-WA before row-level evaluation."
+  },
+  "unchanged_rules": [
+    "Jurisdictions remain exactly Idaho, Oregon, and Washington.",
+    "Years remain exactly 2021 and 2022.",
+    "The 1,000-acre minimum remains required in both MTBS and WFIGS.",
+    "All 68 prior identities remain permanently excluded.",
+    "Exact identifier matching, maturity, duplicate, ecology, HLS metadata, 12-slot-per-state, 36-slot-total, and INCONCLUSIVE shortfall rules remain unchanged.",
+    "No model, label, spectral, metric, imagery-body, or denied-field evidence may enter eligibility.",
+    "No pilot or final event, AOI, or split role may be selected in Milestone 1."
+  ],
+  "released_actions": [
+    "Capture the bounded WFIGS snapshot under the exact reviewed state representation.",
+    "Evaluate M1-U005 rows using only the exact reviewed state and incident-type mappings plus all unchanged frozen rules."
+  ],
+  "scientific_result_created": false,
+  "candidate_eligibility_decisions_at_freeze": 0
+}

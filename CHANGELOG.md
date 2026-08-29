@@ -27,3 +27,17 @@ history remains in its dedicated append-only records.
 - No-overwrite MTBS/EPA intake, dependency-free archive/DBF controls, 187-row
   MTBS universe preflight, and an exact owner-review gate for two zero-match
   literal source encodings.
+- Exact owner-approved representation-only amendment binding MTBS state
+  prefixes to WFIGS `US-` states and MTBS `Wildfire` to WFIGS `WF`, with the
+  zero-match predicates retained as failed history and M1-U005 resumed.
+- Complete 187-candidate universe accounting and a stable bounded WFIGS
+  snapshot of 1,756 features, all with null reviewed `attr_FinalAcres` values.
+- Independent Milestone 1 replay of identities, geometry hashes, evaluator
+  outputs, leakage boundaries, and the zero-slot capacity upper bound.
+
+### Closed
+
+- Milestone 1 and the Experiment Four data route as `INCONCLUSIVE`: zero
+  selectable slots versus 36 required under the frozen source package. No
+  fallback field, cohort relaxation, event selection, imagery, label, model,
+  metric, or Milestone 2 activation was permitted.
