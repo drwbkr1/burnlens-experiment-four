@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "evidence_id": "E4-EV-0010",
+  "observed_at_utc": "2026-08-29T16:37:35Z",
+  "scope": "Exact owner approval and freeze of the bounded M1-U005 source-representation amendment",
+  "disposition": "PASS_protocol_amendment_only",
+  "scientific_evidence": false,
+  "owner_review": {
+    "review_id": "E4-M1-LITERAL-ENCODING-AMENDMENT-2026-001",
+    "bundle_sha256": "3ff69ce031313db2010706cf481a63c24d45a88cfb23c2f6bb7a38d96f7b972a",
+    "contract_sha256": "378223d8cd52ea1df88fc001afdffcdbbca3a0db4b35cc6f5e21e9d9cbe434a9",
+    "locked_response_sha256": "8b19e3002fee9df9349e88932474b17e4ba061e6348930efe6d5ed1feaad2fcc",
+    "lock_receipt_sha256": "e5a4e5a159743378c4a559be1bfa1b755fd08732f2ffffa892c9c0c4d191992f",
+    "reconciliation_sha256": "ae77d66e31ecb605ff3feaddbfe9bd06f73107748eb691d4f2fa3044b62741cf",
+    "human_decision_count": 1,
+    "decision_counts": {
+      "approve": 1,
+      "reject": 0,
+      "uncertain": 0
+    },
+    "notes_included": false,
+    "human_decisions_fabricated": false,
+    "raw_private_artifacts_committed": false,
+    "private_no_overwrite_custody": "verified"
+  },
+  "frozen_amendment_ref": "records/decisions/E4-M1-LITERAL-ENCODING-AMENDMENT-2026-001.json",
+  "released_effect": "Freeze only exact MTBS Event_ID state to WFIGS US-state pairs and exact MTBS Wildfire to WFIGS WF incident type, then resume M1-U005.",
+  "unchanged_boundary": {
+    "eligibility_thresholds_changed": false,
+    "candidate_years_changed": false,
+    "candidate_states_changed": false,
+    "prior_exclusions_changed": false,
+    "maturity_ecology_hls_duplicate_or_capacity_rules_changed": false,
+    "candidate_eligibility_decisions_at_review": 0,
+    "hls_imagery_opened": 0,
+    "credentials_used": 0,
+    "pilot_or_final_events_selected": 0
+  },
+  "retained_failure": "The original frozen literal predicates matched zero admitted-source rows; that conflict remains preserved in E4-EV-0009 and is not rewritten as successful history.",
+  "next_action": "Capture the exact bounded WFIGS snapshot and resume complete M1-U005 metadata evaluation under all unchanged rules."
+}

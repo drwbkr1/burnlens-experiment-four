@@ -1,0 +1,45 @@
+{
+  "contract_version": "human-review-contract-v1",
+  "template": false,
+  "review_id": "E4-M1-LITERAL-ENCODING-AMENDMENT-2026-001",
+  "response_schema_version": "e4-human-protocol-amendment-response-v1",
+  "workflow_authority": {
+    "mode": "inherited",
+    "authority_ref": "active goal BurnLens Experiment Four - Prospective Fresh-Event Benchmark; protocol-change hard stop",
+    "authorized_action_classes": [
+      "lock exact owner response without overwrite",
+      "reconcile exact locked owner response",
+      "if approve, freeze only the exact reviewed representation mappings and resume M1-U005",
+      "if reject, retain the literal predicates and record Milestone 1 INCONCLUSIVE under the reviewed consequence"
+    ],
+    "verified_at_utc": "2026-08-26T01:33:37Z",
+    "expires_at_utc": null,
+    "review_required": true,
+    "lock_authorized": true,
+    "reconcile_authorized": true,
+    "post_review_actions": [
+      "if approve, freeze only the exact reviewed representation mappings and resume M1-U005",
+      "if reject, retain the literal predicates and record Milestone 1 INCONCLUSIVE under the reviewed consequence"
+    ]
+  },
+  "review_bundle": {
+    "bundle_id": "E4-M1-LITERAL-ENCODING-AMENDMENT-BUNDLE-2026-001",
+    "manifest_sha256": "3ff69ce031313db2010706cf481a63c24d45a88cfb23c2f6bb7a38d96f7b972a",
+    "candidate_identity": "E4-M1-LITERAL-ENCODING-AMENDMENT-PROPOSAL-2026-001",
+    "rendered_surface_verified": true
+  },
+  "allowed_decisions": [
+    "approve",
+    "reject",
+    "uncertain"
+  ],
+  "required_attestation": true,
+  "max_notes_length": 2000,
+  "hash_prefix_length": 16,
+  "items": [
+    {
+      "item_id": "E4-M1-LITERAL-ENCODING-AMENDMENT-BUNDLE",
+      "evidence_sha256": "3ff69ce031313db2010706cf481a63c24d45a88cfb23c2f6bb7a38d96f7b972a"
+    }
+  ]
+}

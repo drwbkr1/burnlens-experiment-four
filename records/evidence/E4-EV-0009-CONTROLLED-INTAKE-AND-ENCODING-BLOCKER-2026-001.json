@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "evidence_id": "E4-EV-0009",
+  "observed_at_utc": "2026-08-26T01:25:48Z",
+  "scope": "M1-U005 controlled source intake, MTBS universe preflight, and exact literal-encoding blocker",
+  "disposition": "blocked_pending_owner_protocol_decision",
+  "scientific_evidence": false,
+  "controlled_intake": {
+    "contract_ref": "records/intake/E4-M1-SOURCE-INTAKE-2026-001.json",
+    "contract_sha256": "28eb210d2ae8d154baec1f2a66ee10bbcac1c7b688d15a46ca5fdcfff680826b",
+    "project_root": "C:\\Projects\\Active",
+    "collision_policy": "fail",
+    "promotion_mode": "atomic-no-replace",
+    "assets": [
+      {
+        "asset_id": "mtbs-perimeters-v12",
+        "state": "promoted",
+        "custody_relative_path": "burnlens-experiment-four-custody/external/mtbs/v12.0/mtbs_perims_DD.zip",
+        "size_bytes": 374092911,
+        "sha256": "87073b13e6bf41a7cc7f4d3986001f4498f8d4f66d4f88a977cc513e4607849b",
+        "publisher_md5": "65278fcb893f94cd0eaf66d966ee7125",
+        "publisher_md5_match": true,
+        "zip_crc": "pass",
+        "read_only": true
+      },
+      {
+        "asset_id": "epa-ecoregions-level-iii-us",
+        "state": "promoted",
+        "custody_relative_path": "burnlens-experiment-four-custody/external/epa/ecoregions-level-iii/2024-11-14/us_eco_l3.zip",
+        "size_bytes": 28424315,
+        "sha256": "9a65f63cf10d7386aa0d2b0f39c9d0ac3d51bf742eb59d750abcf65ecc12f633",
+        "zip_crc": "pass",
+        "read_only": true
+      }
+    ],
+    "retained_failed_attempts": [
+      {
+        "attempt_id": "mtbs-preflight-001",
+        "result": "The proposal evidence locator resolved to the 31,562-byte mtbs_perims_DD_metadata.xml rather than the approved ZIP; no body was downloaded.",
+        "resolution": "The exact mtbs_perims_DD.zip locator was resolved from the already approved ScienceBase item and matched file name, media type, size, and publisher MD5 before promotion."
+      }
+    ],
+    "validator_result": "pass_with_live_file_verification"
+  },
+  "mtbs_universe_preflight": {
+    "runtime_manifest_sha256": "0cec99372a86b789ad939c70ab2c62081644664ba5a2cfe26538aae026e10729",
+    "runtime_manifest_size_bytes": 150924,
+    "generator_ref": "scripts/enumerate_mtbs_preflight.py",
+    "generator_sha256": "4874337f2e5b1fc8225656742e03cf83f5b9fd4fb29c36b05b8a15463b4fc727",
+    "complete_pre_exclusion_row_count": 187,
+    "mtbs_literal_WF_count": 0,
+    "mtbs_literal_Wildfire_count": 177,
+    "wildfire_and_mtbs_area_at_least_1000_count": 177,
+    "rows_with_prior_exclusion_match": 18,
+    "duplicate_event_id_groups": 0,
+    "duplicate_non_null_irwin_id_groups": 0,
+    "eligibility_assignments_created": 0,
+    "denied_mtbs_field_values_opened": false
+  },
+  "wfigs_encoding_probe": {
+    "runtime_probe_sha256": "eebf1289f12909cdc3c1321d7e1c7f25700762ad03037b2ff03175658a7db254",
+    "runtime_probe_size_bytes": 3006,
+    "generator_ref": "scripts/capture_wfigs_encoding_probe.py",
+    "generator_sha256": "d6f6c66e27dc3a7b25bb5c3f010bad21226996c201d03b84d2267558073fafe9",
+    "exact_unprefixed_ID_OR_WA_count": 0,
+    "exact_prefixed_US_ID_OR_WA_count": 1756,
+    "group_counts": [
+      {
+        "attr_POOState": "US-ID",
+        "attr_IncidentTypeCategory": "WF",
+        "record_count": 799
+      },
+      {
+        "attr_POOState": "US-OR",
+        "attr_IncidentTypeCategory": "RX",
+        "record_count": 3
+      },
+      {
+        "attr_POOState": "US-OR",
+        "attr_IncidentTypeCategory": "WF",
+        "record_count": 503
+      },
+      {
+        "attr_POOState": "US-WA",
+        "attr_IncidentTypeCategory": "WF",
+        "record_count": 451
+      }
+    ],
+    "full_feature_snapshot_created": false,
+    "geometry_returned": false
+  },
+  "protocol_conflict": {
+    "status": "confirmed",
+    "frozen_text": [
+      "WFIGS attr_POOState must exactly equal ID, OR, or WA.",
+      "MTBS Incid_Type must equal WF."
+    ],
+    "admitted_source_literals": [
+      "WFIGS attr_POOState uses US-ID, US-OR, and US-WA in the approved window.",
+      "MTBS Incid_Type uses Wildfire for wildfire rows; no target-universe row uses WF."
+    ],
+    "strict_result": "Zero rows can satisfy the literal state and incident-type predicates; the frozen 36-slot requirement would be INCONCLUSIVE.",
+    "required_action_class": "cohort_or_protocol_change",
+    "owner_gate_required": true
+  },
+  "boundary": {
+    "candidate_source_rows_observed": 187,
+    "candidate_eligibility_decisions": 0,
+    "hls_imagery_opened": 0,
+    "credentials_used": 0,
+    "pilot_or_final_events_selected": 0,
+    "epa_polygon_rows_opened": 0,
+    "wfigs_full_snapshot_rows_opened": 0
+  },
+  "next_action": "Obtain an exact owner decision on the bounded literal-encoding amendment before WFIGS snapshot capture, CMR queries, eligibility evaluation, or capacity claims."
+}

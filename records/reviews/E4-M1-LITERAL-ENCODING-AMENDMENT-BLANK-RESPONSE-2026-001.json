@@ -1,0 +1,18 @@
+{
+  "response_schema_version": "e4-human-protocol-amendment-response-v1",
+  "review_id": "E4-M1-LITERAL-ENCODING-AMENDMENT-2026-001",
+  "completed": false,
+  "review_started_at_utc": null,
+  "review_completed_at_utc": null,
+  "reviewer": {
+    "attestation": false
+  },
+  "responses": [
+    {
+      "item_id": "E4-M1-LITERAL-ENCODING-AMENDMENT-BUNDLE",
+      "evidence_sha256": "3ff69ce031313db2010706cf481a63c24d45a88cfb23c2f6bb7a38d96f7b972a",
+      "decision": null,
+      "notes": ""
+    }
+  ]
+}

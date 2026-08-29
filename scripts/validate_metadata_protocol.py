@@ -146,7 +146,7 @@ def main() -> int:
             print(f"- {error}")
         return 1
     print("Metadata protocol: PASS (schema, semantics, and evaluator aligned)")
-    print("Eligibility profile: FROZEN from exact reviewed values; candidate rows observed: 0")
+    print("Eligibility profile: FROZEN from exact reviewed values; schema-freeze snapshot rows: 0")
     return 0
 
 

@@ -3,11 +3,12 @@
 ## Purpose and boundary
 
 This protocol defines the metadata record, evaluation states, reason codes,
-and replay behavior before any Experiment Four candidate row is observed. It
-does not admit an external source, authorize source-body access, or choose an
-event. The exact year, size, maturity, ecology, and source-specific duplicate
-values remain an explicit owner decision because the approved charter names
-those dimensions but does not supply their numeric or categorical values.
+source-representation mappings, and replay behavior for Experiment Four
+candidate-universe enumeration. It does not choose an event or authorize
+imagery, labels, model artifacts, training, inference, or evaluation. Exact
+eligibility values are frozen in `E4-ELIGIBILITY-2026-001`; the only later
+amendment is the exact representation mapping frozen in
+`E4-M1-LITERAL-ENCODING-AMENDMENT-2026-001`.
 
 ## Unit of analysis
 
@@ -59,11 +60,28 @@ an eligible candidate. A `frozen` profile requires exact jurisdiction, year,
 area, maturity, incident type, perimeter status, ecology, imagery metadata,
 reference metadata, rights, prior-exclusion hash, and unknown policy values.
 
-The current proposal fixes only what the owner already approved or what is a
-fail-closed control: Idaho/Oregon/Washington, wildfire-only intent,
-metadata-availability requirements, admitted rights, prior-event exclusion,
-and unknown-not-eligible. Numeric ranges, exact vocabularies, source revisions,
-and duplicate tie-breaks are pending the hash-bound owner gate.
+The frozen profile fixes Idaho/Oregon/Washington, 2021-2022, a 1,000-acre
+minimum, wildfire-only intent, final maturity, metadata-availability
+requirements, admitted rights, prior-event exclusion, duplicate controls, and
+unknown-not-eligible under the exact reviewed source package.
+
+## Exact source-representation amendment
+
+The exact owner-approved amendment changes representation only:
+
+1. derive MTBS state only from the first two `Event_ID` characters and require
+   exactly `ID`, `OR`, or `WA`;
+2. require matched WFIGS `attr_POOState` to equal exactly `US-` plus that MTBS
+   state;
+3. require MTBS `Incid_Type` exactly `Wildfire` and matched WFIGS
+   `attr_IncidentTypeCategory` exactly `WF`; and
+4. treat every missing value, non-exact identity, disagreement, or other
+   encoding as unknown and not eligible.
+
+No other alias, prefix removal, name mapping, fallback, or normalization is
+permitted. Years, areas, prior exclusions, identity, maturity, ecology, HLS
+metadata, duplicate handling, capacity, and terminal rules are unchanged. The
+original zero-match literal predicates remain retained failure evidence.
 
 ## Replay
 
@@ -72,5 +90,7 @@ prior-event exclusion manifest, evaluator source, exact source-row hashes, and
 ordered output. The same inputs must reproduce byte-identical candidate IDs,
 states, and ordered reason codes. Failed and superseded replays remain visible.
 
-No candidate enumeration may begin until the profile status is `frozen`, its
-exact owner response is locked, and every admitted source gate passes.
+Candidate enumeration requires the frozen profile, admitted source registry,
+and exact locked owner responses for source adoption and the representation
+amendment. Those gates now pass; every runtime snapshot and replay must remain
+hash-bound and outside Git.

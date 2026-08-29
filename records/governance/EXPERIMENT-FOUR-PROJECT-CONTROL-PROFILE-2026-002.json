@@ -56,6 +56,9 @@
       "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-001.json",
       "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-002.json",
       "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-003.json",
+      "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-004.json",
+      "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-005.json",
+      "records/reconciliations/EXPERIMENT-FOUR-STATE-2026-006.json",
       "CHANGELOG.md",
       "docs/status/VERSION-HISTORY.md"
     ]
@@ -139,9 +142,9 @@
     "amendment_required_to_change_active_gate": true
   },
   "current_checkpoint": {
-    "checkpoint_id": "M1-U004-SOURCE-ADOPTION-PASS-897926590C470978-2026-08-26",
-    "expected_branch": "codex/metadata-feasibility-001",
+    "checkpoint_id": "M1-INCONCLUSIVE-VALIDATED-117CC9EC-2026-08-29",
+    "expected_branch": "codex/m1-candidate-universe-001",
     "expected_head": null,
-    "next_action": "Validate and merge the exact M1-U004 source-adoption checkpoint, then activate M1-U005 before controlled no-overwrite intake or candidate-universe enumeration"
+    "next_action": "Publish and live-verify the exact Milestone 1 INCONCLUSIVE checkpoint through PR #5; do not activate Milestone 2."
   }
 }

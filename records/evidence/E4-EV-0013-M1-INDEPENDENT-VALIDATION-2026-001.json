@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "evidence_id": "E4-EV-0013",
+  "observed_at_utc": "2026-08-29T16:49:00Z",
+  "scope": "M1-U007 independent completeness, identity, replay, leakage, and capacity validation",
+  "disposition": "PASS_validation_M1_INCONCLUSIVE",
+  "scientific_evidence": false,
+  "validation_receipt_sha256": "117cc9eccc510bb876972dd7edaee0abe8b3e59d381a1c60f29ee18aefcba2dc",
+  "validator_sha256": "cfffde5145b575699f9bbd646798d3c806ea87a9fba9ded485ef18978d71c398",
+  "checks": {
+    "exact_snapshot_page_and_allowlist_binding": "pass",
+    "complete_187_row_universe": "pass",
+    "unique_candidate_ids": "pass",
+    "independent_source_reason_recount": "pass",
+    "mtbs_geometry_record_hash_replay": "pass",
+    "candidate_evaluator_replay": "pass",
+    "model_and_label_leakage_boundary": "pass",
+    "no_candidate_or_role_selection": "pass",
+    "zero_slot_capacity_upper_bound": "pass"
+  },
+  "validated_results": {
+    "candidate_count": 187,
+    "wfigs_feature_count": 1756,
+    "wfigs_non_null_final_acres_count": 0,
+    "eligibility_replay_status_counts_before_terminal_stop": {
+      "excluded": 18,
+      "unknown": 169
+    },
+    "maximum_selectable_slots_by_state": {
+      "ID": 0,
+      "OR": 0,
+      "WA": 0
+    },
+    "maximum_selectable_slots_total": 0,
+    "required_selectable_slots_total": 36
+  },
+  "milestone_1_disposition": "INCONCLUSIVE",
+  "dataset_readiness": "NOT_EVALUATED",
+  "lifecycle_status": "INCONCLUSIVE",
+  "comparative_status": "NOT_EVALUATED",
+  "release_status": "NOT_RELEASED",
+  "next_milestone_authorized": false,
+  "reason": "The method and replay controls pass, but the frozen source requirements cannot establish any selectable candidate. A fallback field or relaxed rule would be a new experiment, not a rescue of Experiment Four."
+}

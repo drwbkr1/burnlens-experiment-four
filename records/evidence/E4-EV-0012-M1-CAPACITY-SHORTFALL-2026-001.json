@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "evidence_id": "E4-EV-0012",
+  "observed_at_utc": "2026-08-29T16:49:00Z",
+  "scope": "M1-U006 frozen six-pilot plus 30-final capacity feasibility",
+  "disposition": "INCONCLUSIVE",
+  "scientific_evidence": false,
+  "candidate_universe_manifest_sha256": "ff0f4b8d97dad43ff4424d531292a1c14dd19db735294157f11a68a0afcbdffe",
+  "frozen_requirements": {
+    "required_selectable_slots_by_state": {
+      "ID": 12,
+      "OR": 12,
+      "WA": 12
+    },
+    "required_selectable_slots_total": 36,
+    "pilot_slots_total": 6,
+    "final_slots_total": 30,
+    "shortfall_disposition": "INCONCLUSIVE"
+  },
+  "observed_upper_bound": {
+    "maximum_selectable_slots_by_state": {
+      "ID": 0,
+      "OR": 0,
+      "WA": 0
+    },
+    "maximum_selectable_slots_total": 0,
+    "shortfall_by_state": {
+      "ID": 12,
+      "OR": 12,
+      "WA": 12
+    },
+    "total_shortfall": 36
+  },
+  "cause": "All 171 exact WFIGS matches have null attr_FinalAcres, and the remaining 16 MTBS rows have no exact WFIGS match. The frozen rule requires an exact WFIGS final acreage of at least 1,000; missing evidence is unknown and not eligible.",
+  "terminal_rule_applied": "Fewer than 12 selectable slots in any state or fewer than 36 total ends Milestone 1 INCONCLUSIVE without widening years, lowering area, adding states, reusing prior events, substituting sources, or selecting a fallback field.",
+  "ecology_and_hls_not_evaluated": true,
+  "why_no_additional_queries": "No downstream ecology or HLS result can turn a row with a failed or unknown frozen antecedent into an eligible candidate.",
+  "pilot_or_final_events_selected": 0,
+  "next_action": "Run independent replay and close Milestone 1 INCONCLUSIVE if all bindings and no-rescue boundaries pass."
+}

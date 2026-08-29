@@ -1,0 +1,167 @@
+{
+  "contract_version": "1.0",
+  "intake_id": "e4-m1-source-intake-2026-001",
+  "created_at": "2026-08-26T00:55:33Z",
+  "collision_policy": "fail",
+  "promotion_mode": "atomic-no-replace",
+  "secret_policy": "references-only",
+  "custody_root": "burnlens-experiment-four-custody/external",
+  "staging_root": "burnlens-experiment-four-runtime/intake-staging/e4-m1-source-intake-2026-001",
+  "assets": [
+    {
+      "asset_id": "mtbs-perimeters-v12",
+      "source": {
+        "kind": "https",
+        "uri": "https://www.sciencebase.gov/catalog/file/get/5e7229b8e4b01d509268afba?f=__disk__a5%2F0c%2F74%2Fa50c74cf6fbe3184470ed0dda1c9090750489c14",
+        "authorization_ref": "records/evidence/E4-EV-0008-SOURCE-ADOPTION-APPROVAL-2026-001.json",
+        "terms_ref": "https://www.usgs.gov/centers/eros/science/monitoring-trends-burn-severity",
+        "transport_exception_ref": null
+      },
+      "destination_relative_path": "mtbs/v12.0/mtbs_perims_DD.zip",
+      "staging_relative_path": "mtbs-perimeters-v12/mtbs_perims_DD.zip.part",
+      "expected": {
+        "sha256": null,
+        "size_bytes": 374092911,
+        "unavailable_reason": "The publisher supplies MD5 65278fcb893f94cd0eaf66d966ee7125 but no SHA-256; controlled intake must verify the MD5 and compute SHA-256."
+      },
+      "observed": {
+        "staged_sha256": "87073b13e6bf41a7cc7f4d3986001f4498f8d4f66d4f88a977cc513e4607849b",
+        "staged_size_bytes": 374092911,
+        "promoted_sha256": "87073b13e6bf41a7cc7f4d3986001f4498f8d4f66d4f88a977cc513e4607849b",
+        "promoted_size_bytes": 374092911
+      },
+      "state": "promoted",
+      "attempts": [
+        {
+          "attempt_id": "mtbs-preflight-001",
+          "started_at": "2026-08-26T00:58:20Z",
+          "completed_at": "2026-08-26T00:58:42Z",
+          "outcome": "failed",
+          "reason": "The proposal evidence locator resolved to mtbs_perims_DD_metadata.xml at 31,562 bytes rather than the approved mtbs_perims_DD.zip. No body was downloaded. The exact ZIP locator was resolved from the approved ScienceBase item and passed a 374,092,911-byte application/zip HEAD preflight."
+        },
+        {
+          "attempt_id": "mtbs-download-001",
+          "started_at": "2026-08-26T01:05:44Z",
+          "completed_at": "2026-08-26T01:07:49Z",
+          "outcome": "succeeded",
+          "preflight": "HTTP 200 application/zip; Content-Disposition mtbs_perims_DD.zip; 374,092,911 bytes; exact locator resolved from approved ScienceBase item 5e7229b8e4b01d509268afba."
+        }
+      ],
+      "failure": null,
+      "superseded_by": null
+    },
+    {
+      "asset_id": "epa-ecoregions-level-iii-us",
+      "source": {
+        "kind": "https",
+        "uri": "https://dmap-prod-oms-edc.s3.us-east-1.amazonaws.com/ORD/Ecoregions/us/us_eco_l3.zip",
+        "authorization_ref": "records/evidence/E4-EV-0008-SOURCE-ADOPTION-APPROVAL-2026-001.json",
+        "terms_ref": "https://dmap-prod-oms-edc.s3.us-east-1.amazonaws.com/ORD/Ecoregions/us/Eco_Level_III_US.html",
+        "transport_exception_ref": null
+      },
+      "destination_relative_path": "epa/ecoregions-level-iii/2024-11-14/us_eco_l3.zip",
+      "staging_relative_path": "epa-ecoregions-level-iii-us/us_eco_l3.zip.part",
+      "expected": {
+        "sha256": null,
+        "size_bytes": 28424315,
+        "unavailable_reason": "The publisher supplies a multipart ETag rather than a content checksum; controlled intake must compute SHA-256."
+      },
+      "observed": {
+        "staged_sha256": "9a65f63cf10d7386aa0d2b0f39c9d0ac3d51bf742eb59d750abcf65ecc12f633",
+        "staged_size_bytes": 28424315,
+        "promoted_sha256": "9a65f63cf10d7386aa0d2b0f39c9d0ac3d51bf742eb59d750abcf65ecc12f633",
+        "promoted_size_bytes": 28424315
+      },
+      "state": "promoted",
+      "attempts": [
+        {
+          "attempt_id": "epa-download-001",
+          "started_at": "2026-08-26T00:59:38Z",
+          "completed_at": "2026-08-26T01:00:31Z",
+          "outcome": "succeeded",
+          "preflight": "HTTP 200 application/zip; 28,424,315 bytes; Last-Modified 2024-11-14T17:09:20Z; multipart ETag retained as locator identity only."
+        }
+      ],
+      "failure": null,
+      "superseded_by": null
+    }
+  ],
+  "extensions": {
+    "project_profile_ref": "burnlens-experiment-four/records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+    "source_registry_ref": "burnlens-experiment-four/records/sources/EXPERIMENT-FOUR-ADMITTED-SOURCE-REGISTRY-2026-001.json",
+    "source_gate_ref": "burnlens-experiment-four/records/sources/EXPERIMENT-FOUR-SOURCE-GATE-ASSESSMENT-2026-001.json",
+    "publisher_integrity": {
+      "mtbs_perimeters_v12_md5": "65278fcb893f94cd0eaf66d966ee7125",
+      "epa_level_iii_last_modified": "2024-11-14T17:09:20Z",
+      "epa_level_iii_multipart_etag": "2c2e9e749597f2b4d5553586cb6d23ff-2"
+    },
+    "asset_verification": {
+      "mtbs-perimeters-v12": {
+        "verified_at_utc": "2026-08-26T01:08:31Z",
+        "sha256": "87073b13e6bf41a7cc7f4d3986001f4498f8d4f66d4f88a977cc513e4607849b",
+        "md5": "65278fcb893f94cd0eaf66d966ee7125",
+        "publisher_md5_match": true,
+        "zip_crc": "pass",
+        "zip_member_count": 10,
+        "unsafe_member_count": 0,
+        "shapefile_base": "mtbs_perims_DD",
+        "required_components": [
+          ".dbf",
+          ".prj",
+          ".shp",
+          ".shx"
+        ],
+        "required_fields": [
+          "Event_ID",
+          "irwinID",
+          "Incid_Name",
+          "Incid_Type",
+          "Map_ID",
+          "Map_Prog",
+          "Asmnt_Type",
+          "BurnBndAc",
+          "BurnBndLat",
+          "BurnBndLon",
+          "Ig_Date"
+        ],
+        "denied_field_names_present": 11,
+        "denied_field_values_opened": false,
+        "promoted_at_utc": "2026-08-26T01:09:43Z",
+        "promotion_primitive": "same-filesystem hard-link create without replace",
+        "promoted_read_only": true
+      },
+      "epa-ecoregions-level-iii-us": {
+        "verified_at_utc": "2026-08-26T01:04:22Z",
+        "sha256": "9a65f63cf10d7386aa0d2b0f39c9d0ac3d51bf742eb59d750abcf65ecc12f633",
+        "md5": "d24089511ae83f30fd301aebb7d07f12",
+        "zip_crc": "pass",
+        "zip_member_count": 7,
+        "unsafe_member_count": 0,
+        "shapefile_base": "us_eco_l3",
+        "required_components": [
+          ".dbf",
+          ".prj",
+          ".shp",
+          ".shx"
+        ],
+        "required_fields": [
+          "US_L3CODE",
+          "US_L3NAME"
+        ],
+        "promoted_at_utc": "2026-08-26T01:04:52Z",
+        "promotion_primitive": "same-filesystem hard-link create without replace",
+        "promoted_read_only": true
+      }
+    },
+    "verification_requirements": [
+      "Exact expected byte size",
+      "Computed SHA-256",
+      "Publisher MD5 for MTBS",
+      "ZIP CRC test",
+      "No absolute or traversal ZIP members",
+      "Complete shapefile component set",
+      "Expected metadata fields without opening denied MTBS severity or threshold fields"
+    ],
+    "retention": "Preserve original promoted archive bytes read-only; preserve failed partials until an explicit retention decision."
+  }
+}

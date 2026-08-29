@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "proposal_id": "E4-M1-LITERAL-ENCODING-AMENDMENT-PROPOSAL-2026-001",
+  "status": "proposed_owner_gate",
+  "evidence_ref": "records/evidence/E4-EV-0009-CONTROLLED-INTAKE-AND-ENCODING-BLOCKER-2026-001.json",
+  "frozen_profile_ref": "records/metadata/EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-2026-001.json",
+  "source_use_proposal_ref": "records/sources/EXPERIMENT-FOUR-SOURCE-USE-PROPOSAL-2026-001.json",
+  "problem": {
+    "wfigs_state": "The frozen text requires attr_POOState exactly ID, OR, or WA, but the admitted service uses exact ISO-style values US-ID, US-OR, and US-WA. The approved window contains zero unprefixed rows.",
+    "mtbs_incident_type": "The frozen text requires MTBS Incid_Type exactly WF, but the admitted v12 archive uses exact value Wildfire. The 187-row target universe contains zero WF rows and 177 Wildfire rows.",
+    "cause": "Literal source encodings were described inconsistently with the reviewed canonical eligibility values; this is not a shortage of events and no result has been selected."
+  },
+  "proposed_exact_amendment": {
+    "canonical_state_rule": "Derive the MTBS state only from the first two Event_ID characters and require it to be exactly ID, OR, or WA. Require the exact WFIGS attr_POOState value to equal US- plus that two-character MTBS state. No other prefix removal, alias, name mapping, or fallback is allowed.",
+    "canonical_incident_type_rule": "Require MTBS Incid_Type exactly Wildfire and the exact matched WFIGS attr_IncidentTypeCategory exactly WF. Canonical candidate incident_type remains Wildfire. No other MTBS or WFIGS category is accepted.",
+    "conflict_rule": "Any missing value, non-exact identifier match, state disagreement after this one declared representation mapping, or category disagreement is unknown and not eligible.",
+    "query_rule": "The fixed WFIGS snapshot query may filter exact source values US-ID, US-OR, and US-WA for the approved 2021-2022 window."
+  },
+  "unchanged_rules": [
+    "Jurisdictions remain exactly Idaho, Oregon, and Washington.",
+    "Years remain 2021 and 2022.",
+    "The 1,000-acre minimum remains required in both MTBS and WFIGS.",
+    "All 68 prior identities remain permanently excluded.",
+    "Exact identifier matching, maturity, duplicate, ecology, HLS metadata, 12-slot-per-state, 36-slot-total, and INCONCLUSIVE shortfall rules remain unchanged.",
+    "No model, label, spectral, metric, imagery-body, or denied-field evidence may enter eligibility.",
+    "No pilot or final event, AOI, or split role may be selected in Milestone 1."
+  ],
+  "decision_effects": {
+    "approve": "Freeze only the proposed exact representation mappings, capture the bounded WFIGS snapshot, and resume M1-U005 under all unchanged rules.",
+    "reject": "Retain the current literal predicates. Because both exact predicates have zero matching source rows, close Milestone 1 INCONCLUSIVE under the frozen 36-slot shortfall rule.",
+    "uncertain": "Do not change the protocol or continue metadata capture; retain the unit at the owner gate with the stated concern."
+  },
+  "observed_before_decision": {
+    "mtbs_universe_rows": 187,
+    "candidate_eligibility_decisions": 0,
+    "wfigs_full_snapshot_created": false,
+    "hls_queries_run": 0,
+    "pilot_or_final_events_selected": 0
+  }
+}

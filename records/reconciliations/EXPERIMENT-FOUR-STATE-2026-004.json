@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "reconciliation_id": "EXPERIMENT-FOUR-STATE-2026-004",
+  "project_profile_ref": "records/governance/EXPERIMENT-FOUR-PROJECT-CONTROL-PROFILE-2026-002.json",
+  "observed_at_utc": "2026-08-26T00:55:33Z",
+  "live_facts": [
+    {
+      "id": "git.main_head",
+      "status": "observed",
+      "value": "3c3c86930513e4e40dcec8bfb37d782b0f22d789",
+      "source_ref": "local main, origin/main, and GitHub PR #4 merge commit",
+      "observed_at_utc": "2026-08-26T00:55:33Z"
+    },
+    {
+      "id": "github.main_ci",
+      "status": "observed",
+      "value": "success run 32916876216",
+      "source_ref": "GitHub Actions repository-controls",
+      "observed_at_utc": "2026-08-26T00:55:33Z"
+    },
+    {
+      "id": "github.pr4",
+      "status": "observed",
+      "value": "merged at 2026-08-26T00:53:36Z",
+      "source_ref": "https://github.com/drwbkr1/burnlens-experiment-four/pull/4",
+      "observed_at_utc": "2026-08-26T00:55:33Z"
+    },
+    {
+      "id": "git.branch",
+      "status": "observed",
+      "value": "codex/m1-candidate-universe-001",
+      "source_ref": "git branch --show-current",
+      "observed_at_utc": "2026-08-26T00:55:33Z"
+    },
+    {
+      "id": "milestone.ready_unit",
+      "status": "observed",
+      "value": "M1-U005-ENUMERATE-UNIVERSE",
+      "source_ref": "validate_milestone.py after M1-U004 pass",
+      "observed_at_utc": "2026-08-26T00:55:33Z"
+    }
+  ],
+  "reconciliation": {
+    "requested_action_class": "project_control",
+    "result": "activate_dependency_ready_unit",
+    "active_unit": "M1-U005-ENUMERATE-UNIVERSE",
+    "next_action": "Validate the intake contract, acquire and promote only the exact MTBS and EPA archives, then capture WFIGS and anonymous CMR metadata under the frozen rules.",
+    "retained_boundaries": [
+      "No HLS imagery",
+      "No credentials",
+      "No pilot or final event selection",
+      "No training, evaluation, test opening, scientific claim, or release"
+    ]
+  }
+}

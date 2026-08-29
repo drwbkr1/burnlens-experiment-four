@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "template": false,
+  "bundle_id": "E4-M1-LITERAL-ENCODING-AMENDMENT-BUNDLE-2026-001",
+  "review_id": "E4-M1-LITERAL-ENCODING-AMENDMENT-2026-001",
+  "authority_ref": "active goal BurnLens Experiment Four - Prospective Fresh-Event Benchmark; protocol-change hard stop",
+  "candidate_identity": "E4-M1-LITERAL-ENCODING-AMENDMENT-PROPOSAL-2026-001",
+  "artifacts": [
+    {
+      "artifact_id": "review-surface",
+      "path": "docs/reviews/e4-m1-literal-encoding-amendment-review.html",
+      "sha256": "4c6315172b75b192e5c22075c8fdd0b0faea12befecd29038bc19d170b954ece",
+      "role": "review_surface",
+      "render_required": true,
+      "render_receipts": [
+        {
+          "path": "records/reviews/E4-M1-LITERAL-ENCODING-AMENDMENT-RENDER-RECEIPT-2026-001.json",
+          "sha256": "4a517da367d730daa4dcd50828c155eaf565dd64735b9a8eb38850b44cbf1070"
+        }
+      ]
+    },
+    {
+      "artifact_id": "plain-language-review",
+      "path": "docs/reviews/2026-08-26-m1-literal-encoding-amendment-owner-review.md",
+      "sha256": "7506eacb8b1475bcd4b3917db6950aee0ee7947f31f8451f962bf52408d1af1d",
+      "role": "review_narrative",
+      "render_required": false,
+      "render_receipts": []
+    },
+    {
+      "artifact_id": "amendment-proposal",
+      "path": "records/decisions/E4-M1-LITERAL-ENCODING-AMENDMENT-PROPOSAL-2026-001.json",
+      "sha256": "da574acf7187605239f5b8f300397c48755bc5c36598d6ab86b5e6b4e8b8811f",
+      "role": "exact_protocol_amendment",
+      "render_required": false,
+      "render_receipts": []
+    },
+    {
+      "artifact_id": "blocker-evidence",
+      "path": "records/evidence/E4-EV-0009-CONTROLLED-INTAKE-AND-ENCODING-BLOCKER-2026-001.json",
+      "sha256": "fd8754f52b0019bb95d0f1b67395954d4bad5c9fcea012564958aaef17496e93",
+      "role": "observed_source_encoding_and_intake_evidence",
+      "render_required": false,
+      "render_receipts": []
+    },
+    {
+      "artifact_id": "intake-contract",
+      "path": "records/intake/E4-M1-SOURCE-INTAKE-2026-001.json",
+      "sha256": "28eb210d2ae8d154baec1f2a66ee10bbcac1c7b688d15a46ca5fdcfff680826b",
+      "role": "controlled_source_custody",
+      "render_required": false,
+      "render_receipts": []
+    },
+    {
+      "artifact_id": "frozen-profile",
+      "path": "records/metadata/EXPERIMENT-FOUR-ELIGIBILITY-PROFILE-2026-001.json",
+      "sha256": "1f82e96413c60e861311d1447c0a97d5d2233917d1ed04cd059128bace2d666b",
+      "role": "unchanged_frozen_values",
+      "render_required": false,
+      "render_receipts": []
+    },
+    {
+      "artifact_id": "reviewed-source-use-proposal",
+      "path": "records/sources/EXPERIMENT-FOUR-SOURCE-USE-PROPOSAL-2026-001.json",
+      "sha256": "3fcf8f5fbd9d7263a7dba2e56d71cdb4546cfc83e481ac4b37208d1bf65f70c2",
+      "role": "original_literal_rules_and_unchanged_boundaries",
+      "render_required": false,
+      "render_receipts": []
+    },
+    {
+      "artifact_id": "render-receipt",
+      "path": "records/reviews/E4-M1-LITERAL-ENCODING-AMENDMENT-RENDER-RECEIPT-2026-001.json",
+      "sha256": "4a517da367d730daa4dcd50828c155eaf565dd64735b9a8eb38850b44cbf1070",
+      "role": "render_and_blank_control_verification",
+      "render_required": false,
+      "render_receipts": []
+    }
+  ],
+  "review_surface": {
+    "artifact_id": "review-surface",
+    "blank_state_verified": true,
+    "completion_controls_verified": true,
+    "export_guards_verified": true,
+    "export_verified": true
+  },
+  "decision_consequences": {
+    "approve": "Freeze only the exact bounded source-representation mappings and resume M1-U005.",
+    "reject": "Retain the literal zero-match predicates and close Milestone 1 INCONCLUSIVE.",
+    "uncertain": "Change nothing and retain the owner gate."
+  },
+  "limitations": [
+    "This is a protocol-representation decision, not event selection or a scientific result.",
+    "The 187 MTBS rows were enumerated before exclusions solely to prove complete-universe scope; zero eligibility decisions exist.",
+    "No WFIGS feature snapshot, HLS query or imagery, EPA polygon row, denied MTBS field value, credential, label, model output, metric, or selection entered the decision."
+  ]
+}

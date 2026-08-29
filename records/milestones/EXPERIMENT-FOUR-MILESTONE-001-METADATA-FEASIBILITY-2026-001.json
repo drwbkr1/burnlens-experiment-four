@@ -119,23 +119,32 @@
     },
     {
       "id": "EXIT-M1-COMPLETE-UNIVERSE",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "records/evidence/E4-EV-0011-COMPLETE-CANDIDATE-UNIVERSE-2026-001.json"
+      ]
     },
     {
       "id": "EXIT-M1-CAPACITY",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "records/evidence/E4-EV-0012-M1-CAPACITY-SHORTFALL-2026-001.json"
+      ]
     },
     {
       "id": "EXIT-M1-INDEPENDENT-VALIDATION",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "records/evidence/E4-EV-0013-M1-INDEPENDENT-VALIDATION-2026-001.json"
+      ]
     },
     {
       "id": "EXIT-M1-DISPOSITION",
-      "status": "pending",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        "records/evidence/E4-EV-0013-M1-INDEPENDENT-VALIDATION-2026-001.json",
+        "records/decisions/DECISION-REGISTER.md#e4-dec-0008--close-milestone-1-inconclusive-without-rescue"
+      ]
     }
   ],
   "units": [
@@ -300,32 +309,43 @@
       ],
       "action_class": "metadata_capture",
       "human_gate": false,
-      "status": "planned",
+      "status": "complete",
       "inputs": [
         "Admitted exact metadata sources",
         "Frozen schema",
         "Prior-event exclusions"
       ],
       "outputs": [
-        "Complete candidate manifest",
-        "Exclusion and unknown accounting",
-        "Replay receipt"
+        "records/decisions/E4-M1-LITERAL-ENCODING-AMENDMENT-2026-001.json",
+        "records/evidence/E4-EV-0010-LITERAL-ENCODING-AMENDMENT-APPROVAL-2026-001.json",
+        "runtime manifest E4-M1-COMPLETE-CANDIDATE-UNIVERSE-2026-001 sha256 ff0f4b8d97dad43ff4424d531292a1c14dd19db735294157f11a68a0afcbdffe",
+        "records/evidence/E4-EV-0011-COMPLETE-CANDIDATE-UNIVERSE-2026-001.json"
       ],
       "gates": {
-        "completeness": "pending",
-        "identity": "pending",
-        "replay": "pending",
-        "model_independence": "pending"
+        "completeness": "pass",
+        "identity": "pass",
+        "replay": "pass",
+        "model_independence": "pass",
+        "controlled_intake": "pass",
+        "literal_encoding_semantics": "pass"
       },
-      "disposition": null,
-      "retained_failures": [],
+      "disposition": "pass",
+      "retained_failures": [
+        "Activation attempt 1: the status update removed the last literal Milestone 0 history sentence required by the repository claim-boundary validator; the explicit historical statement was restored and validation passed",
+        "MTBS preflight attempt 1: the proposal evidence locator resolved to metadata XML rather than the approved ZIP; no body was downloaded, and the exact ZIP locator was resolved from the approved ScienceBase item before controlled intake",
+        "Protocol finding 1: frozen literal state and MTBS incident-type predicates each match zero admitted-source rows; no normalization was inferred and an exact owner amendment gate was prepared",
+        "Review candidate 1: the known software fixture was rejected because its evidence binding differed from the exact amendment bundle; one exact human response was locked and reconciled to approval",
+        "Reconciliation attempt 1: missing WFIGS final acreage was classified below minimum instead of unknown; the no-overwrite successor corrected the reason code and retained the failed manifest at sha256 d6c43363231265add24b0bf8d351b874a4e5d8c8a4370598aaab623aa7ed6490"
+      ],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M1-COMPLETE-UNIVERSE"
         ],
-        "observed": [],
+        "observed": [
+          "EXIT-M1-COMPLETE-UNIVERSE"
+        ],
         "decision_value": "advances_exit",
-        "rationale": "Feasibility must use the complete predeclared universe rather than convenient examples."
+        "rationale": "All 187 predeclared candidates are bound and accounted. Zero are ready for downstream ecology or HLS because required source antecedents fail or remain unknown."
       },
       "next_dependency": "M1-U006-CAPACITY-FEASIBILITY"
     },
@@ -337,32 +357,32 @@
       ],
       "action_class": "deterministic_validation",
       "human_gate": false,
-      "status": "planned",
+      "status": "complete",
       "inputs": [
         "Complete candidate manifest",
         "Source metadata",
         "Synthetic or analytical capacity model"
       ],
       "outputs": [
-        "Availability matrix",
-        "Capacity receipt",
-        "Shortfall accounting"
+        "records/evidence/E4-EV-0012-M1-CAPACITY-SHORTFALL-2026-001.json"
       ],
       "gates": {
-        "six_pilots": "pending",
-        "thirty_final": "pending",
-        "state_balance": "pending",
-        "capacity": "pending"
+        "six_pilots": "fail_zero_slots",
+        "thirty_final": "fail_zero_slots",
+        "state_balance": "not_applicable_terminal_antecedent",
+        "capacity": "pass_assessed_shortfall"
       },
-      "disposition": null,
+      "disposition": "pass",
       "retained_failures": [],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M1-CAPACITY"
         ],
-        "observed": [],
+        "observed": [
+          "EXIT-M1-CAPACITY"
+        ],
         "decision_value": "advances_exit",
-        "rationale": "A metadata-rich universe is insufficient if the frozen study cannot be acquired and reviewed."
+        "rationale": "The frozen six-pilot plus 30-final design was assessed and cannot be populated: the independently bounded maximum is zero selectable slots versus 36 required."
       },
       "next_dependency": "M1-U007-INDEPENDENT-VALIDATION"
     },
@@ -374,32 +394,35 @@
       ],
       "action_class": "deterministic_validation",
       "human_gate": false,
-      "status": "planned",
+      "status": "complete",
       "inputs": [
         "Complete Milestone 1 evidence bundle"
       ],
       "outputs": [
-        "Independent validation receipt",
-        "PASS, FAIL, INCONCLUSIVE, or INVALID disposition",
-        "Reconciled next dependency"
+        "runtime validation E4-M1-INDEPENDENT-VALIDATION-2026-001 sha256 117cc9eccc510bb876972dd7edaee0abe8b3e59d381a1c60f29ee18aefcba2dc",
+        "records/evidence/E4-EV-0013-M1-INDEPENDENT-VALIDATION-2026-001.json",
+        "Milestone 1 disposition INCONCLUSIVE; Milestone 2 not authorized"
       ],
       "gates": {
-        "identity": "pending",
-        "completeness": "pending",
-        "leakage": "pending",
-        "replay": "pending",
-        "capacity": "pending"
+        "identity": "pass",
+        "completeness": "pass",
+        "leakage": "pass",
+        "replay": "pass",
+        "capacity": "fail_zero_maximum"
       },
-      "disposition": null,
+      "disposition": "stop",
       "retained_failures": [],
       "exit_condition_delta": {
         "expected": [
           "EXIT-M1-INDEPENDENT-VALIDATION",
           "EXIT-M1-DISPOSITION"
         ],
-        "observed": [],
+        "observed": [
+          "EXIT-M1-INDEPENDENT-VALIDATION",
+          "EXIT-M1-DISPOSITION"
+        ],
         "decision_value": "advances_exit",
-        "rationale": "Milestone 2 is allowed only if the frozen design is genuinely feasible."
+        "rationale": "Independent replay passes, but the frozen source requirements establish zero selectable slots. The scientific disposition is INCONCLUSIVE and Milestone 2 is not authorized."
       },
       "next_dependency": null
     }
@@ -433,12 +456,15 @@
       "complete prior-event exclusion inventory",
       "schema and reason-code validation",
       "no model-output selection fields",
-      "exact source gate and owner decision"
+      "exact source gate and owner decision",
+      "candidate-universe completeness and replay",
+      "storage, compute, and review capacity",
+      "independent bundle validation"
     ]
   },
   "handoff": {
-    "current_checkpoint": "M1-U004 passed: exact response 897926590c470978cca2c5d8d424212f5372c445af8a9df05384f70bdcb7f83c reconciled to one approval; five exact metadata sources are admitted, eligibility profile E4-ELIGIBILITY-2026-001 is frozen, and zero candidate rows or scientific source bodies were opened at decision time.",
-    "next_action": "Validate and merge the exact M1-U004 checkpoint, then activate M1-U005 and perform only the approved controlled intake and metadata-universe actions.",
+    "current_checkpoint": "Milestone 1 method and independent replay pass, but the frozen candidate universe supports zero selectable slots versus 36 required. The scientific disposition is INCONCLUSIVE, no candidate or role was selected, and Milestone 2 is not authorized.",
+    "next_action": "Publish and live-verify the exact Milestone 1 INCONCLUSIVE checkpoint through PR #5; do not activate Milestone 2.",
     "do_not_carry_forward": [
       "Any assumption that a prior event name is a complete event identity",
       "Any source authority inferred from anonymous discovery",

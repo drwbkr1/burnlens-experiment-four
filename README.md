@@ -16,6 +16,12 @@ operational product. Five exact official metadata sources are admitted only
 for the bounded Milestone 1 actions in the owner-reviewed proposal; zero
 candidate rows had been opened at adoption.
 
+M1-U005 has since promoted the exact MTBS and EPA metadata archives and
+accounted for 187 MTBS preflight rows. Eligibility remains unassigned while an
+exact owner review resolves two literal source-encoding conflicts; no WFIGS
+feature snapshot, HLS query, imagery, event selection, or scientific result
+has followed the conflict.
+
 ## Research question
 
 > Can fixed burn-change methods generalize across a prospectively selected,
